@@ -8,6 +8,7 @@
   </script>
   <meta charset="UTF-8">
   <title>Philly Pope Map</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <meta property="og:title" content="Philly Pope Map | Philadelphia"/>
   <meta property="og:url" content="http://phillypopemap.com"/>
   <meta property="og:site_name" content="Philly Pope Map"/>
@@ -18,15 +19,15 @@
   <meta name="twitter:creator" content="@laurenancona" />
   <link rel="image_src" href="https://phillypopemap.com/img/hotlink-ok/phillypopemap.jpg"/>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
   <link href='css/mapbox.css' rel='stylesheet' />
   <link rel="shortcut icon" href="http://laurenancona.com/LA-Icon-2014_red_favi.ico" type="image/x-icon">
   <link href="css/style.css" type="text/css" rel='stylesheet'>
   <link rel="stylesheet" href="css/font-awesome.min.css">
-<!--     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.grey-lime.min.css" /> -->
+     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.grey-red.min.css" /> 
 <!--  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.grey-deep_orange.min.css" />-->
 <!--	  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue_grey-red.min.css" />-->
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.cyan-red.min.css" /> 
+<!--  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.cyan-red.min.css" /> -->
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" type="text/css">
@@ -52,56 +53,94 @@
 
   <style> /* these should be moved to main.css */
       main {min-width:900px;}
-      body {height: 100%; width: 100%;}
+      body {margin: 0; padding: 0;}
       .mdl-layout__drawer {padding-left: 15px!important;}
       ul {font-size: 10px; line-height: 1.3em;}
       p {font-size: 12px;line-height: 1.4em;}
+      .mdl-layout__header-row, .mdl-layout__drawer-button {color: white;}
       /* .page-content {padding-top: } */
       /* div {padding-bottom: 10px;} */
   </style>
 
-  <!-- Uses a header that is transparent -->
     <div class="map-layout-transparent mdl-layout mdl-js-layout mdl-layout--drawer-button">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
+      <header class="mdl-layout__header">
         <div class="mdl-layout-icon"></div> 
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="mdl-layout-title">Philly Pope Map</span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
+          <div class="map-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field" />
+            </div>
+          </div>
           <!-- Navigation -->
           <nav class="mdl-navigation">
             <a class="mdl-navigation__link"></a>
             <div>
-              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links</a>
+<!--              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links</a>-->
             </div>
           </nav>
+            <button class="map-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+              <li class="mdl-menu__item">One</li>
+              <li class="mdl-menu__item">Two</li>
+              <li disabled class="mdl-menu__item">Three</li>
+              <li class="mdl-menu__item">Four</li>
+            </ul>
         </div>
       </header>
+  
       <!-- SIDE DRAWER MENU -->
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Pope Map</span>
+        <span class="side mdl-layout-title">Philly Pope Map</span>
         <nav class="mdl-navigation">
       <!-- ADD MORE LINKS HERE-->
-          <p>This is an attempt to aggregate the myriad sources of publicly-released (analog) geodata published about the #PopeinPhilly visit. It should not be considered <em>official</em> though it is updated daily.</p>
+      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+          <a href="#about" class="mdl-tabs__tab is-active">About</a>
+          <a href="#options" class="mdl-tabs__tab">Options</a>
+        </div>
+        <div class="mdl-tabs__panel is-active" id="about"> <br/>
+          <p>This is an attempt to aggregate the myriad sources of publicly-released (analog) geodata published about the #PopeinPhilly visit. It should not be considered <em>official</em>, though it will be updated daily as changes are announced.</p>
           <p>Last-updated: 9/8/15</p>
           <p><a href="https://twitter.com/laurenancona" />Feedback</a> is welcome, as is help updating layers.</p>
-          <h5>Roadmap</h5>
-          <p>The following layers are in-progress:</p>
-            <ul>
-              <li>all timed boundaries</li>
-              <li>entrances</li>
-              <li>City transit stations</li>
-              <li>Regional transit stations</li>
-              <li>Jumbotron locations</li>
-              <li>Authorized Vehicle Only routes</li>
-              <li>Recommended walking routes</li>
-              <li>Closed highways/Roads/Bridges</li>
-              <li>Event entrance points</li>
-              <li>Hospitals</li>
-              <li>Medic stations</li>
-              <li>Pope Bike Ride route</li>
-            </ul>
+        
+        <h5>Roadmap</h5>
+        <p>The following layers are in-progress:</p>
+          <ul>
+            <li>all timed boundaries</li>
+            <li>entrances</li>
+            <li>City transit stations</li>
+            <li>Regional transit stations</li>
+            <li>Jumbotron locations</li>
+            <li>Authorized Vehicle Only routes</li>
+            <li>Recommended walking routes</li>
+            <li>Closed highways/Roads/Bridges</li>
+            <li>Event entrance points</li>
+            <li>Hospitals</li>
+            <li>Medic stations</li>
+            <li>Pope Bike Ride route</li>
+          </ul>
+        </div>
+        <div class="mdl-tabs__panel" id="options">
+          <p>Coming soon: choose map layers</p>
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="walking">
+            <input type="checkbox" id="walking" class="mdl-switch__input" checked />
+            <span class="mdl-switch__label">Walking Routes</span>
+          </label>
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="entrances">
+            <input type="checkbox" id="entrances" class="mdl-switch__input" checked />
+            <span class="mdl-switch__label">Event entrances</span>
+          </label>
+        </div>
+      </div>
 <!--              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links to things</a>-->
         </nav>
       </div>
@@ -121,7 +160,7 @@
             <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css' rel='stylesheet' />
               
               
-
+            <div id='info' class='info'></div>
             </div>
 <!--            </div>-->
 <!--            <div class="mdl-cell mdl-cell--12-col" id="data-table">-->
