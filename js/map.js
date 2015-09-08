@@ -6,12 +6,6 @@
               bounds = L.latLngBounds(southWest, northEast);
 
           var map = L.mapbox.map('map','laurenancona.2ff8c154', { // Popemap polygons baselayer
-              // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
-                  maxBounds: bounds,
-                  maxZoom: 19,
-                  minZoom: 12
-              });
-          var map = L.mapbox.map('map','laurenancona.2ff8c154', { // Popemap polygons baselayer
 	     		// set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
 			    	maxBounds: bounds,
 			    	maxZoom: 17,
@@ -25,9 +19,9 @@
           // Here be our data layers
           var featureLayer = L.mapbox.featureLayer().addTo(map);                featureLayer.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f70140c706/raw/93d3d0f7e207d6baa8a1b46da196f48505854b0e/screens.geojson');
 
-          var  = L.mapbox.featureLayer('laurenancona.jn22om7k'),
+          var screens = L.mapbox.featureLayer('laurenancona.jn22om7k'),
             blocks = L.mapbox.tileLayer('laurenancona.fc7871b8'),
-            legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend		
+//            legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend		
             lots = L.mapbox.featureLayer('').addTo(map);
 	    
 	    // Layer control freak
@@ -35,7 +29,7 @@
 		  	// 'Parking Dark': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map),
 		  	// 'Parking Light': L.mapbox.tileLayer('laurenancona.fc7871b8')
 		  	}, {
-		  	'Permit Districts': districts,
+		  	'Screens': screens,
 		  	'Permit Blocks': blocks.addTo(map)
 		  	// 'Permit Lots': lots
 			}, {
