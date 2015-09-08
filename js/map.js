@@ -5,12 +5,21 @@
               northEast = L.latLng(40.156325, -74.883544),
               bounds = L.latLngBounds(southWest, northEast);
 
+<<<<<<< HEAD
           var map = L.mapbox.map('map','laurenancona.2ff8c154', { // Popemap polygons baselayer
               // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
                   maxBounds: bounds,
                   maxZoom: 19,
                   minZoom: 12
               });
+=======
+	     	var map = L.mapbox.map('map','laurenancona.2ff8c154', { // Popemap polygons baselayer
+	     		// set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
+			    	maxBounds: bounds,
+			    	maxZoom: 17,
+			    	minZoom: 12
+				});
+>>>>>>> gh-pages
 
 	    L.control.locate().addTo(map);
 

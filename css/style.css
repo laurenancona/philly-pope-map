@@ -57,9 +57,11 @@ p {
   	width:20px;
   }
 
+/*
   .img { 
   	width:20px;
   }
+*/
 
 /*.legend label,
 .legend span {
@@ -168,3 +170,7 @@ p {
   #info-bar {
 
   }
+
+.map-layout-transparent .mdl-layout__header, .map-layout-transparent .mdl-layout__drawer-button {
+  color: white;
+}
