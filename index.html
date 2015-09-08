@@ -23,9 +23,9 @@
   <link rel="shortcut icon" href="http://laurenancona.com/LA-Icon-2014_red_favi.ico" type="image/x-icon">
   <link href="css/style.css" type="text/css" rel='stylesheet'>
   <link rel="stylesheet" href="css/font-awesome.min.css">
-     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.grey-lime.min.css" /> 
+<!--     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.grey-lime.min.css" /> -->
 <!--  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.grey-deep_orange.min.css" />-->
-<!--	  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue_grey-red.min.css" />-->
+	  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue_grey-red.min.css" />
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" type="text/css">
@@ -52,13 +52,16 @@
   <style> /* these should be moved to main.css */
       main {min-width:900px;}
       body {height: 100%; width: 100%;}
+      .mdl-layout__drawer {padding-left: 15px!important;}
+      ul {font-size: 10px; line-height: 1.3em;}
+      p {font-size: 12px;line-height: 1.4em;}
       /* .page-content {padding-top: } */
       /* div {padding-bottom: 10px;} */
   </style>
 
   <!-- Uses a header that is transparent -->
     <div class="map-layout-transparent mdl-layout mdl-js-layout mdl-layout--drawer-button">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
+      <header class="mdl-layout__header mdl-layout__drawer mdl-layout__header--transparent">
         <div class="mdl-layout-icon"></div> 
         <div class="mdl-layout__header-row">
           <!-- Title -->
@@ -79,7 +82,26 @@
         <span class="mdl-layout-title">Pope Map</span>
         <nav class="mdl-navigation">
       <!-- ADD MORE LINKS HERE-->
-              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links to things</a>
+          <p>This is an attempt to aggregate the myriad sources of publicly-released (analog) geodata published about the #PopeinPhilly visit. It should not be considered <em>official</em> though it is updated daily.</p>
+          <p>Last-updated: 9/8/15</p>
+          <p><a href="https://twitter.com/laurenancona" />Feedback</a> is welcome, as is help updating layers.</p>
+          <h5>Roadmap</h5>
+          <p>The following layers are in-progress:</p>
+            <ul>
+              <li>all timed boundaries</li>
+              <li>entrances</li>
+              <li>City transit stations</li>
+              <li>Regional transit stations</li>
+              <li>Jumbotron locations</li>
+              <li>Authorized Vehicle Only routes</li>
+              <li>Recommended walking routes</li>
+              <li>Closed highways/Roads/Bridges</li>
+              <li>Event entrance points</li>
+              <li>Hospitals</li>
+              <li>Medic stations</li>
+              <li>Pope Bike Ride route</li>
+            </ul>
+<!--              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links to things</a>-->
         </nav>
       </div>
       <!-- MAIN CONTENT -->

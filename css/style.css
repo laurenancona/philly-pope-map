@@ -85,8 +85,13 @@ p {
     color: rgba(0, 0, 0, .75)
 }
 
-.leaflet-top.leaflet-right {
+.leaflet-top .leaflet-right {
   top: 60px;
+}
+
+.leaflet-top {
+  top: 50px;
+  left: 12px;
 }
 
 .leaflet-container a {
@@ -171,6 +176,6 @@ p {
 
   }
 
-.map-layout-transparent .mdl-layout__header, .map-layout-transparent .mdl-layout__drawer-button {
+.map-layout-transparent mdl-layout-title .mdl-layout__header, .map-layout-transparent .mdl-layout__drawer-button {
   color: white;
 }
