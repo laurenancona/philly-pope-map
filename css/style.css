@@ -91,7 +91,7 @@ p {
 
 .leaflet-top {
   top: 50px;
-  left: 12px;
+  left: 10px;
 }
 
 .leaflet-container a {
@@ -176,6 +176,6 @@ p {
 
   }
 
-.map-layout-transparent mdl-layout-title .mdl-layout__header, .map-layout-transparent .mdl-layout__drawer-button {
+.map-layout-transparent .mdl-layout-title, .map-layout-transparent .mdl-layout__header, .map-layout-transparent .mdl-layout__drawer-button {
   color: white;
 }
