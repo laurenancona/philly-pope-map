@@ -1,5 +1,17 @@
 # https://git-scm.com/docs/gitignore
 # https://help.github.com/articles/ignoring-files
 # Example .gitignore files: https://github.com/github/gitignore
+
+# directorios
 /bower_components/
 /node_modules/
+/tiles/
+/polygons/
+/sources/
+
+# filetypes
+*.qgs
+*.bak
+
+# files
+dailymaps.pdf
