@@ -1,0 +1,58 @@
+body { margin:0; padding:0; }
+  #container { 
+  	position:absolute; 
+  	z-index:2; 
+  	float:left; 
+  	top:12px; 
+  	left:60px; 
+  	background-color: #FFF; 
+  	padding:10px 15px 10px 15px; 
+  	opacity:0.8;  
+  	font-family:"Georgia", serif; font-size:1em;
+  }
+
+  #text { 
+  	margin-left:auto; 
+  	margin-right:auto; 
+  	color:#555555; 
+  	opacity:1!important; 
+  	z-index:3; text-shadow:1px 1px 2px #888888
+  }
+
+  #map { 
+  	position:absolute; 
+  	top:0; 
+  	bottom:0; 
+  	width:100%; z-index:1; 
+  }
+
+  #attrib { position:absolute; 
+  	float:left; 
+  	margin-bottom: 10px; 
+  	margin-left: 10px;
+  }
+
+  #share-buttons { 
+  	position:relative; 
+  	float:right; 
+  	z-index:4; 
+  	top:.9em; 
+  	right:1.5em; 
+  	opacity:.6; 
+  	width:20px;
+  }
+
+  .img { 
+  	width:20px;
+  }
+
+  #credits { 
+  	position:relative; 
+  	z-index:5; 
+  	top:90%; 
+  	left:20px; 
+  	font-family:"Georgia", serif; 
+  	font-size:.6em; 
+  	opacity:.6; 
+    box-shadow: 1px #0FF;  
+  }
