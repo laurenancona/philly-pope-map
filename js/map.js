@@ -17,7 +17,9 @@
 				map.fitBounds(bounds); // zoom/snap the map to that bounding box
 
 				// Here be our data layers
-				var points = L.mapbox.tileLayer('laurenancona.4ae9c933').addTo(map);
+            var featureLayer = L.mapbox.featureLayer().addTo(map);                    featureLayer.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f70140c706/raw/93d3d0f7e207d6baa8a1b46da196f48505854b0e/screens.geojson');
+
+		    var points = L.mapbox.tileLayer('laurenancona.4ae9c933').addTo(map);
 				   // blocks = L.mapbox.tileLayer('laurenancona.fc7871b8'),
 				  //  legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend		
 				      //lots			= L.mapbox.featureLayer('').addTo(map);
