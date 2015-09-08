@@ -170,3 +170,7 @@ p {
   #info-bar {
 
   }
+
+.map-layout-transparent .mdl-layout__header, .map-layout-transparent .mdl-layout__drawer-button {
+  color: white;
+}
