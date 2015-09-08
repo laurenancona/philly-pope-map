@@ -1164,7 +1164,8 @@
         ]
       },
       "properties": {
-        "name": "Poperide"
+        "name": "Poperide",
+        "marker-size": ""
       }
     },
     {
@@ -1178,7 +1179,9 @@
         ]
       },
       "properties": {
-        "name": "\n    Mile 1\n   ",
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "name": "    Mile 1   ",
         "marker-symbol": "bicycle"
       }
     },
@@ -1194,7 +1197,8 @@
       },
       "properties": {
         "name": "\n    Mile 2\n   ",
-        "marker-symbol": "bicycle"
+        "marker-symbol": "bicycle",
+        "marker-size": "medium"
       }
     },
     {
@@ -1209,7 +1213,8 @@
       },
       "properties": {
         "name": "\n    Mile 3\n   ",
-        "marker-symbol": "bicycle"
+        "marker-symbol": "bicycle",
+        "marker-size": "medium"
       }
     },
     {
@@ -1224,7 +1229,8 @@
       },
       "properties": {
         "name": "\n    Mile 4\n   ",
-        "marker-symbol": "bicycle"
+        "marker-symbol": "bicycle",
+        "marker-size": "medium"
       }
     },
     {
@@ -1256,7 +1262,8 @@
       },
       "properties": {
         "name": "\n    Mile 7\n   ",
-        "marker-symbol": "bicycle"
+        "marker-symbol": "bicycle",
+        "marker-size": "medium"
       }
     },
     {
@@ -1305,7 +1312,8 @@
       },
       "properties": {
         "name": "\n    Mile 10\n   ",
-        "marker-symbol": "bicycle"
+        "marker-symbol": "bicycle",
+        "marker-size": "medium"
       }
     },
     {
