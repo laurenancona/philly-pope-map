@@ -8,7 +8,7 @@
 	     	var map = L.mapbox.map('map','laurenancona.2ff8c154', { // Popemap polygons baselayer
 	     		// set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
 			    	maxBounds: bounds,
-			    	maxZoom: 19,
+			    	maxZoom: 17,
 			    	minZoom: 12
 				});
 
