@@ -53,9 +53,9 @@ function empty() {
   info.innerHTML = '<div><strong>Click a marker</strong></div>';
   }
 
-var points = L.mapbox.tileLayer('laurenancona.4ae9c933').addTo(map);
+// var points = L.mapbox.tileLayer('laurenancona.4ae9c933').addTo(map);
 // blocks = L.mapbox.tileLayer('laurenancona.fc7871b8'),
-//  legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend		
+// legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend		
 //lots			= L.mapbox.featureLayer('').addTo(map);
 
 // Layer control freak
