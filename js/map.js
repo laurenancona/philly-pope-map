@@ -22,11 +22,16 @@ L.control.locate().addTo(map);
 map.fitBounds(bounds); // zoom/snap the map to that bounding box
 
 //// Here be our data layers
+var walking = L.mapbox.featureLayer().addTo(map); walking.loadURL('https://gist.githubusercontent.com/laurenancona/38fc102e1954956e5fd4/raw/983fb584ce6ec971d52876c39534620e5c2924c6/walking.geojson');
 var screens = L.mapbox.featureLayer().addTo(map);
 screens.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f70140c706/raw/93d3d0f7e207d6baa8a1b46da196f48505854b0e/screens.geojson');
 
+//var mapLayers = (walking|screens)
+
 // Listen for individual marker clicks.
 screens.on('click',function(e) {
+//  mapLayers.on('click',function(e) {
+
     // Force the popup closed.
     e.layer.closePopup();
 
