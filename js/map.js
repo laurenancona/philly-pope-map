@@ -692,7 +692,7 @@ L.control.layers({
 //            // lotsControl  			=   L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
 
 var hash = L.hash(map); // append (z)/(x)/(y) to URL for deep linking to locations
-map.setView([39.9577, -75.1641], 14);
+map.setView([39.9581, -75.1657], 15);
 
 
 
