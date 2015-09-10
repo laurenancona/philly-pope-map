@@ -21,11 +21,6 @@ L.control.locate().addTo(map);
 
 map.fitBounds(bounds); // zoom/snap the map to that bounding box
 
-//// Here be our data layers
-var walking = L.mapbox.featureLayer().addTo(map); walking.loadURL('https://gist.githubusercontent.com/laurenancona/38fc102e1954956e5fd4/raw/983fb584ce6ec971d52876c39534620e5c2924c6/walking.geojson');
-var screens = L.mapbox.featureLayer().addTo(map);
-screens.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f70140c706/raw/7775efb9d3b9671dbf88a4b824d3499d4b0aa604/screens.geojson');
-
 
 
 // I do not want to do this:
@@ -631,6 +626,17 @@ screens.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f7014
 //			onEachFeature: onEachFeature
 //		}).addTo(map);
 
+//// Here be our data layers
+var walking = L.mapbox.featureLayer().addTo(map); walking.loadURL('https://gist.githubusercontent.com/laurenancona/38fc102e1954956e5fd4/raw/0386e32eed89b63e75654bcd4c2b0090ab2ae58b/walking.geojson');
+var screens = L.mapbox.featureLayer()//.addTo(map);
+screens.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f70140c706/raw/7775efb9d3b9671dbf88a4b824d3499d4b0aa604/screens.geojson');
+
+var transit = L.mapbox.featureLayer()//.addTo(map);
+screens.loadURL('https://gist.githubusercontent.com/laurenancona/c1fc8125934afa3bb7b2/raw/fcebed4fc907679bde7306ffbf1aa856e1165097/transit-locations.geojson');
+
+var entrances = L.mapbox.featureLayer()//.addTo(map);
+screens.loadURL('https://gist.githubusercontent.com/laurenancona/c1fc8125934afa3bb7b2/raw/fcebed4fc907679bde7306ffbf1aa856e1165097/transit-locations.geojson');
+
 // Listen for individual marker clicks.
 screens.on('click',function(e) {
 //  mapLayers.on('click',function(e) {
@@ -660,17 +666,19 @@ function empty() {
 
 
 // Layer control freak
-//L.control.layers({
+L.control.layers({
 //    // 'Parking Dark': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map),
 //    // 'Parking Light': L.mapbox.tileLayer('laurenancona.fc7871b8')
 //    }, {
-//    'Permit Districts': districts ,
-//    'Permit Blocks': blocks.addTo(map)
-//    // 'Permit Lots': lots
-//    }, {
-//    position: 'topleft'
-//    }
-//    ).addTo(map);	  		
+    'Jumbotrons': screens.addTo(map),
+    'Pedestrian routes': walking.addTo(map),
+    'Festival Entrances': entrances.addTo(map),
+   // 'Pope Bike Ride': 
+    'Transit Stations': transit
+    }, {
+    position: 'bottomright'
+    }
+    ).addTo(map);	  		
 
 //    // UTF Grid interactivity, testing w/ multiple layers
 //        var blocksTiles = blocks.addTo(map);
