@@ -63,7 +63,7 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 var walking = L.mapbox.featureLayer().addTo(map); walking.loadURL('data/walking.geojson');
 
 var screens = L.mapbox.featureLayer()//.addTo(map);
-screens.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f70140c706/raw/7775efb9d3b9671dbf88a4b824d3499d4b0aa604/screens.geojson');
+screens.loadURL('data/screens.geojson');
 
 var transit = L.mapbox.featureLayer()//.addTo(map);
 transit.loadURL('data/transit-locations.geojson');
@@ -94,10 +94,11 @@ transit.on('click',function(e) {
     e.layer.closePopup();
 
     var feature = e.layer.feature;
-    var content = '<div><strong>' + feature.properties.type + '</strong>' +
+    var content = '<div><strong>' + feature.properties.type + ' | ' + feature.properties.desc + '<strong>' +
                   '<p>' + feature.properties.name + '</p>' +
-                  '<p>' + feature.properties.Fare + ' | ' + feature.properties.Tickets +  '</p>' +
-                  '<p><a href=' + feature.properties.info + '</p></div>';
+                  '<p>' + feature.properties.Fare + '</p>' + 
+                  '<p>' + feature.properties.Tickets +  '</p>' +
+                  '<p style="color:#3AA4CE;"><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" />Visit site</a></p></div>';
 
     info.innerHTML = content;
 });
