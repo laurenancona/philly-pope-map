@@ -641,7 +641,7 @@ var poperide = L.mapbox.featureLayer()
 poperide.loadURL('https://gist.githubusercontent.com/laurenancona/58dcb77fd09d37da7446/raw/b7a8b0aab9893eacf04c374424998a6556c3ea70/poperide.geojson');
 
 // Listen for individual marker clicks.
-screens.on('click',function(e) {
+entrances.on('click',function(e) {
 //  mapLayers.on('click',function(e) {
 
     // Force the popup closed.
@@ -649,7 +649,7 @@ screens.on('click',function(e) {
 
     var feature = e.layer.feature;
     var content = '<div><strong>' + feature.properties.name + '</strong>' +
-                  '<p>' + feature.properties.type + '</p></div>';
+                  '<p>Ticketed? ' + feature.properties.ticketed + '</p></div>';
 
     info.innerHTML = content;
 });
