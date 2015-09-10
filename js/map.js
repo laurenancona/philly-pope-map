@@ -632,10 +632,13 @@ var screens = L.mapbox.featureLayer()//.addTo(map);
 screens.loadURL('https://gist.githubusercontent.com/laurenancona/12875fed89f70140c706/raw/7775efb9d3b9671dbf88a4b824d3499d4b0aa604/screens.geojson');
 
 var transit = L.mapbox.featureLayer()//.addTo(map);
-screens.loadURL('https://gist.githubusercontent.com/laurenancona/c1fc8125934afa3bb7b2/raw/fcebed4fc907679bde7306ffbf1aa856e1165097/transit-locations.geojson');
+transit.loadURL('https://gist.githubusercontent.com/laurenancona/c1fc8125934afa3bb7b2/raw/fcebed4fc907679bde7306ffbf1aa856e1165097/transit-locations.geojson');
 
 var entrances = L.mapbox.featureLayer()//.addTo(map);
-screens.loadURL('https://gist.githubusercontent.com/laurenancona/c1fc8125934afa3bb7b2/raw/fcebed4fc907679bde7306ffbf1aa856e1165097/transit-locations.geojson');
+entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
+
+var poperide = L.mapbox.featureLayer()
+poperide.loadURL('https://gist.githubusercontent.com/laurenancona/58dcb77fd09d37da7446/raw/b7a8b0aab9893eacf04c374424998a6556c3ea70/poperide.geojson');
 
 // Listen for individual marker clicks.
 screens.on('click',function(e) {
@@ -667,15 +670,16 @@ function empty() {
 
 // Layer control freak
 L.control.layers({
-//    // 'Parking Dark': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map),
-//    // 'Parking Light': L.mapbox.tileLayer('laurenancona.fc7871b8')
+//    // 'Friday': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map),
+//    // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8'),
+//    // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8')
 //    }, {
 
     }, {
-    Layers:'Jumbotrons': screens.addTo(map),
+    'Jumbotrons': screens,
     'Pedestrian routes': walking.addTo(map),
     'Festival Entrances': entrances.addTo(map),
-   // 'Pope Bike Ride': 
+    'Pope Bike Ride': poperide,
     'Transit Stations': transit
     }
     ).addTo(map);	  		
