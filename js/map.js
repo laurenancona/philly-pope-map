@@ -670,13 +670,13 @@ L.control.layers({
 //    // 'Parking Dark': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map),
 //    // 'Parking Light': L.mapbox.tileLayer('laurenancona.fc7871b8')
 //    }, {
-    'Jumbotrons': screens.addTo(map),
+
+    }, {
+    Layers:'Jumbotrons': screens.addTo(map),
     'Pedestrian routes': walking.addTo(map),
     'Festival Entrances': entrances.addTo(map),
    // 'Pope Bike Ride': 
     'Transit Stations': transit
-    }, {
-    position: 'bottomright'
     }
     ).addTo(map);	  		
 
