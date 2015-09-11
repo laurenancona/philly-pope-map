@@ -148,7 +148,7 @@ L.control.layers({
 //    // 'Sunday': L.mapbox.tileLayer('laurenancona.fc7871b8')
     }, {
     'Jumbotrons': screens,
-    'Pedestrian routes': walking.addTo(map),
+    'Pedestrian routes': walking,
     'Festival Entrances': entrances,
     'Pope Bike Ride': poperide,
     'Transit Stations': transit.addTo(map),
