@@ -51,7 +51,6 @@
     <!--[if lt IE 9]>
       <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.21.0/L.Control.Locate.ie.css' rel='stylesheet' />
     <![endif]-->
-<!--  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />-->
   
 </head>
 <body>
@@ -72,9 +71,9 @@
     ul {font-size: 10px; line-height: 1.3em;}
     p {font-size: 12px;line-height: 1.4em;}
     .mdl-layout__header-row, .mdl-layout__drawer-button {color: white;}
-/*    .mdl-switch {padding: 10px 10px;}*/
+    /* .mdl-switch {padding: 10px 10px;}*/
     /* .page-content {padding-top: } */
-      /* div {padding-bottom: 10px;} */
+    /* div {padding-bottom: 10px;} */
   </style>
 
     <div class="map-layout-transparent mdl-layout mdl-js-layout mdl-layout--drawer-button">
@@ -120,12 +119,84 @@
         </div>
         <div class="mdl-tabs__panel is-active" id="about"> <br/>
           <p>This is an attempt to aggregate the myriad sources of publicly-released (analog) geodata published about the #PopeinPhilly visit. It should not be considered <em>official</em>, though it will be updated daily as changes are announced.</p>
-          <p>Last-updated: 9/10/15 5:55pm</p>
-          <p>Have an idea? <a href="https://twitter.com/laurenancona" />Feedback</a> is welcome, as is help updating layers.</p>
+<script 
+  type="text/JavaScript" 
+  language="JavaScript">
+<!-- 
+//
+// format date as dd-mmm-yy
+// example: 12-Jan-99
+//
+function date_ddmmmyy(date)
+{
+  var d = date.getDate();
+  var m = date.getMonth() + 1;
+  var y = date.getYear();
+
+  // handle different year values 
+  // returned by IE and NS in 
+  // the year 2000.
+  if(y >= 2000)
+  {
+    y -= 2000;
+  }
+  if(y >= 100)
+  {
+    y -= 100;
+  }
+
+  // could use splitString() here 
+  // but the following method is 
+  // more compatible
+  var mmm = 
+    ( 1==m)?'Jan':( 2==m)?'Feb':(3==m)?'Mar':
+    ( 4==m)?'Apr':( 5==m)?'May':(6==m)?'Jun':
+    ( 7==m)?'Jul':( 8==m)?'Aug':(9==m)?'Sep':
+    (10==m)?'Oct':(11==m)?'Nov':'Dec';
+
+  return "" +
+    (d<10?"0"+d:d) + "-" +
+    mmm + "-" +
+    (y<10?"0"+y:y);
+}
+
+
+//
+// get last modified date of the 
+// current document.
+//
+function date_lastmodified()
+{
+  var lmd = document.lastModified;
+  var s   = "Unknown";
+  var d1;
+
+  // check if we have a valid date
+  // before proceeding
+  if(0 != (d1=Date.parse(lmd)))
+  {
+    s = "" + date_ddmmmyy(new Date(d1));
+  }
+
+  return s;
+}
+
+//
+// finally display the last modified date
+// as DD-MMM-YY
+//
+document.write( 
+  "<p>Last updated:  " + 
+  date_lastmodified() + ".</p>" );
+
+// -->
+</script>
+        <p>Have an idea? <a href="https://twitter.com/laurenancona" />Feedback</a> is welcome, as is help updating layers.</p>
         
         <h5>Roadmap</h5>
         <p>The following layers are in-progress:</p>
           <ul>
+            <li>Open/closed Indiego Bikeshare stations<em>new</em></li>
             <li>Vehicle Tow Zones + Times <em>new</em></li>
             <li>all timed boundaries</li>
             <li>[x]City transit stations</li>

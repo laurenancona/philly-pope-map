@@ -1,18 +1,18 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 // Construct a bounding box
 var southWest = L.latLng(39.864439, -75.387541),
-  northEast = L.latLng(40.156325, -74.883544),
-  bounds = L.latLngBounds(southWest, northEast);
+    northEast = L.latLng(40.156325, -74.883544),
+    bounds = L.latLngBounds(southWest, northEast);
 
 var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons baselayer
   // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
-  maxBounds: bounds,
-  maxZoom: 17,
-  minZoom: 13
+    maxBounds: bounds,
+    maxZoom: 17,
+    minZoom: 13
 })
 
 .addControl(L.mapbox.geocoderControl('mapbox.places', {
-  autocomplete: true
+    autocomplete: true
 }));
 
 
@@ -62,21 +62,23 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 //// Here be our data layers
 var walking = L.mapbox.featureLayer().addTo(map); walking.loadURL('data/walking.geojson');
 
-var screens = L.mapbox.featureLayer()//.addTo(map);
+var screens = L.mapbox.featureLayer();//.addTo(map);
 screens.loadURL('data/screens.geojson');
 
-var transit = L.mapbox.featureLayer()//.addTo(map);
+var transit = L.mapbox.featureLayer();//.addTo(map);
 transit.loadURL('data/transit-locations.geojson');
 
-var entrances = L.mapbox.featureLayer()//.addTo(map);
+var entrances = L.mapbox.featureLayer();//.addTo(map);
 entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
 
-var poperide = L.mapbox.featureLayer()
-poperide.loadURL('https://gist.githubusercontent.com/laurenancona/58dcb77fd09d37da7446/raw/6f194ae6c3b7bbb51e35a202bde8c0e5d7cb2003/poperide.geojson');
+var poperide = L.mapbox.featureLayer();//.addTo(map);
+poperide.loadURL('data/poperide.geojson');
+
+var parking = L.mapbox.featureLayer();//.addTo(map);
+parking.loadURL('data/parking.geojson');
 
 // Listen for individual marker clicks.
 entrances.on('click',function(e) {
-//  mapLayers.on('click',function(e) {
 
     // Force the popup closed.
     e.layer.closePopup();
@@ -98,7 +100,7 @@ transit.on('click',function(e) {
                   '<p>' + feature.properties.name + '</p>' +
                   '<p>' + feature.properties.Fare + '</p>' + 
                   '<p>' + feature.properties.Tickets +  '</p>' +
-                  '<p style="color:#3AA4CE;"><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" />Visit site</a></p></div>';
+                  '<p style="color:#3AA4CE;"><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>Visit site</strong></a></p></div>';
 
     info.innerHTML = content;
 });
@@ -115,7 +117,17 @@ poperide.on('click',function(e) {
     info.innerHTML = content;
 });
 
-// lookit loading via jQuery.parseJSON
+parking.on('click',function(e) {
+
+    // Force the popup closed.
+    e.layer.closePopup();
+
+    var feature = e.layer.feature;
+    var content = '<div><strong>' + feature.properties.name + '</strong>' +
+                  '<p> Deadline to move vehicles: ' + feature.properties.desc + '</p></div>';
+
+    info.innerHTML = content;
+});
 
 // Clear the tooltip when map is clicked.
 map.on('move', empty);
@@ -134,14 +146,13 @@ L.control.layers({
 //    // 'Friday': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map),
 //    // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8'),
 //    // 'Sunday': L.mapbox.tileLayer('laurenancona.fc7871b8')
-//    }, {
-
     }, {
     'Jumbotrons': screens,
     'Pedestrian routes': walking.addTo(map),
-    'Festival Entrances': entrances.addTo(map),
+    'Festival Entrances': entrances,
     'Pope Bike Ride': poperide,
-    'Transit Stations': transit.addTo(map)
+    'Transit Stations': transit.addTo(map),
+    'Towing/Parking Deadlines': parking.addTo(map)
     }
     ).addTo(map);	  		
 
