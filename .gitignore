@@ -9,6 +9,7 @@
 /polygons/
 /sources/
 /img/icons/
+/data/authorized-vehicle-only
 
 # filetypes
 *.qgs
@@ -20,3 +21,5 @@ dailymaps.pdf
 css/geojson.io.mhtml
 
 img/add to homescreen thumbnails.ai
+
+data/authorized-vehicle-only.zip
