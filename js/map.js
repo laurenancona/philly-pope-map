@@ -60,6 +60,9 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 //		}).addTo(map);
 
 //// Here be our data layers
+var highways = L.mapbox.featureLayer();//.addTo(map);
+highways.loadURL('data/highways.geojson');
+
 var walking = L.mapbox.featureLayer();//.addTo(map);
 walking.loadURL('data/walking.geojson');
 
@@ -77,9 +80,6 @@ poperide.loadURL('data/poperide.geojson');
 
 var parking = L.mapbox.featureLayer();//.addTo(map);
 parking.loadURL('data/parking.geojson');
-
-var highways = L.mapbox.featureLayer();//.addTo(map);
-highways.loadURL('data/highways.geojson');
 
 // Listen for individual marker clicks.
 entrances.on('click',function(e) {
@@ -154,7 +154,7 @@ map.on('move', empty);
 empty();
 
 function empty() {
-  info.innerHTML = '<div><strong>Click a marker</strong></div>';
+  info.innerHTML = '<div><strong>Choose layers at right, then click a feature for more info</strong></div>';
   }
 
 
