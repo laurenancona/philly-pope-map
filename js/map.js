@@ -63,7 +63,7 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 var walking = L.mapbox.featureLayer().addTo(map); walking.loadURL('data/walking.geojson');
 
 var screens = L.mapbox.featureLayer();//.addTo(map);
-screens.loadURL('data/screens.geojson');
+screens.loadURL('data/jumbotrons.geojson');
 
 var transit = L.mapbox.featureLayer();//.addTo(map);
 transit.loadURL('data/transit-locations.geojson');
