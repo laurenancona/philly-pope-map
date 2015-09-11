@@ -60,7 +60,8 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 //		}).addTo(map);
 
 //// Here be our data layers
-var walking = L.mapbox.featureLayer().addTo(map); walking.loadURL('data/walking.geojson');
+var walking = L.mapbox.featureLayer();//.addTo(map);
+walking.loadURL('data/walking.geojson');
 
 var screens = L.mapbox.featureLayer();//.addTo(map);
 screens.loadURL('data/jumbotrons.geojson');
@@ -76,6 +77,9 @@ poperide.loadURL('data/poperide.geojson');
 
 var parking = L.mapbox.featureLayer();//.addTo(map);
 parking.loadURL('data/parking.geojson');
+
+var highways = L.mapbox.featureLayer();//.addTo(map);
+highways.loadURL('data/highways.geojson');
 
 // Listen for individual marker clicks.
 entrances.on('click',function(e) {
@@ -129,6 +133,19 @@ parking.on('click',function(e) {
     info.innerHTML = content;
 });
 
+highways.on('click',function(e) {
+
+    // Force the popup closed.
+    e.layer.closePopup();
+
+    var feature = e.layer.feature;
+    var content = '<div><strong>' + feature.properties.name + '</strong>' +
+                  '<p> Closed to inbound traffic</p></div>';
+
+    info.innerHTML = content;
+});
+
+
 // Clear the tooltip when map is clicked.
 map.on('move', empty);
 
@@ -151,8 +168,9 @@ L.control.layers({
     'Pedestrian routes': walking,
     'Festival Entrances': entrances,
     'Pope Bike Ride': poperide,
-    'Transit Stations': transit.addTo(map),
-    'Towing/Parking Deadlines': parking.addTo(map)
+    'Transit Stations': transit,
+    'Towing/Parking Deadlines': parking.addTo(map),
+    'Closed Highways': highways.addTo(map)
     }
     ).addTo(map);	  		
 
