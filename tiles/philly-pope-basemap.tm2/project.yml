@@ -1,0 +1,28 @@
+_prefs: 
+  mapid: laurenancona.2ff8c154
+  saveCenter: false
+_properties: {}
+attribution: "<a href=\"https://twitter.com/laurenancona\" />Lauren Ancona</a> | <a href=\"https://phillypopemap.com/sources.html\" /> Sources </a>"
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -75.1641
+  - 39.9577
+  - 14
+description: ''
+format: "png8:m=h:c=64"
+interactivity_layer: ''
+layers: null
+maxzoom: 18
+minzoom: 13
+name: philly-pope-baselayer
+source: "mapbox:///mapbox.mapbox-streets-v5,laurenancona.h8rozuxr,laurenancona.697zm2t9,laurenancona.ae5b1a3d,laurenancona.b6b3d96e"
+styles: 
+  - style.mss
+  - roads.mss
+  - poped.mss
+  - labels.mss
+template: ''

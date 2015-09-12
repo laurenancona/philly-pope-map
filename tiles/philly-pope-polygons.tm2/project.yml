@@ -1,0 +1,25 @@
+_prefs: 
+  mapid: ''
+  saveCenter: true
+_properties: {}
+attribution: ''
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -75.1681
+  - 39.9581
+  - 13
+description: ''
+format: "png8:m=h:c=64"
+interactivity_layer: ''
+layers: null
+maxzoom: 18
+minzoom: 13
+name: philly-pope-polygons
+source: "mapbox:///laurenancona.ae5b1a3d"
+styles: 
+  - style.mss
+template: ''

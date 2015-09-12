@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+
+<Parameters>
+  <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
+  <Parameter name="center">-75.1669,39.9541,14</Parameter>
+  <Parameter name="format">png8:m=h:c=64</Parameter>
+  <Parameter name="maxzoom">17</Parameter>
+  <Parameter name="minzoom">12</Parameter>
+  <Parameter name="name"><![CDATA[Transit-Screens]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///laurenancona.b6b3d96e]]></Parameter>
+</Parameters>
+
+
+<Layer name="transit-stations"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Layer name="screens"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="entrances_labels" filter-mode="first">
+  <Rule>
+    <Filter>([type] = 'SEPTA')</Filter>
+    <LineSymbolizer stroke-width="1" />
+    <MarkersSymbolizer file="icons/SEPTA-Logo.png" height="15" avoid-edges="true" placement="point" allow-overlap="true" fill="rgba(248, 23, 0, 0.5)" width="8" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke-width="1" />
+    <MarkersSymbolizer fill="rgba(248, 23, 0, 0.5)" width="8" />
+  </Rule>
+</Style>
+<Layer name="entrances_labels"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>entrances_labels</StyleName>  </Layer>
+
+<Layer name="bikeride"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="walking_paths" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke="rgba(13, 121, 156, 0.6)" comp-op="soft-light" stroke-gamma="0.3" stroke-linejoin="round" stroke-width="8" />
+  </Rule>
+</Style>
+<Layer name="walking_paths"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>walking_paths</StyleName>  </Layer>
+
+</Map>

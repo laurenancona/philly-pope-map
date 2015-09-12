@@ -1,0 +1,25 @@
+_prefs: 
+  mapid: ''
+  saveCenter: true
+_properties: {}
+attribution: Lauren Ancona | City of Philadelphia | OpenStreetMap | United States Secret Service
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -75.193
+  - 39.9792
+  - 12
+description: wrangling the cray
+format: "png8:m=h:c=64"
+interactivity_layer: ''
+layers: null
+maxzoom: 18
+minzoom: 12
+name: philly-pope-map
+source: "mapbox:///laurenancona.697zm2t9,laurenancona.06ublnmi,laurenancona.h8rozuxr,laurenancona.ae5b1a3d"
+styles: 
+  - style.mss
+template: ''

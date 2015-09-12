@@ -1,0 +1,104 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: laurenancona.b6b3d96e
+  rev: s-2b109945
+  saveCenter: true
+attribution: ''
+center: 
+  - -75.1642
+  - 39.9582
+  - 13
+description: ''
+Layer: 
+  - id: transit-stations
+    Datasource: 
+      file: /Users/lancona/Downloads/transit-stations.csv
+      type: csv
+    description: In-city transit stations
+    fields: 
+      id: Number
+      "Accessible?": String
+      desc: String
+      Distance: String
+      Fare: String
+      Hours: String
+      lat: Number
+      lon: Number
+      More Info: String
+      name: String
+      Stations: String
+      Tickets: String
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: screens
+    Datasource: 
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/screens.csv
+      type: csv
+    description: Jumbotron screens for viewing Sunday's Papal Mass
+    fields: 
+      id: Number
+      "Accessible?": String
+      desc: String
+      Distance: String
+      Fare: String
+      Hours: String
+      lat: Number
+      lon: Number
+      More Info: String
+      name: String
+      Stations: String
+      Tickets: String
+      type: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: entrances_labels
+    Datasource: 
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/entrances_labels.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: ''
+    fields: 
+      cartodb_id: Number
+      description: String
+      name: String
+      ticketed: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: bikeride
+    Datasource: 
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/bikeride.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: ''
+    fields: 
+      "marker-color": String
+      "marker-size": String
+      "marker-symbol": String
+      name: String
+      stroke: String
+      "stroke-opacity": Number
+      "stroke-width": Number
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: walking_paths
+    Datasource: 
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/walking_paths.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: ''
+    fields: 
+      cartodb_id: Number
+      description: String
+      name: String
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 15
+minzoom: 13
+name: Transit & Screens

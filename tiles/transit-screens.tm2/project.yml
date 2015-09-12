@@ -1,0 +1,26 @@
+_prefs: 
+  mapid: laurenancona.4ae9c933
+  saveCenter: true
+_properties: {}
+attribution: ''
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -75.1669
+  - 39.9541
+  - 14
+description: ''
+format: "png8:m=h:c=64"
+interactivity_layer: ''
+layers: null
+maxzoom: 17
+minzoom: 12
+name: Transit-Screens
+source: "mapbox:///laurenancona.b6b3d96e"
+styles: 
+  - style.mss
+  - paths.mss
+template: ''

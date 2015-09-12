@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#736868">
+
+<Parameters>
+  <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
+  <Parameter name="center">-75.1681,39.9581,13</Parameter>
+  <Parameter name="format">png8:m=h:c=64</Parameter>
+  <Parameter name="maxzoom">18</Parameter>
+  <Parameter name="minzoom">13</Parameter>
+  <Parameter name="name"><![CDATA[philly-pope-polygons]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///laurenancona.ae5b1a3d]]></Parameter>
+</Parameters>
+
+
+<Style name="traffic-boxes-fri-6-10pm" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(255, 238, 153, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="traffic-boxes-fri-6-10pm"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>traffic-boxes-fri-6-10pm</StyleName>  </Layer>
+
+<Style name="secure-vehicle-independence-fri-10p" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(255, 119, 221, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="secure-vehicle-independence-fri-10p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-vehicle-independence-fri-10p</StyleName>  </Layer>
+
+<Style name="secure-perimeter-thur-10p" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(85, 221, 136, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="secure-perimeter-thur-10p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-perimeter-thur-10p</StyleName>  </Layer>
+
+<Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(204, 187, 119, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="secure-vehicle-perimeter-fri-10a"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-vehicle-perimeter-fri-10a</StyleName>  </Layer>
+
+<Style name="secure-vehicle-perimeter-fri-10p_3857" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(204, 255, 102, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="secure-vehicle-perimeter-fri-10p_3857"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-vehicle-perimeter-fri-10p_3857</StyleName>  </Layer>
+
+<Style name="independence-mall-secure-perimeter-sat-6am" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(153, 102, 221, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="independence-mall-secure-perimeter-sat-6am"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>independence-mall-secure-perimeter-sat-6am</StyleName>  </Layer>
+
+<Style name="secure-perimeter-12-20th-6a" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(204, 68, 170, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="secure-perimeter-12-20th-6a"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-perimeter-12-20th-6a</StyleName>  </Layer>
+
+<Style name="parkway-ticketed-sunday" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(85, 255, 153, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="parkway-ticketed-sunday"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>parkway-ticketed-sunday</StyleName>  </Layer>
+
+<Style name="authorized-veh-only-fri-6p" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="1" stroke="rgba(68, 204, 136, 0.5)" />
+  </Rule>
+</Style>
+<Layer name="authorized-veh-only-fri-6p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>authorized-veh-only-fri-6p</StyleName>  </Layer>
+
+</Map>
