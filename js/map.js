@@ -15,12 +15,17 @@ var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons bas
   autocomplete: true
 }));
 
+var mapLayers = [],
+    layerNames = ['highways','walking']
+
 //// Here be our data layers
 var highways = L.mapbox.featureLayer(); //.addTo(map);
 highways.loadURL('data/highways.geojson');
+mapLayers.push(highways);
 
 var walking = L.mapbox.featureLayer(); //.addTo(map);
 walking.loadURL('data/walking.geojson');
+mapLayers.push(walking);
 
 var screens = L.mapbox.featureLayer();//.addTo(map);
 screens.loadURL('data/jumbotrons.geojson');
@@ -39,6 +44,17 @@ poperide.loadURL('data/poperide.geojson');
 
 var parking = L.mapbox.featureLayer().addTo(map);
 parking.loadURL('data/parking.geojson');
+
+layerNames.forEach(function(item, index){
+  var layer = mapLayers[index], layerName = layerNames[index];
+  document.getElementById(layerName).addEventListener('change', function(){
+    if (document.getElementById(layerName).checked)
+      layer.addTo(map);
+    else
+      map.removeLayer(layer);
+  });
+});
+
 
 /*var filters = document.getElementById('filters');
 var checkboxes = document.getElementsByClassName('filter');
@@ -75,7 +91,7 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 
 // var points = L.mapbox.tileLayer('laurenancona.4ae9c933').addTo(map);
 // blocks = L.mapbox.tileLayer('laurenancona.fc7871b8'),
-// legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend		
+// legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend
 // lots = L.mapbox.featureLayer('').addTo(map);
 
 // Set our icon styles
@@ -196,7 +212,7 @@ L.control.layers({
     'Closed Highways': highways.addTo(map),
     'Hospitals': hospitals
     }
-    ).addTo(map);	  		
+    ).addTo(map);
 
 // UTF Grid interactivity, testing w/ multiple layers
 //    var blocksTiles = blocks.addTo(map);
