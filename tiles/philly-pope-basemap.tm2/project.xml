@@ -359,6 +359,13 @@
 
 <Style name="secure-vehicle-independence-fri-10p" filter-mode="first">
   <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.8)" comp-op="overlay" />
+    <TextSymbolizer size="10" fill="#ffffff" face-name="Arial Unicode MS Regular" text-transform="uppercase" placement="line" halo-fill="#000000" halo-radius="2" comp-op="src-atop" minimum-padding="10" spacing="200" ><![CDATA[Friday10am]]></TextSymbolizer>
+    <LineSymbolizer stroke-width="2" stroke="#000000" stroke-opacity="0.9" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
     <PolygonSymbolizer fill="rgba(217, 217, 217, 0.8)" comp-op="overlay" />
     <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
   </Rule>
@@ -373,13 +380,6 @@
 
 <Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.8)" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
-    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" placement="line" fill="#ffffff" halo-fill="#000000" halo-radius="2" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
     <PolygonSymbolizer fill="rgba(217, 217, 217, 0.8)" comp-op="overlay" />
     <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
   </Rule>
