@@ -23,7 +23,7 @@ layers:
   - bridge
   - philadelphia-ciy-limits
   - curbproj
-
+  - road
   - authorized-veh-only-fri-6p
   - traffic-boxes-fri-6-10pm
   - secure-vehicle-independence-fri-10p
@@ -42,16 +42,16 @@ layers:
   - entrances
   - jumbotrons
   - authorized-vehicle-only_labels
-  - authorized-veh-only-fri-6p.label
-  - traffic-boxes-fri-6-10pm.label
-  - secure-vehicle-independence-fri-10p.label
-  - secure-perimeter-thur-10p.label
-  - secure-vehicle-perimeter-fri-10a.label
-  - secure-vehicle-perimeter-fri-10p_3857.label
-  - independence-mall-secure-perimeter-sat-6am.label
-  - secure-perimeter-12-20th-6a.label
-  - parkway-ticketed-sunday.label
-  - road
+  - authorized-veh-only-fri-6p
+  - traffic-boxes-fri-6-10pm
+  - secure-vehicle-independence-fri-10p
+  - secure-perimeter-thur-10p
+  - secure-vehicle-perimeter-fri-10a
+  - secure-vehicle-perimeter-fri-10p_3857
+  - independence-mall-secure-perimeter-sat-6am
+  - secure-perimeter-12-20th-6a
+  - parkway-ticketed-sunday
+  - authorized-vehicles-only
 maxzoom: 18
 minzoom: 13
 name: philly-pope-baselayer

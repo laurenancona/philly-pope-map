@@ -45,7 +45,7 @@
 
 #traffic-boxes-fri-6-10pm{
   [name='Center City Traffic Box'],[name='University City Traffic Box']{
-  polygon-fill:   rgba(217,217,217,0.5);
+  polygon-fill:   rgba(217,217,217,0.4);
   polygon-comp-op: overlay;
   line-color: @traffic;
   line-width: 2;
