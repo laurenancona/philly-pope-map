@@ -145,7 +145,7 @@ transit.on('click', function (e) {
     '<p>' + feature.properties.name + '</p>' +
     '<p>' + feature.properties.Fare + '</p>' +
     '<p>' + feature.properties.Tickets + '</p>' +
-    '<p style="color:#3AA4CE;"><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
+    '<p><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
   info.innerHTML = content;
 });
 
