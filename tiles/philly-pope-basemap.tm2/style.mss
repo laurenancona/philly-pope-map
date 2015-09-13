@@ -261,15 +261,24 @@ Map {
   }
 }
 
-#secure-vehicle-perimeter-fri-10a {
+ #secure-vehicle-independence-fri-10p {
   [zoom >= 15]{
-  text-name: [name];
-  text-size: 7;
+  text-name: 'Friday10am';
+  text-size: 10;
+  text-fill: white;
   text-face-name: 'Arial Unicode MS Regular';
+  text-transform: uppercase;
   text-placement: line;
-  text-fill: @text;
   text-halo-fill: @authorized;
   text-halo-radius: 2;
+  text-comp-op: src-atop;
+ // text-repeat-distance: 30;
+  text-min-padding: 10;
+  line-width: 2;
+  line-color: @authorized;
+  line-opacity: 0.9;
+  line-comp-op: overlay;
+  text-spacing: 200;
   }
 }
 
