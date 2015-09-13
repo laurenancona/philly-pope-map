@@ -14,49 +14,48 @@ center:
   - 14
 description: ''
 format: "png8:m=h:c=32"
-interactivity_layer: 'laurenancona.b6b3d96e'
-layers: null
+interactivity_layer: laurenancona.b6b3d96e
+layers: 
+  - waterway
+  - water
+  - landuse
+  - tunnel
+  - bridge
+  - philadelphia-ciy-limits
+  - curbproj
+
+  - authorized-veh-only-fri-6p
+  - traffic-boxes-fri-6-10pm
+  - secure-vehicle-independence-fri-10p
+  - secure-perimeter-thur-10p
+  - secure-vehicle-perimeter-fri-10a
+  - secure-vehicle-perimeter-fri-10p_3857
+  - independence-mall-secure-perimeter-sat-6am
+  - secure-perimeter-12-20th-6a
+  - parkway-ticketed-sunday
+  - authorized-vehicles-only
+  - road-label
+  - walking
+  - highways
+  - transit-stations
+  - hospitals
+  - entrances
+  - jumbotrons
+  - authorized-vehicle-only_labels
+  - authorized-veh-only-fri-6p.label
+  - traffic-boxes-fri-6-10pm.label
+  - secure-vehicle-independence-fri-10p.label
+  - secure-perimeter-thur-10p.label
+  - secure-vehicle-perimeter-fri-10a.label
+  - secure-vehicle-perimeter-fri-10p_3857.label
+  - independence-mall-secure-perimeter-sat-6am.label
+  - secure-perimeter-12-20th-6a.label
+  - parkway-ticketed-sunday.label
+  - road
 maxzoom: 18
 minzoom: 13
 name: philly-pope-baselayer
 source: "mapbox:///mapbox.mapbox-streets-v5,laurenancona.h8rozuxr,laurenancona.697zm2t9,laurenancona.ae5b1a3d,laurenancona.b6b3d96e"
-layers:
- - waterway
- - water
- - landuse
- - tunnel
- - bridge
- - philadelphia-ciy-limits
- - curbproj
- - road
- - authorized-veh-only-fri-6p
- - traffic-boxes-fri-6-10pm
- - secure-vehicle-independence-fri-10p
- - secure-perimeter-thur-10p
- - secure-vehicle-perimeter-fri-10a
- - secure-vehicle-perimeter-fri-10p_3857
- - independence-mall-secure-perimeter-sat-6am
- - secure-perimeter-12-20th-6a
- - parkway-ticketed-sunday
- - authorized-vehicles-only
- - road-label
- - walking
- - highways
- - transit-stations
- - hospitals
- - entrances
- - jumbotrons
- - authorized-vehicle-only_labels
- - authorized-veh-only-fri-6p
- - traffic-boxes-fri-6-10pm
- - secure-vehicle-independence-fri-10p
- - secure-perimeter-thur-10p
- - secure-vehicle-perimeter-fri-10a
- - secure-vehicle-perimeter-fri-10p_3857
- - independence-mall-secure-perimeter-sat-6am
- - secure-perimeter-12-20th-6a
- - parkway-ticketed-sunday
- - authorized-vehicles-only
 styles: 
   - style.mss
   - roads.mss
