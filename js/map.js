@@ -16,7 +16,7 @@ var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons bas
 }));
 
 var mapLayers = [],
-    layerNames = ['highways','walking']
+    layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking']
 
 //// Here be our data layers
 var highways = L.mapbox.featureLayer(); //.addTo(map);
@@ -153,7 +153,6 @@ poperide.on('click', function (e) {
   e.layer.closePopup();
   var feature = e.layer.feature;
   var content = '<div><strong>' + feature.properties.name + '</strong>';
-  //                  '<p>' + feature.properties.ticketed + '</p></div>';
   info.innerHTML = content;
 });
 
