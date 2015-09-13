@@ -16,19 +16,19 @@ description: ''
 format: "png8:m=h:c=32"
 interactivity_layer: laurenancona.b6b3d96e
 layers: 
+# points
   - transit-stations
   - jumbotrons
   - hospitals
   - entrances
+# labels
+  - highways.label
   - road-label
-  
+# lines
   - walking
   - highways
   - road
-
-
-
-
+# polygon labels
   - authorized-veh-only-fri-6p
   - traffic-boxes-fri-6-10pm
   - secure-vehicle-independence-fri-10p
@@ -39,9 +39,7 @@ layers:
   - secure-perimeter-12-20th-6a
   - parkway-ticketed-sunday
   - authorized-vehicles-only
-
-
-
+#polygons
   - authorized-vehicle-only_labels
   - authorized-veh-only-fri-6p
   - traffic-boxes-fri-6-10pm
@@ -53,7 +51,7 @@ layers:
   - secure-perimeter-12-20th-6a
   - parkway-ticketed-sunday
   - authorized-vehicles-only
-  
+  # basemap features
   - curbproj
   - bridge
   - tunnel
