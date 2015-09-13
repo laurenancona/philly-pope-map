@@ -20,6 +20,42 @@ maxzoom: 18
 minzoom: 13
 name: philly-pope-baselayer
 source: "mapbox:///mapbox.mapbox-streets-v5,laurenancona.h8rozuxr,laurenancona.697zm2t9,laurenancona.ae5b1a3d,laurenancona.b6b3d96e"
+layers:
+ - waterway
+ - water
+ - landuse
+ - tunnel
+ - bridge
+ - philadelphia-ciy-limits
+ - curbproj
+ - authorized-veh-only-fri-6p
+ - traffic-boxes-fri-6-10pm
+ - secure-vehicle-independence-fri-10p
+ - secure-perimeter-thur-10p
+ - secure-vehicle-perimeter-fri-10a
+ - secure-vehicle-perimeter-fri-10p_3857
+ - independence-mall-secure-perimeter-sat-6am
+ - secure-perimeter-12-20th-6a
+ - parkway-ticketed-sunday
+ - authorized-vehicles-only
+ - road-label
+ - walking
+ - highways
+ - transit-stations
+ - hospitals
+ - entrances
+ - jumbotrons
+ - authorized-vehicle-only_labels
+ - authorized-veh-only-fri-6p
+ - traffic-boxes-fri-6-10pm
+ - secure-vehicle-independence-fri-10p
+ - secure-perimeter-thur-10p
+ - secure-vehicle-perimeter-fri-10a
+ - secure-vehicle-perimeter-fri-10p_3857
+ - independence-mall-secure-perimeter-sat-6am
+ - secure-perimeter-12-20th-6a
+ - parkway-ticketed-sunday
+ - authorized-vehicles-only
 styles: 
   - style.mss
   - roads.mss
