@@ -1,0 +1,240 @@
+<style>
+body {
+  margin: 0;
+  background: #444;
+}
+#timeline {
+  background: #444;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: -apple-system-font, Arial;
+}
+#timeline-header > div {
+  width: 11%;
+  float: left;
+  box-sizing: border-box;
+  padding: 3px 0;
+  text-align: center;
+  color: #aaa;
+}
+#timeline-header > div.main {
+  color: #fff;
+  font-weight: bold;
+}
+#timeline-content {
+  clear: both;
+}
+#timeline-content > div {
+  position: relative;
+  height: 28px;
+}
+.bar {
+  position: absolute;
+  background: #fff;
+  color: #000;
+  padding: 2px 0;
+  text-align: center;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.parking { background: rgba(58, 164, 206, 0.8); color: #fff; }
+.driving { background: rgba(255, 180, 180, 0.8); color: #800; }
+.walking { background: rgba(255, 180, 255, 0.8); color: #808; }
+.transit { background: rgba(255, 255, 180, 0.8); color: #880; }
+
+.line {
+  position: absolute;
+  display: block;
+  width: 1px;
+  background: #888;
+  height: 500px;
+}
+.line.sub {
+  background: repeating-linear-gradient(180deg, transparent, transparent 3px, #666 3px, #666 4px);
+}
+</style>
+
+<div id="timeline">
+  <div id="timeline-header">
+    <div>Sun Sep 20</div>
+    <div>Mon Sep 21</div>
+    <div>Tue Sep 22</div>
+    <div>Wed Sep 23</div>
+    <div>Thu Sep 24</div>
+    <div>Fri Sep 25</div>
+    <div class="main">Sat Sep 26</div>
+    <div class="main">Sun Sep 27</div>
+    <div>Mon Sep 28</div>
+  </div>
+  <div id="timeline-content">
+
+  </div>
+  <div style="clear:both;"</div>
+</div>
+
+<script>
+  (function(){
+    var $tl = document.getElementById('timeline-content');
+
+    function add(rowHTML){
+      var div = document.createElement('div');
+      div.innerHTML = rowHTML;
+      $tl.appendChild(div);
+    }
+
+    function positionForTimestamp(timestamp){
+      var width = document.body.offsetWidth,
+        left = +(new Date(2015,8,20)),
+        right = +(new Date(2015,8,29)),
+        pixelsPerMs = (right-left)/width;
+      return (+timestamp-left)/pixelsPerMs;
+    }
+
+    function addBar(title, from, to, klass, action){
+      var pxFrom = positionForTimestamp(from),
+          pxTo   = positionForTimestamp(to),
+          width  = pxTo-pxFrom;
+      add('<div class="bar '+klass+'" style="'+
+        'left:'+pxFrom+'px;'+
+        'width:'+width+'px">'+
+        title+
+        '</div>'
+      );
+    }
+
+    function addLine(timestamp, klass){
+      var px = positionForTimestamp(timestamp),
+         span = document.createElement('span');
+      span.className = 'line '+(klass||'');
+      span.style.left = px + 'px';
+      $tl.appendChild(span);
+    }
+
+    function render(){
+      $tl.innerHTML = '';
+
+      addLine(new Date(2015,8,20,6), 'sub');
+      addLine(new Date(2015,8,20,12), 'sub');
+      addLine(new Date(2015,8,20,18), 'sub');
+
+      addLine(new Date(2015,8,21));
+      addLine(new Date(2015,8,21,6), 'sub');
+      addLine(new Date(2015,8,21,12), 'sub');
+      addLine(new Date(2015,8,21,18), 'sub');
+
+      addLine(new Date(2015,8,22));
+      addLine(new Date(2015,8,22,6), 'sub');
+      addLine(new Date(2015,8,22,12), 'sub');
+      addLine(new Date(2015,8,22,18), 'sub');
+
+      addLine(new Date(2015,8,23));
+      addLine(new Date(2015,8,23,6), 'sub');
+      addLine(new Date(2015,8,23,12), 'sub');
+      addLine(new Date(2015,8,23,18), 'sub');
+
+      addLine(new Date(2015,8,24));
+      addLine(new Date(2015,8,24,6), 'sub');
+      addLine(new Date(2015,8,24,12), 'sub');
+      addLine(new Date(2015,8,24,18), 'sub');
+
+      addLine(new Date(2015,8,25));
+      addLine(new Date(2015,8,25,6), 'sub');
+      addLine(new Date(2015,8,25,12), 'sub');
+      addLine(new Date(2015,8,25,18), 'sub');
+
+      addLine(new Date(2015,8,26));
+      addLine(new Date(2015,8,26,6), 'sub');
+      addLine(new Date(2015,8,26,12), 'sub');
+      addLine(new Date(2015,8,26,18), 'sub');
+
+      addLine(new Date(2015,8,27));
+      addLine(new Date(2015,8,27,6), 'sub');
+      addLine(new Date(2015,8,27,12), 'sub');
+      addLine(new Date(2015,8,27,18), 'sub');
+
+      addLine(new Date(2015,8,28));
+      addLine(new Date(2015,8,28,6), 'sub');
+      addLine(new Date(2015,8,28,12), 'sub');
+      addLine(new Date(2015,8,28,18), 'sub');
+
+      // towing
+      addBar('Towing enforcement (Parkway/Art Museum East to 12th St)',
+        new Date(2015,8,20,18,0),
+        new Date(2015,8,28,18,0),
+        'parking'
+      );
+      addBar('Towing enforcement (North and South of Parkway)',
+        new Date(2015,8,21,21,0),
+        new Date(2015,8,28,18,0),
+        'parking'
+      );
+      addBar('Towing enforcement (3rd St to 12th St)',
+        new Date(2015,8,22,18,0),
+        new Date(2015,8,28,18,0),
+        'parking'
+      );
+      addBar('Towing enforcement (authorized vehicle routes)',
+        new Date(2015,8,23,21,0),
+        new Date(2015,8,28,18,0),
+        'parking'
+      );
+      addBar('Parkway secure vehicle perimeter',
+        new Date(2015,8,24,20,0),
+        new Date(2015,8,28,18,0),
+        'driving'
+      );
+      addBar('No driving allowed (authorized vehicle routes)',
+        new Date(2015,8,25,8,0),
+        new Date(2015,8,28,18,0),
+        'driving'
+      );
+      addBar('Independence Mall secure vehicle perimeter',
+        new Date(2015,8,25,22,0),
+        new Date(2015,8,28,18,0),
+        'driving'
+      );
+
+      addBar('Center City Traffic box',
+        new Date(2015,8,25,18,0),
+        new Date(2015,8,28,18,0),
+        'driving'
+      );
+      addBar('University City Traffic box',
+        new Date(2015,8,25,22,0),
+        new Date(2015,8,28,18,0),
+        'driving'
+      );
+
+      // perimeters
+      addBar('Parkway secure perimeter',
+        new Date(2015,8,24,20,0),
+        new Date(2015,8,28,18,0),
+        'walking'
+      );
+      addBar('Independence Mall secure perimeter',
+        new Date(2015,8,25,22,0),
+        new Date(2015,8,27,18,0),
+        'walking'
+      );
+
+
+      addBar('Taxis not allowed to move in/out Traffic Box',
+        new Date(2015,8,26,2,0),
+        new Date(2015,8,28,3,0),
+        'transit'
+      );
+      addBar('Subway &amp; Bus Revised Service',
+        new Date(2015,8,26,5,30),
+        new Date(2015,8,28,1,0),
+        'transit'
+      );
+    }
+
+    window.addEventListener('resize', render);
+    render();
+  })();
+</script>
