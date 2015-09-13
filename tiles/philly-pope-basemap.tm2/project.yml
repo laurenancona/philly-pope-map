@@ -16,14 +16,19 @@ description: ''
 format: "png8:m=h:c=32"
 interactivity_layer: laurenancona.b6b3d96e
 layers: 
-  - waterway
-  - water
-  - landuse
-  - tunnel
-  - bridge
-  - philadelphia-ciy-limits
-  - curbproj
+  - transit-stations
+  - jumbotrons
+  - hospitals
+  - entrances
+  - road-label
+  
+  - walking
+  - highways
   - road
+
+
+
+
   - authorized-veh-only-fri-6p
   - traffic-boxes-fri-6-10pm
   - secure-vehicle-independence-fri-10p
@@ -34,13 +39,9 @@ layers:
   - secure-perimeter-12-20th-6a
   - parkway-ticketed-sunday
   - authorized-vehicles-only
-  - road-label
-  - walking
-  - highways
-  - transit-stations
-  - hospitals
-  - entrances
-  - jumbotrons
+
+
+
   - authorized-vehicle-only_labels
   - authorized-veh-only-fri-6p
   - traffic-boxes-fri-6-10pm
@@ -52,6 +53,14 @@ layers:
   - secure-perimeter-12-20th-6a
   - parkway-ticketed-sunday
   - authorized-vehicles-only
+  
+  - curbproj
+  - bridge
+  - tunnel
+  - landuse
+  - philadelphia-city-limits
+  - water
+  - waterway
 maxzoom: 18
 minzoom: 13
 name: philly-pope-baselayer
