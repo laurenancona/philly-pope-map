@@ -1,62 +1,88 @@
-<style>
-body {
-  margin: 0;
-  background: #444;
-}
-#timeline {
-  background: #444;
-  font-size: 12px;
-  line-height: 18px;
-  font-family: -apple-system-font, Arial;
-}
-#timeline-header > div {
-  width: 11%;
-  float: left;
-  box-sizing: border-box;
-  padding: 3px 0;
-  text-align: center;
-  color: #aaa;
-}
-#timeline-header > div.main {
-  color: #fff;
-  font-weight: bold;
-}
-#timeline-content {
-  clear: both;
-}
-#timeline-content > div {
-  position: relative;
-  height: 28px;
-}
-.bar {
-  position: absolute;
-  background: #fff;
-  color: #000;
-  padding: 2px 0;
-  text-align: center;
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
-  cursor: pointer;
-  box-sizing: border-box;
-  border-radius: 3px;
-  border: 1px solid transparent;
-}
+<!doctype html>
+<html>
+  <meta charset="utf-8">
+  <title>
+    #PopeInPhilly timeline
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <style>
+  body {
+    margin: 0;
+    background: #444;
+  }
+  #timeline {
+    background: #444;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: -apple-system-font, Arial;
+    min-width: 1200px;
+    position: relative;
+    margin-top: 50px;
+  }
+  #timeline-header > div {
+    width: 11%;
+    float: left;
+    box-sizing: border-box;
+    padding: 3px 0;
+    text-align: center;
+    color: #aaa;
+  }
+  #timeline-header > div.main {
+    color: #fff;
+    font-weight: bold;
+  }
+  #timeline-content {
+    clear: both;
+  }
+  #timeline-content > div {
+    position: relative;
+    height: 28px;
+  }
+  .bar {
+    position: absolute;
+    background: #fff;
+    color: #000;
+    padding: 2px 0;
+    text-align: center;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }
 
-.parking { background: rgba(58, 164, 206, 0.8); color: #fff; }
-.driving { background: rgba(255, 180, 180, 0.8); color: #800; }
-.walking { background: rgba(255, 180, 255, 0.8); color: #808; }
-.transit { background: rgba(255, 255, 180, 0.8); color: #880; }
+  .parking { background: rgba(58, 164, 206, 0.8); color: #fff; }
+  .driving { background: rgba(255, 180, 180, 0.8); color: #800; }
+  .walking { background: rgba(255, 180, 255, 0.8); color: #808; }
+  .transit { background: rgba(255, 255, 180, 0.8); color: #880; }
 
-.line {
-  position: absolute;
-  display: block;
-  width: 1px;
-  background: #888;
-  height: 500px;
-}
-.line.sub {
-  background: repeating-linear-gradient(180deg, transparent, transparent 3px, #666 3px, #666 4px);
-}
-</style>
+  .line {
+    position: absolute;
+    display: block;
+    width: 1px;
+    background: #888;
+    height: 500px;
+  }
+  .line.sub {
+    background: repeating-linear-gradient(180deg, transparent, transparent 3px, #666 3px, #666 4px);
+  }
+  h1 {
+    color: white;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: -apple-system-font, Arial;
+  }
+  </style>
+</head>
+<body>
+
+<h1>
+  PhillyPopeMap Timeline
+</h1>
 
 <div id="timeline">
   <div id="timeline-header">
@@ -87,7 +113,7 @@ body {
     }
 
     function positionForTimestamp(timestamp){
-      var width = document.body.offsetWidth,
+      var width = document.getElementById('timeline').offsetWidth,
         left = +(new Date(2015,8,20)),
         right = +(new Date(2015,8,29)),
         pixelsPerMs = (right-left)/width;
@@ -238,3 +264,5 @@ body {
     render();
   })();
 </script>
+</body>
+</html>
