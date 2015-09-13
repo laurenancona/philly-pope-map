@@ -5,47 +5,15 @@
 <Parameters>
   <Parameter name="center">-75.1642,39.9582,13</Parameter>
   <Parameter name="format">pbf</Parameter>
-  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"authorized-vehicles-only","description":"","fields":{"cartodb_id":"Number","name":"String","descriptio":"String","created_at":"String","updated_at":"String","start_time":"String","allowed":"String","category":"String"}},{"id":"walking","description":"","fields":{"name":"String","description":"String","id":"Number","stroke":"String","stroke-width":"Number","stroke-opacity":"Number"}},{"id":"highways","description":"","fields":{"name":"String","stroke":"String","stroke-width":"Number","stroke-opacity":"Number"}},{"id":"transit-stations","description":"In-city transit stations","fields":{"name":"String","id":"Number","type":"String","desc":"String","Distance":"String","More Info":"String","lon":"Number","lat":"Number","Stations":"String","Tickets":"String","Fare":"String","Hours":"String","Accessible?":"String"}},{"id":"hospitals","description":"","fields":{"X":"Number","Y":"Number","ID":"String","name":"String","phone":"String","zip":"Number","address":"String","marker-color":"String","marker-size":"String","marker-symbol":"String"}},{"id":"entrances","description":"","fields":{"cartodb_id":"Number","name":"String","description":"String","ticketed":"String","marker-size":"String","marker-color":"String","marker-symbol":"String"}},{"id":"jumbotrons","description":"","fields":{"name":"String","styleUrl":"String","styleHash":"String","LAT":"String","LON":"String","LOCATION":"String","NUMBER":"String","ROTATE":"String","marker-symbol":"String","marker-size":"String","marker-color":"String"}},{"id":"authorized-vehicle-only_labels","description":"","fields":{"cartodb_id":"Number","name":"String","descriptio":"String","created_at":"String","updated_at":"String","start_time":"String","allowed":"String","category":"String"}}]}]]></Parameter>
-  <Parameter name="maxzoom">16</Parameter>
-  <Parameter name="minzoom">12</Parameter>
+  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"transit-stations","description":"In-city transit stations","fields":{"name":"String","id":"Number","type":"String","desc":"String","Distance":"String","More Info":"String","lon":"Number","lat":"Number","Stations":"String","Tickets":"String","Fare":"String","Hours":"String","Accessible?":"String"}},{"id":"screens","description":"Jumbotron screens for viewing Sunday's Papal Mass","fields":{"name":"String","id":"Number","type":"String","desc":"String","Distance":"String","More Info":"String","lon":"Number","lat":"Number","Stations":"String","Tickets":"String","Fare":"String","Hours":"String","Accessible?":"String"}},{"id":"entrances_labels","description":"","fields":{"cartodb_id":"Number","name":"String","description":"String","ticketed":"String"}},{"id":"bikeride","description":"","fields":{"stroke":"String","stroke-width":"Number","stroke-opacity":"Number","name":"String","marker-size":"String","marker-color":"String","marker-symbol":"String"}},{"id":"walking_paths","description":"","fields":{"cartodb_id":"Number","name":"String","description":"String"}}]}]]></Parameter>
+  <Parameter name="maxzoom">15</Parameter>
+  <Parameter name="minzoom">13</Parameter>
   <Parameter name="name"><![CDATA[Transit & Screens]]></Parameter>
 </Parameters>
 
 
-<Layer name="authorized-vehicles-only"
-  buffer-size="8"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/authorized-vehicle-only/authorized-vehicles-only.shp]]></Parameter>
-       <Parameter name="type"><![CDATA[shape]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="walking"
-  buffer-size="8"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/walking.geojson]]></Parameter>
-       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
-       <Parameter name="type"><![CDATA[ogr]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="highways"
-  buffer-size="16"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/highways.geojson]]></Parameter>
-       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
-       <Parameter name="type"><![CDATA[ogr]]></Parameter>
-    </Datasource>
-  </Layer>
-
 <Layer name="transit-stations"
-  buffer-size="20"
+  buffer-size="8"
   srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     
     <Datasource>
@@ -54,45 +22,44 @@
     </Datasource>
   </Layer>
 
-<Layer name="hospitals"
-  buffer-size="26"
-  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
-    <Datasource>
-       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/hospitals.geojson]]></Parameter>
-       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
-       <Parameter name="type"><![CDATA[ogr]]></Parameter>
-    </Datasource>
-  </Layer>
-
-<Layer name="entrances"
+<Layer name="screens"
   buffer-size="8"
   srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     
     <Datasource>
-       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/entrances.geojson]]></Parameter>
-       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
-       <Parameter name="type"><![CDATA[ogr]]></Parameter>
+       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/screens.csv]]></Parameter>
+       <Parameter name="type"><![CDATA[csv]]></Parameter>
     </Datasource>
   </Layer>
 
-<Layer name="jumbotrons"
+<Layer name="entrances_labels"
   buffer-size="8"
   srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     
     <Datasource>
-       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/jumbotrons.geojson]]></Parameter>
+       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/entrances_labels.geojson]]></Parameter>
        <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
        <Parameter name="type"><![CDATA[ogr]]></Parameter>
     </Datasource>
   </Layer>
 
-<Layer name="authorized-vehicle-only_labels"
-  buffer-size="18"
+<Layer name="bikeride"
+  buffer-size="8"
   srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
     
     <Datasource>
-       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/authorized-vehicle-only.geojson]]></Parameter>
+       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/bikeride.geojson]]></Parameter>
+       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
+       <Parameter name="type"><![CDATA[ogr]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="walking_paths"
+  buffer-size="8"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/walking_paths.geojson]]></Parameter>
        <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
        <Parameter name="type"><![CDATA[ogr]]></Parameter>
     </Datasource>

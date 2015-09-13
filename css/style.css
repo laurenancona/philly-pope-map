@@ -1,12 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #404040;
-
-  height: 100%;
+ height: 100%;
 }
 
-/*
 #container {
   position: absolute;
   z-index: 1;
@@ -22,17 +19,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 1;
 }
-*/
 
-#container {
-  overflow-x:hidden;
-}
-/*
 p {
   font-family: 'Cabin', sans-serif;
   font-size: 1em;
 }
-*/
 
 #text {
   margin-left: auto;
@@ -51,10 +42,10 @@ p {
 #map {
   position: absolute;
   top: 0;
-/*  bottom: 20px;*/
+  bottom: 0;
   width: 100%;
   z-index: 1;
-  height: 90%;
+  height: 100%;
 }
 
 #attrib {
@@ -203,25 +194,14 @@ p {
   position: absolute;
   bottom: 0px;
   color: white;
-  width: 100%;
   z-index: 100;
-  height: 10%;
-  margin-bottom: 0px;
-  overflow-x:hidden;
-
-}
-
-.info p {
-  line-height: 1.3em;
+/* height: 30%;*/
 }
 
 .info div {
-/*  background: #434343;*/
-  position: relative;
-  padding: 10px 10px 5px 10px;
-  width: 100%;
-  margin-bottom: 0px;
-  z-index: 100;
+  background: #434343;
+  padding: 10px;
+  
 }
 
 .span.side.mdl-layout-title {
@@ -229,30 +209,10 @@ p {
 }
 
 #options {
-/*  padding-top: 15px;*/
+  padding-top: 15px;
 }
 
 .li a{
-/*  font-size: 1.6em!important;*/
+  font-size: 1.6em!important;
   
 }
-
-.ui-select {
-  background:#fff;
-  position:absolute;
-  top:10px;
-  right:10px;
-  z-index:100;
-  padding:10px;
-  border-radius:3px;
-  }
-
- header, main, footer {
-    padding-left: 240px;
-  }
-
-  @media only screen and (max-width : 992px) {
-    header, main, footer {
-      padding-left: 0;
-    }
-  }

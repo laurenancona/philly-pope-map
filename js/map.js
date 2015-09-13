@@ -6,63 +6,14 @@ var southWest = L.latLng(39.864439, -75.387541),
 
 var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons baselayer
   // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
-  maxBounds: bounds,
-  maxZoom: 17,
-  minZoom: 13
+    maxBounds: bounds,
+    maxZoom: 17,
+    minZoom: 13
 })
 
 .addControl(L.mapbox.geocoderControl('mapbox.places', {
-  autocomplete: true
+    autocomplete: true
 }));
-
-//// Here be our data layers
-var highways = L.mapbox.featureLayer(); //.addTo(map);
-highways.loadURL('data/highways.geojson');
-
-var walking = L.mapbox.featureLayer(); //.addTo(map);
-walking.loadURL('data/walking.geojson');
-
-var screens = L.mapbox.featureLayer();//.addTo(map);
-screens.loadURL('data/jumbotrons.geojson');
-
-var hospitals =  L.mapbox.featureLayer();//.addTo(map);
-hospitals.loadURL('data/hospitals.geojson');
-
-var transit = L.mapbox.featureLayer(); //.addTo(map);
-transit.loadURL('data/transit-locations.geojson');
-
-var entrances = L.mapbox.featureLayer(); //.addTo(map);
-entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
-
-var poperide = L.mapbox.featureLayer(); //.addTo(map);
-poperide.loadURL('data/poperide.geojson');
-
-var parking = L.mapbox.featureLayer().addTo(map);
-parking.loadURL('data/parking.geojson');
-
-/*var filters = document.getElementById('filters');
-var checkboxes = document.getElementsByClassName('filter');
-
-function change() {
-  // Find all checkboxes that are checked and build a list of their values
-  var on = [];
-  for (var i = 0; i < checkboxes.length; i++) {
-    if (checkboxes[i].checked) on.push(checkboxes[i].value);
-  }
-  // The filter function takes a GeoJSON feature object
-  // and returns true to show it or false to hide it.
-  map.featureLayer.setFilter(function (f) {
-    // check each marker's symbol to see if its value is in the list
-    // of symbols that should be on, stored in the 'on' array
-    return on.indexOf(f.properties['marker-symbol']) !== -1;
-  });
-  return false;
-}
-
-// When the form is touched, re-filter markers
-filters.onchange = change;
-// Initially filter the markers
-change();*/
 
 
 // Locate user
@@ -76,7 +27,7 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 // var points = L.mapbox.tileLayer('laurenancona.4ae9c933').addTo(map);
 // blocks = L.mapbox.tileLayer('laurenancona.fc7871b8'),
 // legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend		
-// lots = L.mapbox.featureLayer('').addTo(map);
+//lots			= L.mapbox.featureLayer('').addTo(map);
 
 // Set our icon styles
 //var screenIcon = L.icon({
@@ -89,103 +40,129 @@ map.fitBounds(bounds); // zoom/snap the map to that bounding box
 //
 //function onEachFeature(feature, layer) {
 //			var popupContent = "<p>I started out as a GeoJSON " +
-//				  feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
+//					feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
 //
 //			if (feature.properties && feature.properties.name) {
-//				  popupContent += feature.properties.name;
+//				popupContent += feature.properties.name;
 //			}
 //
 //			layer.bindPopup(popupContent);
 //		}
 //
-//
+////
 //var screenLayer = L.geoJson(screens, {
 //
 //			pointToLayer: function (feature, latlng) {
-//			   return L.marker(latlng, {icon: screenIcon});
+//				return L.marker(latlng, {icon: screenIcon});
 //			},
 //
 //			onEachFeature: onEachFeature
 //		}).addTo(map);
 
+//// Here be our data layers
+var highways = L.mapbox.featureLayer();//.addTo(map);
+highways.loadURL('data/highways.geojson');
 
+var walking = L.mapbox.featureLayer();//.addTo(map);
+walking.loadURL('data/walking.geojson');
 
+var screens = L.mapbox.featureLayer();//.addTo(map);
+screens.loadURL('data/jumbotrons.geojson');
 
-//============================================================//
+var transit = L.mapbox.featureLayer();//.addTo(map);
+transit.loadURL('data/transit-locations.geojson');
+
+var entrances = L.mapbox.featureLayer();//.addTo(map);
+entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
+
+var poperide = L.mapbox.featureLayer();//.addTo(map);
+poperide.loadURL('data/poperide.geojson');
+
+var parking = L.mapbox.featureLayer();//.addTo(map);
+parking.loadURL('data/parking.geojson');
 
 // Listen for individual marker clicks.
-entrances.on('click', function (e) {
-  e.layer.closePopup(); // Force the popup closed.
-  var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.name + '</strong>' +
-    '<p>Ticketed? ' + feature.properties.ticketed + '</p></div>';
-  info.innerHTML = content;
+entrances.on('click',function(e) {
+
+    // Force the popup closed.
+    e.layer.closePopup();
+
+    var feature = e.layer.feature;
+    var content = '<div><strong>' + feature.properties.name + '</strong>' +
+                  '<p>Ticketed? ' + feature.properties.ticketed + '</p></div>';
+
+    info.innerHTML = content;
 });
 
-transit.on('click', function (e) {
-  e.layer.closePopup();
-  var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.type + ' | ' + feature.properties.desc + '<strong>' +
-    '<p>' + feature.properties.name + '</p>' +
-    '<p>' + feature.properties.Fare + '</p>' +
-    '<p>' + feature.properties.Tickets + '</p>' +
-    '<p style="color:#3AA4CE;"><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
-  info.innerHTML = content;
+transit.on('click',function(e) {
+
+    // Force the popup closed.
+    e.layer.closePopup();
+
+    var feature = e.layer.feature;
+    var content = '<div><strong>' + feature.properties.type + ' | ' + feature.properties.desc + '<strong>' +
+                  '<p>' + feature.properties.name + '</p>' +
+                  '<p>' + feature.properties.Fare + '</p>' + 
+                  '<p>' + feature.properties.Tickets +  '</p>' +
+                  '<p style="color:#3AA4CE;"><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>Visit site</strong></a></p></div>';
+
+    info.innerHTML = content;
 });
 
-poperide.on('click', function (e) {
-  e.layer.closePopup();
-  var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.name + '</strong>';
-  //                  '<p>' + feature.properties.ticketed + '</p></div>';
-  info.innerHTML = content;
+poperide.on('click',function(e) {
+
+    // Force the popup closed.
+    e.layer.closePopup();
+
+    var feature = e.layer.feature;
+    var content = '<div><strong>' + feature.properties.name + '</strong>';
+//                  '<p>' + feature.properties.ticketed + '</p></div>';
+
+    info.innerHTML = content;
 });
 
-parking.on('click', function (e) {
-  e.layer.closePopup();
-  var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.name + '</strong>' +
-    '<p> Deadline to move vehicles: ' + feature.properties.desc + '</p>' +
-    '<p><a href="http://www.philapark.org/2015/09/the-papal-visit-what-the-ppa-is-doing/" target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
-  info.innerHTML = content;
+parking.on('click',function(e) {
+
+    // Force the popup closed.
+    e.layer.closePopup();
+
+    var feature = e.layer.feature;
+    var content = '<div><strong>' + feature.properties.name + '</strong>' +
+                  '<p> Deadline to move vehicles: ' + feature.properties.desc + '</p></div>';
+
+    info.innerHTML = content;
 });
 
-highways.on('click', function (e) {
-  e.layer.closePopup();
-  var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.name + '</strong>' +
-    '<p> Closed to inbound traffic</p></div>';
-  info.innerHTML = content;
-});
+highways.on('click',function(e) {
 
-hospitals.on('click', function (e) {
-  e.layer.closePopup();
-  var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.name + '</strong>' +
-    '<p>' + feature.properties.address + '</p>' +
-    '<p> PHILADELPHIA, PA ' + feature.properties.zip + '</p>' +
-    '<p>' + feature.properties.phone + '</p></div>';
-  info.innerHTML = content;
+    // Force the popup closed.
+    e.layer.closePopup();
+
+    var feature = e.layer.feature;
+    var content = '<div><strong>' + feature.properties.name + '</strong>' +
+                  '<p> Closed to inbound traffic</p></div>';
+
+    info.innerHTML = content;
 });
 
 
 // Clear the tooltip when map is clicked.
 map.on('move', empty);
 
-// Trigger empty contents when the script has loaded on the page.
+// Trigger empty contents when the script
+// has loaded on the page.
 empty();
 
 function empty() {
-  info.innerHTML = '<div><p><strong>Choose layers at right, then click features for info</strong></p></div>';
-}
+  info.innerHTML = '<div><strong>Choose layers at right, then click a feature for more info</strong></div>';
+  }
 
-//============================================================//
 
 // Layer control freak
 L.control.layers({
-    // 'Friday': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map), //in case want to split by day
-    // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8'),
-    // 'Sunday': L.mapbox.tileLayer('laurenancona.fc7871b8')
+//    // 'Friday': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map),
+//    // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8'),
+//    // 'Sunday': L.mapbox.tileLayer('laurenancona.fc7871b8')
     }, {
     'Jumbotrons': screens,
     'Pedestrian routes': walking,
@@ -193,20 +170,20 @@ L.control.layers({
     'Pope Bike Ride': poperide,
     'Transit Stations': transit,
     'Towing/Parking Deadlines': parking.addTo(map),
-    'Closed Highways': highways.addTo(map),
-    'Hospitals': hospitals
+    'Closed Highways': highways.addTo(map)
     }
     ).addTo(map);	  		
 
-// UTF Grid interactivity, testing w/ multiple layers
-//    var blocksTiles = blocks.addTo(map);
-//    var blocksGrid = L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map); //,
-//        lotsGrid = L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map);
-//    var blocksControl = L.mapbox.gridControl(blocksGrid	).addTo(map); //,
-//        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
+//    // UTF Grid interactivity, testing w/ multiple layers
+//        var blocksTiles = blocks.addTo(map);
+//        var blocksGrid 	= L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map); //,
+//            // lotsGrid 				= L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map);
+//        var blocksControl = L.mapbox.gridControl(blocksGrid	).addTo(map); //,
+//            // lotsControl  			=   L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
 
 var hash = L.hash(map); // append (z)/(x)/(y) to URL for deep linking to locations
-map.setView([39.9581, -75.1657], 14);
+map.setView([39.9581, -75.1657], 15);
+
 
 
 // ht @konklone for console.log-fication example

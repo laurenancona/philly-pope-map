@@ -2,7 +2,7 @@ _prefs:
   disabled: []
   inspector: false
   mapid: laurenancona.b6b3d96e
-  rev: s-5ed5bbd3
+  rev: s-2b109945
   saveCenter: true
 attribution: ''
 center: 
@@ -11,53 +11,6 @@ center:
   - 13
 description: ''
 Layer: 
-  - id: authorized-vehicles-only
-    Datasource: 
-      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/authorized-vehicle-only/authorized-vehicles-only.shp
-      type: shape
-    description: ''
-    fields: 
-      allowed: String
-      cartodb_id: Number
-      category: String
-      created_at: String
-      descriptio: String
-      name: String
-      start_time: String
-      updated_at: String
-    properties: 
-      "buffer-size": 8
-    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
-  - id: walking
-    Datasource: 
-      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/walking.geojson
-      layer: OGRGeoJSON
-      type: ogr
-    description: ''
-    fields: 
-      id: Number
-      description: String
-      name: String
-      stroke: String
-      "stroke-opacity": Number
-      "stroke-width": Number
-    properties: 
-      "buffer-size": 8
-    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-  - id: highways
-    Datasource: 
-      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/highways.geojson
-      layer: OGRGeoJSON
-      type: ogr
-    description: ''
-    fields: 
-      name: String
-      stroke: String
-      "stroke-opacity": Number
-      "stroke-width": Number
-    properties: 
-      "buffer-size": 16
-    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
   - id: transit-stations
     Datasource: 
       file: /Users/lancona/Downloads/transit-stations.csv
@@ -78,84 +31,74 @@ Layer:
       Tickets: String
       type: String
     properties: 
-      "buffer-size": 20
+      "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-  - id: hospitals
+  - id: screens
     Datasource: 
-      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/hospitals.geojson
-      layer: OGRGeoJSON
-      type: ogr
-    description: ''
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/screens.csv
+      type: csv
+    description: Jumbotron screens for viewing Sunday's Papal Mass
     fields: 
-      ID: String
-      address: String
-      "marker-color": String
-      "marker-size": String
-      "marker-symbol": String
+      id: Number
+      "Accessible?": String
+      desc: String
+      Distance: String
+      Fare: String
+      Hours: String
+      lat: Number
+      lon: Number
+      More Info: String
       name: String
-      phone: String
-      X: Number
-      Y: Number
-      zip: Number
+      Stations: String
+      Tickets: String
+      type: String
     properties: 
-      "buffer-size": 26
+      "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-  - id: entrances
+  - id: entrances_labels
     Datasource: 
-      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/entrances.geojson
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/entrances_labels.geojson
       layer: OGRGeoJSON
       type: ogr
     description: ''
     fields: 
       cartodb_id: Number
       description: String
-      "marker-color": String
-      "marker-size": String
-      "marker-symbol": String
       name: String
       ticketed: String
     properties: 
       "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-  - id: jumbotrons
+  - id: bikeride
     Datasource: 
-      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/jumbotrons.geojson
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/bikeride.geojson
       layer: OGRGeoJSON
       type: ogr
     description: ''
     fields: 
-      LAT: String
-      LOCATION: String
-      LON: String
       "marker-color": String
       "marker-size": String
       "marker-symbol": String
       name: String
-      NUMBER: String
-      ROTATE: String
-      styleHash: String
-      styleUrl: String
+      stroke: String
+      "stroke-opacity": Number
+      "stroke-width": Number
     properties: 
       "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-  - id: authorized-vehicle-only_labels
+  - id: walking_paths
     Datasource: 
-      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/authorized-vehicle-only.geojson
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/walking_paths.geojson
       layer: OGRGeoJSON
       type: ogr
     description: ''
     fields: 
-      allowed: String
       cartodb_id: Number
-      category: String
-      created_at: String
-      descriptio: String
+      description: String
       name: String
-      start_time: String
-      updated_at: String
     properties: 
-      "buffer-size": 18
+      "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-maxzoom: 16
-minzoom: 12
+maxzoom: 15
+minzoom: 13
 name: Transit & Screens
