@@ -216,7 +216,7 @@ L.control.layers({
 
 // UTF Grid interactivity, testing w/ multiple layers
 //    var blocksTiles = blocks.addTo(map);
-    var infoGrid = L.mapbox.gridLayer('laurenancona.2ff8c154'').addTo(map); //,
+    var infoGrid = L.mapbox.gridLayer('laurenancona.2ff8c154').addTo(map); //,
 //        lotsGrid = L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map);
 //    var blocksControl = L.mapbox.gridControl(blocksGrid	).addTo(map); //,
 //        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
