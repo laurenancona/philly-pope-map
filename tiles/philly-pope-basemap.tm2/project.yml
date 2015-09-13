@@ -13,8 +13,8 @@ center:
   - 39.9577
   - 14
 description: ''
-format: "png8:m=h:c=64"
-interactivity_layer: ''
+format: "png8:m=h:c=32"
+interactivity_layer: 'laurenancona.b6b3d96e'
 layers: null
 maxzoom: 18
 minzoom: 13
