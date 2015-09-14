@@ -65,8 +65,7 @@
   <!-- End Google Tag Manager -->
 
   <style> /* these should be moved to style.css */
-    main {}
-    body {margin: 0; padding: 0;}
+    main { }
     .mdl-layout__drawer {padding-left: 15px!important; padding-right:10px; }
     ul {font-size: 10px; line-height: 1.3em;}
     p {font-size: 12px;line-height: 1.4em;}
@@ -84,20 +83,20 @@
       <header class="mdl-layout__header">
         <div class="mdl-layout-icon"></div>
 -->
-        <div class="mdl-layout__header-row">
+<!--        <div class="mdl-layout__header-row">-->
           <!-- Title -->
-          <span class="mdl-layout-title" href="/">Philly Pope Map</span>
+<!--          <span class="mdl-layout-title" href="/">Philly Pope Map</span>-->
           <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
+<!--          <div class="mdl-layout-spacer"></div>-->
 
 
 <!--           Navigation -->
-          <nav class="mdl-navigation">
-            <a class="mdl-navigation__link"></a>
-            <div>
+<!--          <nav class="mdl-navigation">-->
+<!--            <a class="mdl-navigation__link"></a>-->
+<!--            <div>-->
 <!--              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links</a>-->
-            </div>
-          </nav>
+<!--            </div>-->
+<!--          </nav>-->
 <!--
             <button class="map-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
                 <i class="material-icons">more_vert</i>
@@ -109,18 +108,18 @@
               <li class="mdl-menu__item">Four</li>
             </ul>
 -->
-        </div>
-      </header>
+<!--        </div>-->
+<!--      </header>-->
 
-      <!-- SIDE DRAWER MENU -->
+    <!-- SIDE DRAWER MENU -->
       <div class="mdl-layout__drawer">
         <span class="side mdl-layout-title">Philly Pope Map</span>
-        <nav class="mdl-navigation">
+      <nav class="mdl-navigation">
       <!-- ADD MORE LINKS HERE-->
       <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
           <a href="#options" class="mdl-tabs__tab is-active">Options</a>
-          <a href="#about" class="mdl-tabs__tab ">About</a>
+          <a href="#about" class="mdl-tabs__tab">About</a>
         </div>
       <!-- TAB SELECTORS -->
         <div class="mdl-tabs__panel is-active" id="options">
@@ -258,10 +257,11 @@ document.write(
 <!--              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links to things</a>-->
         </nav>
       </div>
-      <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
       <main class="mdl-layout__content">
         <div class="page-content">
             <div class="" id="map">
+        
             <script src="js/feature-geojson.js" type="text/javascript"></script>
             <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
             <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
