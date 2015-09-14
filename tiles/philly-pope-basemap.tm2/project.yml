@@ -41,12 +41,6 @@ layers:
   - walking
   - authorized-veh-only-fri-6p
   - authorized-vehicles-only
-# labels
-  - highways.label
-  - water.label
-  - road_label
-  - bridge.label
-  - authorized-vehicle-only_labels
 # polygon labels
   - secure-vehicle-perimeter-fri-10a.labels
   - secure-vehicle-perimeter-fri-10p_3857.labels
@@ -56,6 +50,12 @@ layers:
   - secure-perimeter-thur-10p.labels
   - traffic-boxes-fri-6-10pm.labels
   - parkway-ticketed-sunday.labels
+# labels
+  - water.label
+  - highways.label
+  - bridge.label
+  - road_label
+  - authorized-vehicle-only_labels
 # points
   - transit-stations
   - jumbotrons
