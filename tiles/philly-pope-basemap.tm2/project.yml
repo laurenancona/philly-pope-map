@@ -13,9 +13,46 @@ center:
   - 39.9577
   - 14
 description: ''
-format: "png8:m=h:c=64"
-interactivity_layer: ''
-layers: null
+format: "png8:m=h:c=32"
+interactivity_layer: laurenancona.b6b3d96e
+layers: 
+  - waterway
+  - water
+  - philadelphia-city-limits
+  - landuse
+  - tunnel
+  - curbproj
+  - secure-vehicle-perimeter-fri-10a
+  - secure-vehicle-perimeter-fri-10p_3857
+  - secure-vehicle-independence-fri-10p
+  - secure-perimeter-12-20th-6a
+  - secure-perimeter-thur-10p
+  - independence-mall-secure-perimeter-sat-6am
+  - traffic-boxes-fri-6-10pm
+  - parkway-ticketed-sunday
+  - road
+  - bridge
+  - highways
+  - walking
+  - authorized-veh-only-fri-6p
+  - authorized-vehicles-only
+  - secure-vehicle-perimeter-fri-10a.labels
+  - secure-vehicle-perimeter-fri-10p_3857.labels
+  - secure-vehicle-independence-fri-10p.labels
+  - independence-mall-secure-perimeter-sat-6am.labels
+  - secure-perimeter-12-20th-6a.labels
+  - secure-perimeter-thur-10p.labels
+  - traffic-boxes-fri-6-10pm.labels
+  - parkway-ticketed-sunday.labels
+  - water.label
+  - highways.label
+  - bridge.label
+  - road_label
+  - authorized-vehicle-only_labels
+  - transit-stations
+  - jumbotrons
+  - hospitals
+  - entrances
 maxzoom: 18
 minzoom: 13
 name: philly-pope-baselayer

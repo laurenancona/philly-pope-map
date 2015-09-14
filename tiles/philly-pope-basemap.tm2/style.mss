@@ -147,7 +147,7 @@ Map {
     text-name: [name];
     text-face-name: @bold;
     text-placement: line;
-    comp-op: contrast;
+ //   comp-op: contrast;
     text-fill: white;
     text-opacity: 1;
     text-transform: uppercase;
@@ -167,7 +167,7 @@ Map {
     text-name: [name];
     text-face-name: @bold;
     text-placement: line;
-    comp-op: contrast;
+  //  comp-op: contrast;
     text-fill: white;
     text-opacity: 1;
     text-transform: uppercase;
@@ -177,7 +177,7 @@ Map {
     text-repeat-distance: 500;
   //  text-avoid-edges: true;
     text-allow-overlap: false;
-   text-margin: 100;
+    text-margin: 100;
     text-min-padding: 20;
     text-wrap-width: 80;
   //  text-min-path-length: 200;
@@ -241,16 +241,16 @@ Map {
    }
   }
 }
-#authorized-veh-only-fri-6p {
+#authorized-vehicle-only_labels {
   [zoom >=15]{
-  text-name: [category];
+  text-name: [name];
   text-face-name: 'Arial Unicode MS Regular';
   text-placement: line;
   text-size: 9;
   text-transform: uppercase;
   text-fill:white;
- // text-halo-fill: black;
-  text-comp-op: src-atop;
+  text-halo-fill: black;
+ // text-comp-op: src-atop;
  // text-halo-radius: 1;
   text-avoid-edges: true;
   text-min-padding: 50;
@@ -260,11 +260,11 @@ Map {
  // comp-op: dst-out;
   }
 }
-
+/*
  #secure-vehicle-independence-fri-10p {
   [zoom >= 15]{
   text-name: 'Friday10am';
-  text-size: 10;
+  text-size: 9;
   text-fill: white;
   text-face-name: 'Arial Unicode MS Regular';
   text-transform: uppercase;
@@ -274,17 +274,29 @@ Map {
   text-comp-op: src-atop;
  // text-repeat-distance: 30;
   text-min-padding: 10;
-  line-width: 2;
-  line-color: @authorized;
+  line-width: 3;
+  line-color: black;// rgba(60,187,232,0.9);
   line-opacity: 0.9;
   line-comp-op: overlay;
   text-spacing: 200;
   }
+} 
+*/
+#jumbotrons {
+  [zoom >= 15]{
+  marker-file: url("icons/maki/svg/square-24.svg");
+  marker-fill: @light;
+  marker-line-color: black;
+  marker-line-width: 2;
+  marker-line-opacity: 0.8;
+  marker-opacity: 1;
+  marker-width: 18;
+  marker-avoid-edges: true;
+  marker-placement: point;
+  marker-comp-op: src-atop;
+  }
 }
 
-#screens {
- // marker
-}
 /*
 #place_label{
 [zoom < 14]{  

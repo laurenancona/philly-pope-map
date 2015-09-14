@@ -1,14 +1,15 @@
 @traffic: rgba(158, 206, 9, 0.7);
 @authorized: #000000;
-@polygons: rgba(217,217,217,0.8);
-@ticketed:  rgba(248, 0, 47, 0.88);
+@polygons: rgba(217,217,217,0.5);
+@ticketed:  rgba(248, 0, 47, 0.5);
 @text: rgba(255, 255, 255,1);
 
 
-#authorized-veh-only-fri-6p {
+#authorized-vehicles-only {
   [zoom > 14]{
   line-color: @authorized;
   line-width: 4;
+ // line-comp-op: 
   [zoom < 17]{ line-width: 8; }
   [zoom >= 17]{ line-width: 12; }
   }
@@ -45,7 +46,7 @@
 
 #traffic-boxes-fri-6-10pm{
   [name='Center City Traffic Box'],[name='University City Traffic Box']{
-  polygon-fill:   rgba(217,217,217,1);
+  polygon-fill:   rgba(217,217,217,0.4);
   polygon-comp-op: overlay;
   line-color: @traffic;
   line-width: 2;
@@ -61,7 +62,7 @@
   }
 }
 #secure-vehicle-perimeter-fri-10a {
-  polygon-fill:   @polygons;
+  polygon-fill: @polygons;
   polygon-comp-op: overlay;
   line-color: @authorized;
   line-width: 0.7;
@@ -81,41 +82,43 @@
 
 #secure-vehicle-independence-fri-10p {
   polygon-fill:   @polygons;
+  polygon-opacity: 0.8;
   polygon-comp-op: overlay;
   line-color: @authorized;
-  line-width: 0.7;
+  line-width: 2;
   line-opacity: 1;
-  line-comp-op: soft-light;
+ // line-comp-op: soft-light;
 }
 
 #secure-perimeter-12-20th-6a {
- // polygon-fill:   rgba(228, 0, 0,0.5);
+ // polygon-fill:   rgba(228, 0, 0,0.3);
   polygon-fill:  @traffic;
   polygon-comp-op: overlay;
   line-color: @traffic;
-  line-width: 1;
-  line-opacity: 1;
+  //line-width: 1;
+ // line-opacity: 1;
 //  line-comp-op: soft-light;
  // polygon-smooth: 0.1;
 }
 
 #independence-mall-secure-perimeter-sat-6am {
-  polygon-fill:  @ticketed;
- // polygon-comp-op: contrast;
-  polygon-comp-op: overlay;
-  line-color: @ticketed;
-  line-width: 0.8;
-  line-opacity: 1;
+   polygon-fill:  @ticketed;
+ // polygon-fill:  white;
+ // polygon-comp-op: overlay;
+  polygon-opacity: 0.8;
+  //line-color: black;
+  //line-width: 2;
+ // line-opacity: 1;
   line-comp-op: soft-light;
 }
 
-#walking_paths {
+#walking {
  // [name='name']{
   [zoom >= 15]{
   line-color: rgba(8,145,196, 0.6);
-  line-width: 9;
-  line-opacity: 0.5;
- // line-comp-op: src-over;
+  line-width: 6;
+  line-opacity: 0.9;
+ // line-comp-op: overlay;
   text-name: ['Walking Route'];
   text-face-name: @routes;
   text-size: 9;

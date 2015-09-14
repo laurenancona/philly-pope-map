@@ -16,7 +16,7 @@ var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons bas
 }));
 
 var mapLayers = [],
-    layerNames = ['highways','walking']
+    layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking']
 
 //// Here be our data layers
 var highways = L.mapbox.featureLayer(); //.addTo(map);
@@ -29,21 +29,26 @@ mapLayers.push(walking);
 
 var screens = L.mapbox.featureLayer();//.addTo(map);
 screens.loadURL('data/jumbotrons.geojson');
+mapLayers.push(screens);
 
 var hospitals =  L.mapbox.featureLayer();//.addTo(map);
 hospitals.loadURL('data/hospitals.geojson');
+mapLayers.push(hospitals);
 
 var transit = L.mapbox.featureLayer(); //.addTo(map);
-transit.loadURL('data/transit-locations.geojson');
+transit.loadURL('data/transit-locations.geojson');mapLayers.push(transit);
 
 var entrances = L.mapbox.featureLayer(); //.addTo(map);
 entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
+mapLayers.push(entrances);
 
 var poperide = L.mapbox.featureLayer(); //.addTo(map);
 poperide.loadURL('data/poperide.geojson');
+mapLayers.push(poperide);
 
 var parking = L.mapbox.featureLayer().addTo(map);
 parking.loadURL('data/parking.geojson');
+mapLayers.push(parking);
 
 layerNames.forEach(function(item, index){
   var layer = mapLayers[index], layerName = layerNames[index];
@@ -145,15 +150,16 @@ transit.on('click', function (e) {
     '<p>' + feature.properties.name + '</p>' +
     '<p>' + feature.properties.Fare + '</p>' +
     '<p>' + feature.properties.Tickets + '</p>' +
-    '<p style="color:#3AA4CE;"><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
+    '<p><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
   info.innerHTML = content;
 });
 
 poperide.on('click', function (e) {
   e.layer.closePopup();
   var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.name + '</strong>';
-  //                  '<p>' + feature.properties.ticketed + '</p></div>';
+  var content = '<div><strong>Pope Bike Ride</strong>' +
+          '<p>' + feature.properties.name + '</p></div>';
+
   info.innerHTML = content;
 });
 
@@ -161,7 +167,8 @@ parking.on('click', function (e) {
   e.layer.closePopup();
   var feature = e.layer.feature;
   var content = '<div><strong>' + feature.properties.name + '</strong>' +
-    '<p> Deadline to move vehicles: ' + feature.properties.desc + '</p>' +
+    '<p> Deadline to move vehicles: ' + '</p>' +
+    '<p>' +feature.properties.desc + '</p>' +
     '<p><a href="http://www.philapark.org/2015/09/the-papal-visit-what-the-ppa-is-doing/" target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
   info.innerHTML = content;
 });
@@ -192,31 +199,31 @@ map.on('move', empty);
 empty();
 
 function empty() {
-  info.innerHTML = '<div><p><strong>Choose layers at right, then click features for info</strong></p></div>';
+  info.innerHTML = '<div><p><strong>Choose layers at left, then click features for info</strong></p></div>';
 }
 
 //============================================================//
 
 // Layer control freak
-L.control.layers({
+//L.control.layers({
     // 'Friday': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map), //in case want to split by day
     // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8'),
     // 'Sunday': L.mapbox.tileLayer('laurenancona.fc7871b8')
-    }, {
-    'Jumbotrons': screens,
-    'Pedestrian routes': walking,
-    'Festival Entrances': entrances,
-    'Pope Bike Ride': poperide,
-    'Transit Stations': transit,
-    'Towing/Parking Deadlines': parking.addTo(map),
-    'Closed Highways': highways.addTo(map),
-    'Hospitals': hospitals
-    }
-    ).addTo(map);
+//    }, {
+//    'Jumbotrons': screens,
+//    'Pedestrian routes': walking,
+//    'Festival Entrances': entrances,
+//    'Pope Bike Ride': poperide,
+//    'Transit Stations': transit,
+//    'Towing/Parking Deadlines': parking.addTo(map),
+//    'Closed Highways': highways.addTo(map),
+//    'Hospitals': hospitals
+//    }
+//    ).addTo(map);
 
 // UTF Grid interactivity, testing w/ multiple layers
 //    var blocksTiles = blocks.addTo(map);
-//    var blocksGrid = L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map); //,
+    var infoGrid = L.mapbox.gridLayer('laurenancona.2ff8c154').addTo(map); //,
 //        lotsGrid = L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map);
 //    var blocksControl = L.mapbox.gridControl(blocksGrid	).addTo(map); //,
 //        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);

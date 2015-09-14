@@ -6,17 +6,13 @@
   <Parameter name="attribution"><![CDATA[<a href="https://twitter.com/laurenancona" />Lauren Ancona</a> | <a href="https://phillypopemap.com/sources.html" /> Sources </a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
   <Parameter name="center">-75.1641,39.9577,14</Parameter>
-  <Parameter name="format">png8:m=h:c=64</Parameter>
+  <Parameter name="format">png8:m=h:c=32</Parameter>
   <Parameter name="maxzoom">18</Parameter>
   <Parameter name="minzoom">13</Parameter>
   <Parameter name="name"><![CDATA[philly-pope-baselayer]]></Parameter>
   <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-streets-v5,laurenancona.h8rozuxr,laurenancona.697zm2t9,laurenancona.ae5b1a3d,laurenancona.b6b3d96e]]></Parameter>
 </Parameters>
 
-
-<Layer name="landuse"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
 
 <Layer name="waterway"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
@@ -31,19 +27,11 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>water</StyleName>  </Layer>
 
-<Layer name="aeroway"
+<Layer name="philadelphia-city-limits"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
-<Layer name="barrier_line"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="building"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="landuse_overlay"
+<Layer name="landuse"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
@@ -62,6 +50,154 @@
 <Layer name="tunnel"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>tunnel</StyleName>  </Layer>
+
+<Layer name="curbproj"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
+  </Rule>
+</Style>
+<Layer name="secure-vehicle-perimeter-fri-10a"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-vehicle-perimeter-fri-10a</StyleName>  </Layer>
+
+<Layer name="secure-vehicle-perimeter-fri-10p_3857"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="secure-vehicle-independence-fri-10p" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" fill-opacity="0.8" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+</Style>
+<Layer name="secure-vehicle-independence-fri-10p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-vehicle-independence-fri-10p</StyleName>  </Layer>
+
+<Style name="secure-perimeter-12-20th-6a" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="rgba(158, 206, 9, 0.7)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" />
+  </Rule>
+</Style>
+<Layer name="secure-perimeter-12-20th-6a"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-perimeter-12-20th-6a</StyleName>  </Layer>
+
+<Layer name="secure-perimeter-thur-10p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="independence-mall-secure-perimeter-sat-6am" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" fill-opacity="0.8" />
+    <LineSymbolizer comp-op="soft-light" />
+  </Rule>
+</Style>
+<Layer name="independence-mall-secure-perimeter-sat-6am"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>independence-mall-secure-perimeter-sat-6am</StyleName>  </Layer>
+
+<Style name="traffic-boxes-fri-6-10pm" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([name] = 'Center City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([name] = 'Center City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'Center City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([name] = 'University City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([name] = 'University City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'University City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'Vine Street Bridge')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="7" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" placement="interior" halo-radius="2" allow-overlap="false" ><![CDATA[[title]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'Vine Street Bridge')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'Fairmount Park')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="7" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" placement="interior" halo-radius="2" allow-overlap="false" ><![CDATA[[title]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'Fairmount Park')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+  </Rule>
+</Style>
+<Layer name="traffic-boxes-fri-6-10pm"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>traffic-boxes-fri-6-10pm</StyleName>  </Layer>
+
+<Style name="parkway-ticketed-sunday" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <Filter>([name] = 'parkway-ticketed')</Filter>
+    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(248, 0, 47, 0.5)" stroke-width="0.8" stroke-opacity="1" comp-op="soft-light" />
+  </Rule>
+</Style>
+<Layer name="parkway-ticketed-sunday"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>parkway-ticketed-sunday</StyleName>  </Layer>
 
 <Style name="road-hatch" filter-mode="first">
   <Rule>
@@ -119,7 +255,7 @@
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([class] = 'path')</Filter>
-    <LineSymbolizer stroke-width="0.8" stroke-dasharray="1, 2" comp-op="dst-over" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="0.8" stroke-dasharray="1, 2" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
@@ -144,243 +280,47 @@
     <StyleName>road-line</StyleName>
     <StyleName>road-hatch</StyleName>  </Layer>
 
-<Style name="bridge" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'street')</Filter>
-    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([class] = 'street')</Filter>
-    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([class] = 'street')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'path')</Filter>
-    <LineSymbolizer stroke="rgba(217, 217, 217, 0.5)" stroke-width="0.6" stroke-dasharray="1, 2" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([class] = 'path')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-  <Rule>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" />
-  </Rule>
-</Style>
 <Layer name="bridge"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>bridge</StyleName>  </Layer>
+      </Layer>
 
-<Layer name="admin"
+<Layer name="highways"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
-<Layer name="country_label_line"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="country_label"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="marine_label"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="state_label"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="place_label"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="water_label"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="poi_label"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Style name="road_label" filter-mode="first" comp-op="contrast">
+<Style name="walking" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <Filter>([class] = 'street')</Filter>
-    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="500" allow-overlap="false" margin="100" minimum-padding="20" wrap-width="80" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
-    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="300" allow-overlap="false" margin="100" minimum-padding="20" ><![CDATA[[name]]]></TextSymbolizer>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <LineSymbolizer stroke="rgba(8, 145, 196, 0.6)" stroke-width="6" stroke-opacity="0.9" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="9" placement="line" fill="#000000" halo-fill="#ffffff" ><![CDATA[['Walking Route']]]></TextSymbolizer>
   </Rule>
 </Style>
-<Layer name="road_label"
+<Layer name="walking"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>road_label</StyleName>  </Layer>
+    <StyleName>walking</StyleName>  </Layer>
 
-<Layer name="waterway_label"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="housenum_label"
+<Layer name="authorized-veh-only-fri-6p"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
-<Layer name="philadelphia_city_limits"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Style name="curbprj" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([FCODE] = 9999)</Filter>
-    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.1" />
-  </Rule>
-</Style>
-<Layer name="curbprj"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>curbprj</StyleName>  </Layer>
-
-<Style name="authorized-veh-only-fri-6p" filter-mode="first">
+<Style name="authorized-vehicles-only" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <LineSymbolizer stroke-width="12" stroke="#000000" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" comp-op="src-atop" avoid-edges="true" minimum-padding="50" ><![CDATA[[category]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
     <LineSymbolizer stroke-width="8" stroke="#000000" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" comp-op="src-atop" avoid-edges="true" minimum-padding="50" ><![CDATA[[category]]]></TextSymbolizer>
   </Rule>
 </Style>
-<Layer name="authorized-veh-only-fri-6p"
+<Layer name="authorized-vehicles-only"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>authorized-veh-only-fri-6p</StyleName>  </Layer>
-
-<Style name="traffic-boxes-fri-6-10pm" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="#d9d9d9" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="#d9d9d9" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="#d9d9d9" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="#d9d9d9" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="#d9d9d9" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="#d9d9d9" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([name] = 'Fairmount Park')</Filter>
-    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="7" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" placement="interior" halo-radius="2" allow-overlap="false" ><![CDATA[[title]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([name] = 'Fairmount Park')</Filter>
-    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([name] = 'Vine Street Bridge')</Filter>
-    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="7" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" placement="interior" halo-radius="2" allow-overlap="false" ><![CDATA[[title]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([name] = 'Vine Street Bridge')</Filter>
-    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0" />
-  </Rule>
-</Style>
-<Layer name="traffic-boxes-fri-6-10pm"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>traffic-boxes-fri-6-10pm</StyleName>  </Layer>
-
-<Style name="secure-vehicle-independence-fri-10p" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.8)" comp-op="overlay" />
-    <TextSymbolizer size="10" fill="#ffffff" face-name="Arial Unicode MS Regular" text-transform="uppercase" placement="line" halo-fill="#000000" halo-radius="2" comp-op="src-atop" minimum-padding="10" spacing="200" ><![CDATA[Friday10am]]></TextSymbolizer>
-    <LineSymbolizer stroke-width="2" stroke="#000000" stroke-opacity="0.9" comp-op="overlay" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.8)" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
-  </Rule>
-</Style>
-<Layer name="secure-vehicle-independence-fri-10p"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>secure-vehicle-independence-fri-10p</StyleName>  </Layer>
-
-<Layer name="secure-perimeter-thur-10p"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>authorized-vehicles-only</StyleName>  </Layer>
 
 <Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.8)" comp-op="overlay" />
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="overlay" />
     <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
   </Rule>
 </Style>
@@ -392,10 +332,20 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
+<Style name="secure-vehicle-independence-fri-10p" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" fill-opacity="0.8" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+</Style>
+<Layer name="secure-vehicle-independence-fri-10p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>secure-vehicle-independence-fri-10p</StyleName>  </Layer>
+
 <Style name="independence-mall-secure-perimeter-sat-6am" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.88)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(248, 0, 47, 0.88)" stroke-width="0.8" stroke-opacity="1" comp-op="soft-light" />
+    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" fill-opacity="0.8" />
+    <LineSymbolizer comp-op="soft-light" />
   </Rule>
 </Style>
 <Layer name="independence-mall-secure-perimeter-sat-6am"
@@ -405,12 +355,90 @@
 <Style name="secure-perimeter-12-20th-6a" filter-mode="first">
   <Rule>
     <PolygonSymbolizer fill="rgba(158, 206, 9, 0.7)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="1" stroke-opacity="1" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" />
   </Rule>
 </Style>
 <Layer name="secure-perimeter-12-20th-6a"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>secure-perimeter-12-20th-6a</StyleName>  </Layer>
+
+<Layer name="secure-perimeter-thur-10p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="traffic-boxes-fri-6-10pm" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([name] = 'Center City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([name] = 'Center City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'Center City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([name] = 'University City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([name] = 'University City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'University City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'Vine Street Bridge')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="7" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" placement="interior" halo-radius="2" allow-overlap="false" ><![CDATA[[title]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'Vine Street Bridge')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'Fairmount Park')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="7" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" placement="interior" halo-radius="2" allow-overlap="false" ><![CDATA[[title]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'Fairmount Park')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#000000" stroke-width="0" />
+  </Rule>
+</Style>
+<Layer name="traffic-boxes-fri-6-10pm"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>traffic-boxes-fri-6-10pm</StyleName>  </Layer>
 
 <Style name="parkway-ticketed-sunday" filter-mode="first">
   <Rule>
@@ -426,39 +454,77 @@
   </Rule>
   <Rule>
     <Filter>([name] = 'parkway-ticketed')</Filter>
-    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.88)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(248, 0, 47, 0.88)" stroke-width="0.8" stroke-opacity="1" comp-op="soft-light" />
+    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" comp-op="overlay" />
+    <LineSymbolizer stroke="rgba(248, 0, 47, 0.5)" stroke-width="0.8" stroke-opacity="1" comp-op="soft-light" />
   </Rule>
 </Style>
 <Layer name="parkway-ticketed-sunday"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>parkway-ticketed-sunday</StyleName>  </Layer>
 
+<Style name="water" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="#0c6995" />
+  </Rule>
+</Style>
+<Layer name="water"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>water</StyleName>  </Layer>
+
+<Layer name="highways"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Layer name="bridge"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="road_label" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <Filter>([class] = 'street')</Filter>
+    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="500" allow-overlap="false" margin="100" minimum-padding="20" wrap-width="80" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
+    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="300" allow-overlap="false" margin="100" minimum-padding="20" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+</Style>
+<Layer name="road_label"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>road_label</StyleName>  </Layer>
+
+<Style name="authorized-vehicle-only_labels" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" avoid-edges="true" minimum-padding="50" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+</Style>
+<Layer name="authorized-vehicle-only_labels"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>authorized-vehicle-only_labels</StyleName>  </Layer>
+
 <Layer name="transit-stations"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
-<Layer name="screens"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="entrances_labels"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Layer name="bikeride"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
-<Style name="walking_paths" filter-mode="first">
+<Style name="jumbotrons" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <LineSymbolizer stroke="rgba(8, 145, 196, 0.6)" stroke-width="9" stroke-opacity="0.5" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="9" placement="line" fill="#000000" halo-fill="#ffffff" ><![CDATA[['Walking Route']]]></TextSymbolizer>
+    <MarkersSymbolizer file="icons/maki/svg/square-24.svg" fill="#f7f7f7" stroke="#000000" stroke-width="2" stroke-opacity="0.8" opacity="1" width="18" avoid-edges="true" placement="point" comp-op="src-atop" />
   </Rule>
 </Style>
-<Layer name="walking_paths"
+<Layer name="jumbotrons"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>walking_paths</StyleName>  </Layer>
+    <StyleName>jumbotrons</StyleName>  </Layer>
+
+<Layer name="hospitals"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Layer name="entrances"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
 
 </Map>
