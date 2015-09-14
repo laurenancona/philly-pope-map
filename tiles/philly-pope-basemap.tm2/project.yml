@@ -35,15 +35,6 @@ layers:
   - independence-mall-secure-perimeter-sat-6am
   - traffic-boxes-fri-6-10pm
   - parkway-ticketed-sunday
-# polygon labels
-  - secure-vehicle-perimeter-fri-10a.labels
-  - secure-vehicle-perimeter-fri-10p_3857.labels
-  - secure-vehicle-independence-fri-10p.labels
-  - independence-mall-secure-perimeter-sat-6am.labels
-  - secure-perimeter-12-20th-6a.labels 
-  - secure-perimeter-thur-10p.labels
-  - traffic-boxes-fri-6-10pm.labels
-  - parkway-ticketed-sunday.labels
 # lines
   - road
   - highways
@@ -56,6 +47,15 @@ layers:
   - road_label
   - bridge.label
   - authorized-vehicle-only_labels
+# polygon labels
+  - secure-vehicle-perimeter-fri-10a.labels
+  - secure-vehicle-perimeter-fri-10p_3857.labels
+  - secure-vehicle-independence-fri-10p.labels
+  - independence-mall-secure-perimeter-sat-6am.labels
+  - secure-perimeter-12-20th-6a.labels 
+  - secure-perimeter-thur-10p.labels
+  - traffic-boxes-fri-6-10pm.labels
+  - parkway-ticketed-sunday.labels
 # points
   - transit-stations
   - jumbotrons
