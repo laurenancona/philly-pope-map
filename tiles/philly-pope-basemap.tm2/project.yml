@@ -23,25 +23,24 @@ layers:
   - entrances
 # labels
   - highways.label
+  - authorized-vehicle-only_labels
   - road-label
 # lines
   - walking
   - highways
+  - authorized-veh-only-fri-6p
+  - authorized-vehicles-only
   - road
 # polygon labels
-  - authorized-veh-only-fri-6p
-  - traffic-boxes-fri-6-10pm
-  - secure-vehicle-independence-fri-10p
-  - secure-perimeter-thur-10p
-  - secure-vehicle-perimeter-fri-10a
-  - secure-vehicle-perimeter-fri-10p_3857
-  - independence-mall-secure-perimeter-sat-6am
-  - secure-perimeter-12-20th-6a
-  - parkway-ticketed-sunday
-  - authorized-vehicles-only
+  - parkway-ticketed-sunday.labels
+  - traffic-boxes-fri-6-10pm.labels
+  - secure-vehicle-independence-fri-10p.labels
+  - secure-perimeter-thur-10p.labels
+  - secure-vehicle-perimeter-fri-10a.labels
+  - secure-vehicle-perimeter-fri-10p_3857.labels
+  - independence-mall-secure-perimeter-sat-6am.labels
+  - secure-perimeter-12-20th-6a.labels
 #polygons
-  - authorized-vehicle-only_labels
-  - authorized-veh-only-fri-6p
   - traffic-boxes-fri-6-10pm
   - secure-vehicle-independence-fri-10p
   - secure-perimeter-thur-10p
@@ -50,7 +49,6 @@ layers:
   - independence-mall-secure-perimeter-sat-6am
   - secure-perimeter-12-20th-6a
   - parkway-ticketed-sunday
-  - authorized-vehicles-only
   # basemap features
   - curbproj
   - bridge
