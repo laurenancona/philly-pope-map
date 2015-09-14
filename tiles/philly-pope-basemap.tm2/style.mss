@@ -147,7 +147,7 @@ Map {
     text-name: [name];
     text-face-name: @bold;
     text-placement: line;
-    comp-op: contrast;
+ //   comp-op: contrast;
     text-fill: white;
     text-opacity: 1;
     text-transform: uppercase;
@@ -167,7 +167,7 @@ Map {
     text-name: [name];
     text-face-name: @bold;
     text-placement: line;
-    comp-op: contrast;
+  //  comp-op: contrast;
     text-fill: white;
     text-opacity: 1;
     text-transform: uppercase;
@@ -177,7 +177,7 @@ Map {
     text-repeat-distance: 500;
   //  text-avoid-edges: true;
     text-allow-overlap: false;
-   text-margin: 100;
+    text-margin: 100;
     text-min-padding: 20;
     text-wrap-width: 80;
   //  text-min-path-length: 200;
@@ -250,7 +250,7 @@ Map {
   text-transform: uppercase;
   text-fill:white;
  // text-halo-fill: black;
-  text-comp-op: src-atop;
+ // text-comp-op: src-atop;
  // text-halo-radius: 1;
   text-avoid-edges: true;
   text-min-padding: 50;

@@ -103,7 +103,7 @@
 #independence-mall-secure-perimeter-sat-6am {
    polygon-fill:  @ticketed;
  // polygon-fill:  white;
-  polygon-comp-op: overlay;
+ // polygon-comp-op: overlay;
   polygon-opacity: 0.8;
   //line-color: black;
   //line-width: 2;
@@ -115,9 +115,9 @@
  // [name='name']{
   [zoom >= 15]{
   line-color: rgba(8,145,196, 0.6);
-  line-width: 9;
-  line-opacity: 0.5;
- // line-comp-op: src-over;
+  line-width: 6;
+  line-opacity: 0.9;
+ // line-comp-op: overlay;
   text-name: ['Walking Route'];
   text-face-name: @routes;
   text-size: 9;

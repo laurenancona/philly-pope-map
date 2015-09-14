@@ -1,4 +1,4 @@
-
+/*
 #bridge {
   line-color: @dark;
   line-join: round;
@@ -24,7 +24,7 @@
   }
  } 
 }
-
+*/
 #road {
   line-color: @dark;
   line-join: round;
@@ -53,7 +53,7 @@
    [zoom>=15]{
    line-width: .8;
    line-dasharray: 1, 2;
-   line-comp-op: dst-over;
+ //  line-comp-op: dst-over;
    } 
   }
  } 
