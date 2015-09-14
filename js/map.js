@@ -157,7 +157,9 @@ transit.on('click', function (e) {
 poperide.on('click', function (e) {
   e.layer.closePopup();
   var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.name + '</strong>';
+  var content = '<div><strong>Pope Bike Ride</strong>' +
+          '<p>' + feature.properties.name + '</p></div>';
+
   info.innerHTML = content;
 });
 
@@ -165,7 +167,8 @@ parking.on('click', function (e) {
   e.layer.closePopup();
   var feature = e.layer.feature;
   var content = '<div><strong>' + feature.properties.name + '</strong>' +
-    '<p> Deadline to move vehicles: ' + feature.properties.desc + '</p>' +
+    '<p> Deadline to move vehicles: ' + '</p>' +
+    '<p>' +feature.properties.desc + '</p>' +
     '<p><a href="http://www.philapark.org/2015/09/the-papal-visit-what-the-ppa-is-doing/" target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
   info.innerHTML = content;
 });
