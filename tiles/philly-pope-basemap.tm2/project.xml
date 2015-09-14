@@ -55,10 +55,6 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 
-<Layer name="bridge"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
-
 <Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
   <Rule>
     <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="overlay" />
@@ -284,6 +280,10 @@
     <StyleName>road-line</StyleName>
     <StyleName>road-hatch</StyleName>  </Layer>
 
+<Layer name="bridge"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
 <Layer name="highways"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
@@ -299,26 +299,24 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>walking</StyleName>  </Layer>
 
-<Style name="authorized-veh-only-fri-6p" filter-mode="first">
+<Layer name="authorized-veh-only-fri-6p"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="authorized-vehicles-only" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <LineSymbolizer stroke-width="12" stroke="#000000" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" avoid-edges="true" minimum-padding="50" ><![CDATA[[category]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
     <LineSymbolizer stroke-width="8" stroke="#000000" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" avoid-edges="true" minimum-padding="50" ><![CDATA[[category]]]></TextSymbolizer>
   </Rule>
 </Style>
-<Layer name="authorized-veh-only-fri-6p"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>authorized-veh-only-fri-6p</StyleName>  </Layer>
-
 <Layer name="authorized-vehicles-only"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>authorized-vehicles-only</StyleName>  </Layer>
 
 <Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
   <Rule>
@@ -497,9 +495,15 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>road_label</StyleName>  </Layer>
 
+<Style name="authorized-vehicle-only_labels" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" avoid-edges="true" minimum-padding="50" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+</Style>
 <Layer name="authorized-vehicle-only_labels"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>authorized-vehicle-only_labels</StyleName>  </Layer>
 
 <Layer name="transit-stations"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">

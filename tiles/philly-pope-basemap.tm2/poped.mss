@@ -5,10 +5,11 @@
 @text: rgba(255, 255, 255,1);
 
 
-#authorized-veh-only-fri-6p {
+#authorized-vehicles-only {
   [zoom > 14]{
   line-color: @authorized;
   line-width: 4;
+ // line-comp-op: 
   [zoom < 17]{ line-width: 8; }
   [zoom >= 17]{ line-width: 12; }
   }

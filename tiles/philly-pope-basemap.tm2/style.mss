@@ -241,15 +241,15 @@ Map {
    }
   }
 }
-#authorized-veh-only-fri-6p {
+#authorized-vehicle-only_labels {
   [zoom >=15]{
-  text-name: [category];
+  text-name: [name];
   text-face-name: 'Arial Unicode MS Regular';
   text-placement: line;
   text-size: 9;
   text-transform: uppercase;
   text-fill:white;
- // text-halo-fill: black;
+  text-halo-fill: black;
  // text-comp-op: src-atop;
  // text-halo-radius: 1;
   text-avoid-edges: true;
