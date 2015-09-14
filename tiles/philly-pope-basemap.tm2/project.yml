@@ -34,22 +34,22 @@ layers:
 # polygon labels
   - parkway-ticketed-sunday.labels
   - traffic-boxes-fri-6-10pm.labels
-  - secure-vehicle-independence-fri-10p.labels
   - secure-perimeter-thur-10p.labels
   - secure-vehicle-perimeter-fri-10a.labels
   - secure-vehicle-perimeter-fri-10p_3857.labels
+  - secure-vehicle-independence-fri-10p.labels
   - independence-mall-secure-perimeter-sat-6am.labels
   - secure-perimeter-12-20th-6a.labels
 #polygons
   - traffic-boxes-fri-6-10pm
-  - secure-vehicle-independence-fri-10p
-  - secure-perimeter-thur-10p
   - secure-vehicle-perimeter-fri-10a
   - secure-vehicle-perimeter-fri-10p_3857
-  - independence-mall-secure-perimeter-sat-6am
+  - secure-vehicle-independence-fri-10p
   - secure-perimeter-12-20th-6a
+  - secure-perimeter-thur-10p
+  - independence-mall-secure-perimeter-sat-6am
   - parkway-ticketed-sunday
-  # basemap features
+# basemap features
   - curbproj
   - bridge
   - tunnel
