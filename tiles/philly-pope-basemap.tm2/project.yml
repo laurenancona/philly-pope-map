@@ -23,6 +23,7 @@ layers:
   - entrances
 # labels
   - highways.label
+  - water.label
   - authorized-vehicle-only_labels
   - road-label
 # lines
