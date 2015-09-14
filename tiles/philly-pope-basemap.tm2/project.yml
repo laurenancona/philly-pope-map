@@ -25,7 +25,6 @@ layers:
   - landuse
   - tunnel
   - curbproj
-  - bridge
   #polygons
   - secure-vehicle-perimeter-fri-10a
   - secure-vehicle-perimeter-fri-10p_3857
@@ -37,6 +36,7 @@ layers:
   - parkway-ticketed-sunday
 # lines
   - road
+  - bridge
   - highways
   - walking
   - authorized-veh-only-fri-6p
