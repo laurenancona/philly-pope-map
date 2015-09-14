@@ -119,15 +119,49 @@
       <!-- ADD MORE LINKS HERE-->
       <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
-          <a href="#about" class="mdl-tabs__tab is-active">About</a>
-          <a href="#options" class="mdl-tabs__tab">Options</a>
+          <a href="#options" class="mdl-tabs__tab is-active">Options</a>
+          <a href="#about" class="mdl-tabs__tab ">About</a>
         </div>
-        <div class="mdl-tabs__panel is-active" id="about">
+      <!-- TAB SELECTORS -->
+        <div class="mdl-tabs__panel is-active" id="options">
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="highways">
+            <input type="checkbox" id="highways" class="mdl-switch__input">
+            <span class="mdl-switch__label">Highways</span>
+          </label>
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="walking">
+            <input type="checkbox" id="walking" class="mdl-switch__input">
+            <span class="mdl-switch__label">Walking Routes</span>
+          </label>
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="screens">
+            <input type="checkbox" id="screens" class="mdl-switch__input">
+            <span class="mdl-switch__label">Jumbotrons</span>
+          </label>
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="hospitals">
+            <input type="checkbox" id="hospitals" class="mdl-switch__input">
+            <span class="mdl-switch__label">Hospitals</span>
+          </label>
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="transit">
+            <input type="checkbox" id="transit" class="mdl-switch__input">
+            <span class="mdl-switch__label">Transit <small>(more info soon)</small></span>
+          </label>     
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="entrances">
+            <input type="checkbox" id="entrances" class="mdl-switch__input">
+            <span class="mdl-switch__label">Festival Entrances</span>
+          </label>
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="poperide">
+            <input type="checkbox" id="poperide" class="mdl-switch__input">
+            <span class="mdl-switch__label">Pope Ride Bike Routes</span>
+          </label> 
+          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="parking">
+            <input type="checkbox" id="parking" class="mdl-switch__input">
+            <span class="mdl-switch__label">Parking/Towing Info</span>
+          </label>   
+        </div>
+<div class="mdl-tabs__panel" id="about">
           <p>This is an attempt to aggregate the myriad sources of publicly-released (analog) geodata published about the #PopeinPhilly visit. It should not be considered <em>official</em>, though it will be updated daily as changes are announced.</p>
 <script
   type="text/JavaScript"
   language="JavaScript">
-<!--
 //
 // format date as dd-mmm-yy
 // example: 12-Jan-99
@@ -219,42 +253,8 @@ document.write(
             <li>[x] Pope Bike Ride route <em><strong>added 9/10</strong></em></li>
           </ul>
         </div>
-        <div class="mdl-tabs__panel" id="options">
-<!--          <p>Coming soon: choose map layers</p>-->
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="highways">
-            <input type="checkbox" id="highways" class="mdl-switch__input">
-            <span class="mdl-switch__label">Highways</span>
-          </label>
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="walking">
-            <input type="checkbox" id="walking" class="mdl-switch__input">
-            <span class="mdl-switch__label">Walking Routes</span>
-          </label>
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="screens">
-            <input type="checkbox" id="screens" class="mdl-switch__input">
-            <span class="mdl-switch__label">Jumbotrons</span>
-          </label>
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="hospitals">
-            <input type="checkbox" id="hospitals" class="mdl-switch__input">
-            <span class="mdl-switch__label">Hospitals</span>
-          </label>
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="transit">
-            <input type="checkbox" id="transit" class="mdl-switch__input">
-            <span class="mdl-switch__label">Transit <small>(more info soon)</small></span>
-          </label>     
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="entrances">
-            <input type="checkbox" id="entrances" class="mdl-switch__input">
-            <span class="mdl-switch__label">Festival Entrances</span>
-          </label>
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="poperide">
-            <input type="checkbox" id="poperide" class="mdl-switch__input">
-            <span class="mdl-switch__label">Pope Ride Bike Routes</span>
-          </label> 
-          <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="parking">
-            <input type="checkbox" id="parking" class="mdl-switch__input">
-            <span class="mdl-switch__label">Parking/Towing Info</span>
-          </label>   
-        </div>
       </div>
+    </div> 
 <!--              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links to things</a>-->
         </nav>
       </div>
