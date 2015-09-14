@@ -29,21 +29,26 @@ mapLayers.push(walking);
 
 var screens = L.mapbox.featureLayer();//.addTo(map);
 screens.loadURL('data/jumbotrons.geojson');
+mapLayers.push(screens);
 
 var hospitals =  L.mapbox.featureLayer();//.addTo(map);
 hospitals.loadURL('data/hospitals.geojson');
+mapLayers.push(hospitals);
 
 var transit = L.mapbox.featureLayer(); //.addTo(map);
-transit.loadURL('data/transit-locations.geojson');
+transit.loadURL('data/transit-locations.geojson');mapLayers.push(transit);
 
 var entrances = L.mapbox.featureLayer(); //.addTo(map);
 entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
+mapLayers.push(entrances);
 
 var poperide = L.mapbox.featureLayer(); //.addTo(map);
 poperide.loadURL('data/poperide.geojson');
+mapLayers.push(poperide);
 
 var parking = L.mapbox.featureLayer().addTo(map);
 parking.loadURL('data/parking.geojson');
+mapLayers.push(parking);
 
 layerNames.forEach(function(item, index){
   var layer = mapLayers[index], layerName = layerNames[index];
@@ -191,27 +196,27 @@ map.on('move', empty);
 empty();
 
 function empty() {
-  info.innerHTML = '<div><p><strong>Choose layers at right, then click features for info</strong></p></div>';
+  info.innerHTML = '<div><p><strong>Choose layers at left, then click features for info</strong></p></div>';
 }
 
 //============================================================//
 
 // Layer control freak
-L.control.layers({
+//L.control.layers({
     // 'Friday': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map), //in case want to split by day
     // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8'),
     // 'Sunday': L.mapbox.tileLayer('laurenancona.fc7871b8')
-    }, {
-    'Jumbotrons': screens,
-    'Pedestrian routes': walking,
-    'Festival Entrances': entrances,
-    'Pope Bike Ride': poperide,
-    'Transit Stations': transit,
-    'Towing/Parking Deadlines': parking.addTo(map),
-    'Closed Highways': highways.addTo(map),
-    'Hospitals': hospitals
-    }
-    ).addTo(map);
+//    }, {
+//    'Jumbotrons': screens,
+//    'Pedestrian routes': walking,
+//    'Festival Entrances': entrances,
+//    'Pope Bike Ride': poperide,
+//    'Transit Stations': transit,
+//    'Towing/Parking Deadlines': parking.addTo(map),
+//    'Closed Highways': highways.addTo(map),
+//    'Hospitals': hospitals
+//    }
+//    ).addTo(map);
 
 // UTF Grid interactivity, testing w/ multiple layers
 //    var blocksTiles = blocks.addTo(map);
