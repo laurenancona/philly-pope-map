@@ -43,7 +43,7 @@ entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959
 mapLayers.push(entrances);
 
 var poperide = L.mapbox.featureLayer(); //.addTo(map);
-poperide.loadURL('data/poperide.geojson');
+poperide.loadURL('https://gist.githubusercontent.com/laurenancona/51985e88ee9e6df7355a/raw/bc1e5536e0cd01d167615bce9eff2a50bed881a0/poperide.geojson');
 mapLayers.push(poperide);
 
 var parking = L.mapbox.featureLayer().addTo(map);
