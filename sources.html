@@ -6,6 +6,7 @@
     var host = "phillypopemap.com";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
       window.location.protocol = "https";
+
   </script>
   <meta charset="UTF-8">
   <title>Philly Pope Map</title>
@@ -62,7 +63,7 @@
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6WFRN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <script>
-    (function (w, d, s, l, i) {
+    (function(w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({
         'gtm.start': new Date().getTime(),
@@ -76,21 +77,44 @@
         'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-W6WFRN');
+
   </script>
   <!-- End Google Tag Manager -->
 
   <style>
     /* these should be moved to main.css */
-    main { min-width: 600px; }
-    body { background: #fff; }
-    .mdl-layout__drawer { padding-left: 15px!important; padding-right: 10px; }
-    ul { font-size: 1em; line-height: 1.3em; }
-    p { font-size: 12px; line-height: 1.4em; }
+    
+    main {
+      min-width: 600px;
+    }
+    
+    body {
+      background: #fff;
+    }
+    
+    .mdl-layout__drawer {
+      padding-left: 15px!important;
+      padding-right: 10px;
+    }
+    
+    ul {
+      font-size: 1em;
+      line-height: 1.3em;
+    }
+    
+    p {
+      font-size: 12px;
+      line-height: 1.4em;
+    }
+    
     .mdl-layout__header-row,
-    .mdl-layout__drawer-button { color: white; }
+    .mdl-layout__drawer-button {
+      color: white;
+    }
     /* .mdl-switch {padding: 10px 10px;}*/
     /* .page-content {padding-top: } */
     /*  div {padding-bottom: 10px;} */
+
   </style>
 
   <div class="map-layout-transparent mdl-layout mdl-js-layout mdl-layout--drawer-button">
@@ -129,8 +153,8 @@
       <span class="side mdl-layout-title">Philly Pope Map</span>
       <nav class="mdl-navigation">
         <div>
-        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent" href="/">BACK TO MAP</a>
-        </div>  
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent" href="/">BACK TO MAP</a>
+        </div>
         <!-- ADD MORE LINKS HERE-->
         <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
           <div class="mdl-tabs__tab-bar">
@@ -164,7 +188,8 @@
           <div class="mdl" id="sources">
             <div class="mdl-grid">
               <div class="mdl-cell mdl-cell--2-col">
-                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent" href="/"> < BACK TO MAP</a>
+                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent" href="/">
+                  < BACK TO MAP</a>
               </div>
               <div class="mdl-cell mdl-cell--8-col" max-width="600px">
 
@@ -209,6 +234,10 @@
                   <li>
                     <a href="http://www.phillymag.com/citified/2015/09/02/secret-service-releases-official-pope-security-map" target="_blank">Secret Service Releases Official Pope Map</a>
                   </li>
+                </ul>
+                <h4>PhillyMag</h4>
+                <ul>
+                  <li><a href="http://www.phillymag.com/news/2015/09/14/septa-interactive-pope-map/">SEPTA Unveils New Interactive Pope Map</a></li>
                 </ul>
                 <h4>BillyPenn.com</h4>
                 <ul>
