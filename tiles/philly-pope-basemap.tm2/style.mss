@@ -15,12 +15,29 @@ Map {
 @water: rgb(12,105,149);
 @land: rgb(52,52,52);
 @curbs: rgba(217,217,217,0.3);
+@fill4: rgb(52,52,52);
 
 // Text
 @routes: 'Arial Unicode MS Regular';
 @bold: 'Arial Unicode MS Bold';
-
-
+/*
+#water {
+  ::shadow {
+    polygon-fill: mix(@land,@water,75);
+    
+  }
+  ::fill {
+    // a fill and overlay comp-op lighten the polygon-
+    // fill from ::shadow.
+    polygon-fill: @water;
+    comp-op: soft-light;
+    // blurring reveals the polygon fill from ::shadow around
+    // the edges of the water
+    image-filters: agg-stack-blur(10,10);
+    image-filters-inflate: true;
+  }
+}
+*/
 /*
 #POINT {
 [type='SEPTA']{

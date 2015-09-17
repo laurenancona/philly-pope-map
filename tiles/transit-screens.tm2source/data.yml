@@ -2,13 +2,13 @@ _prefs:
   disabled: []
   inspector: false
   mapid: laurenancona.b6b3d96e
-  rev: s-5ed5bbd3
+  rev: s-422bed0f
   saveCenter: true
 attribution: ''
 center: 
-  - -75.1642
-  - 39.9582
-  - 13
+  - -75.1848
+  - 39.984
+  - 12
 description: ''
 Layer: 
   - id: authorized-vehicles-only
@@ -156,6 +156,19 @@ Layer:
     properties: 
       "buffer-size": 18
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-maxzoom: 16
+  - id: septa-stations
+    Datasource: 
+      file: /Users/lancona/Documents/Github/laurenancona/philly-pope-map/_sources/septa-stations.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: ''
+    fields: 
+      cartodb_id: Number
+      description: String
+      name: String
+    properties: 
+      "buffer-size": 20
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 15
 minzoom: 12
 name: Transit & Screens

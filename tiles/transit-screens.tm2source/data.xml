@@ -3,10 +3,10 @@
 <Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
 
 <Parameters>
-  <Parameter name="center">-75.1642,39.9582,13</Parameter>
+  <Parameter name="center">-75.1848,39.984,12</Parameter>
   <Parameter name="format">pbf</Parameter>
-  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"authorized-vehicles-only","description":"","fields":{"cartodb_id":"Number","name":"String","descriptio":"String","created_at":"String","updated_at":"String","start_time":"String","allowed":"String","category":"String"}},{"id":"walking","description":"","fields":{"name":"String","description":"String","id":"Number","stroke":"String","stroke-width":"Number","stroke-opacity":"Number"}},{"id":"highways","description":"","fields":{"name":"String","stroke":"String","stroke-width":"Number","stroke-opacity":"Number"}},{"id":"transit-stations","description":"In-city transit stations","fields":{"name":"String","id":"Number","type":"String","desc":"String","Distance":"String","More Info":"String","lon":"Number","lat":"Number","Stations":"String","Tickets":"String","Fare":"String","Hours":"String","Accessible?":"String"}},{"id":"hospitals","description":"","fields":{"X":"Number","Y":"Number","ID":"String","name":"String","phone":"String","zip":"Number","address":"String","marker-color":"String","marker-size":"String","marker-symbol":"String"}},{"id":"entrances","description":"","fields":{"cartodb_id":"Number","name":"String","description":"String","ticketed":"String","marker-size":"String","marker-color":"String","marker-symbol":"String"}},{"id":"jumbotrons","description":"","fields":{"name":"String","styleUrl":"String","styleHash":"String","LAT":"String","LON":"String","LOCATION":"String","NUMBER":"String","ROTATE":"String","marker-symbol":"String","marker-size":"String","marker-color":"String"}},{"id":"authorized-vehicle-only_labels","description":"","fields":{"cartodb_id":"Number","name":"String","descriptio":"String","created_at":"String","updated_at":"String","start_time":"String","allowed":"String","category":"String"}}]}]]></Parameter>
-  <Parameter name="maxzoom">16</Parameter>
+  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"authorized-vehicles-only","description":"","fields":{"cartodb_id":"Number","name":"String","descriptio":"String","created_at":"String","updated_at":"String","start_time":"String","allowed":"String","category":"String"}},{"id":"walking","description":"","fields":{"name":"String","description":"String","id":"Number","stroke":"String","stroke-width":"Number","stroke-opacity":"Number"}},{"id":"highways","description":"","fields":{"name":"String","stroke":"String","stroke-width":"Number","stroke-opacity":"Number"}},{"id":"transit-stations","description":"In-city transit stations","fields":{"name":"String","id":"Number","type":"String","desc":"String","Distance":"String","More Info":"String","lon":"Number","lat":"Number","Stations":"String","Tickets":"String","Fare":"String","Hours":"String","Accessible?":"String"}},{"id":"hospitals","description":"","fields":{"X":"Number","Y":"Number","ID":"String","name":"String","phone":"String","zip":"Number","address":"String","marker-color":"String","marker-size":"String","marker-symbol":"String"}},{"id":"entrances","description":"","fields":{"cartodb_id":"Number","name":"String","description":"String","ticketed":"String","marker-size":"String","marker-color":"String","marker-symbol":"String"}},{"id":"jumbotrons","description":"","fields":{"name":"String","styleUrl":"String","styleHash":"String","LAT":"String","LON":"String","LOCATION":"String","NUMBER":"String","ROTATE":"String","marker-symbol":"String","marker-size":"String","marker-color":"String"}},{"id":"authorized-vehicle-only_labels","description":"","fields":{"cartodb_id":"Number","name":"String","descriptio":"String","created_at":"String","updated_at":"String","start_time":"String","allowed":"String","category":"String"}},{"id":"septa-stations","description":"","fields":{"cartodb_id":"Number","description":"String","name":"String"}}]}]]></Parameter>
+  <Parameter name="maxzoom">15</Parameter>
   <Parameter name="minzoom">12</Parameter>
   <Parameter name="name"><![CDATA[Transit & Screens]]></Parameter>
 </Parameters>
@@ -93,6 +93,17 @@
     
     <Datasource>
        <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/data/authorized-vehicle-only.geojson]]></Parameter>
+       <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
+       <Parameter name="type"><![CDATA[ogr]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="septa-stations"
+  buffer-size="20"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[/Users/lancona/Documents/Github/laurenancona/philly-pope-map/_sources/septa-stations.geojson]]></Parameter>
        <Parameter name="layer"><![CDATA[OGRGeoJSON]]></Parameter>
        <Parameter name="type"><![CDATA[ogr]]></Parameter>
     </Datasource>

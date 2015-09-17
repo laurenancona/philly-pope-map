@@ -17,8 +17,8 @@ format: "png8:m=h:c=32"
 interactivity_layer: laurenancona.b6b3d96e
 layers: 
   - waterway
-  - water
-  - philadelphia-city-limits
+  - water 
+  - Philadelphia_City_Limits
   - landuse
   - tunnel
   - curbproj
@@ -30,9 +30,11 @@ layers:
   - independence-mall-secure-perimeter-sat-6am
   - traffic-boxes-fri-6-10pm
   - parkway-ticketed-sunday
+  - GIS_PLANNING_Zipcodes
   - road
   - bridge
   - highways
+  - septa-stations
   - walking
   - authorized-veh-only-fri-6p
   - authorized-vehicles-only
@@ -44,11 +46,14 @@ layers:
   - secure-perimeter-thur-10p.labels
   - traffic-boxes-fri-6-10pm.labels
   - parkway-ticketed-sunday.labels
+  - philadelpiha_city_limits.shp.labels
   - water.label
   - highways.label
   - bridge.label
   - road_label
+  - septa-stations.label
   - authorized-vehicle-only_labels
+  - GIS_PLANNING_Zipcodes
   - transit-stations
   - jumbotrons
   - hospitals
