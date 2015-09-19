@@ -5,11 +5,14 @@
 # directorios
 /bower_components/
 /node_modules/
-/tiles/
 /polygons/
 /_sources/
 /img/icons/
 /data/authorized-vehicle-only
+/philly-pope-map.tm2
+/philly-pope-polygons.tm2
+/transit-screens.tm2source
+/transit-screens.tm2
 
 # filetypes
 *.qgs
