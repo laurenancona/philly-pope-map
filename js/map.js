@@ -8,7 +8,8 @@ var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons bas
   // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
   maxBounds: bounds,
   maxZoom: 17,
-  minZoom: 13
+  minZoom: 13,
+  center: [39.9572, -75.1575]
 })
 
 .addControl(L.mapbox.geocoderControl('mapbox.places', {
