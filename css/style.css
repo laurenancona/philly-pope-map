@@ -25,7 +25,7 @@ body {
 */
 
 #container {
-  overflow-x:hidden;
+/*  overflow-x:hidden;*/
   position: relative;
 }
 /*
@@ -207,7 +207,7 @@ position: fixed;
 /*  width: 100%;*/
   z-index: 100;
   margin-bottom: 0px;
-  overflow-x: hidden;
+/*  overflow-x: hidden;*/
   margin-right: 120px;
 
 }
@@ -218,7 +218,7 @@ position: fixed;
 }
 
 .info a {
-  color: red;
+/*  color: red;*/
   font-size: 0.9em;
 /*  text-decoration: none;*/
 }
