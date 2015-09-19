@@ -29,6 +29,7 @@
   line-color: @dark;
   line-join: round;
   line-opacity: 1;
+  line-comp-op: src-over;
   [zoom>14]{
   [class='street']{
   line-width: 3;

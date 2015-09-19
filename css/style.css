@@ -6,24 +6,6 @@ body {
   width: 100%;
 }
 
-/*
-#container {
-  position: absolute;
-  z-index: 1;
-  float: left;
-  max-width: 80%;
-  top: 30px;
-  left: 50px;
-  background-color: #404040;
-  padding: 8px 13px 8px 13px;
-  opacity: 0.9;
-  text-align: center;
-  font-family: 'Cabin', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1;
-}
-*/
-
 #container {
   overflow-x:hidden;
   position: relative;
@@ -262,5 +244,6 @@ position: fixed;
   @media only screen and (max-width : 992px) {
     header, main, footer, #map {
       padding-left: 0;
+      
     }
   }

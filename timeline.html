@@ -25,161 +25,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
-  <style>
-    body {
-      margin: 0;
-      background: #444;
-    }
-    
-    header {
-      padding: 10px;
-    }
-    
-    #timeline {
-      background: #444;
-      font-size: 12px;
-      line-height: 18px;
-      font-family: -apple-system-font, Arial;
-      min-width: 1200px;
-      position: relative;
-      margin-top: 50px;
-      padding-top: 5px;
-    }
-    
-    #timeline-header > div {
-      width: 11%;
-      float: left;
-      padding-left: 10px;
-      box-sizing: border-box;
-      padding: 3px 0;
-      text-align: center;
-      color: #aaa;
-    }
-    
-    #timeline-header > div.main {
-      color: #fff;
-      font-weight: bold;
-    }
-    
-    #timeline-content {
-      clear: both;
-      /*    height: 100%;*/
-    }
-    
-    #timeline-content > div {
-      position: relative;
-      height: 28px;
-    }
-    
-    .bar {
-      position: absolute;
-      background: #fff;
-      color: #000;
-      padding: 2px 0;
-      text-align: center;
-      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      box-sizing: border-box;
-      border-radius: 3px;
-      border: 1px solid transparent;
-    }
-    
-    .parking a, .driving a, .walking a, .transit a, .line a {
-      text-decoration: none!important;
-      color: #fff;
-    }
-
-    .parking {
-      background: rgba(111,197,219,0.8);
-      color: #444;
-    }
-    
-    .driving {
-      background: rgba(248,133,128,0.8);
-      color: #444
-    }
-    
-    .walking {
-      background: rgba(229,235,47,0.8);
-      color: #444;
-    }
-    
-    .transit {
-      background: rgba(255,138,43,0.8);
-      color: #444;
-    }
-    
-    .line {
-      position: absolute;
-      display: block;
-      width: 1px;
-      background: #888;
-      height: 100%;
-    }
-    
-    .line.sub {
-      background: repeating-linear-gradient(180deg, transparent, transparent 3px, #666 3px, #666 4px);
-    }
-    
-    h1 {
-      color: white;
-      font-size: 18px;
-      line-height: 24px;
-      padding: 0 10px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      font-family: -apple-system-font, Arial;
-    }
-    
-    .mdl-layout__drawer {
-      padding-left: 15px!important;
-      padding-right: 10px;
-      background-color: #444;
-      color: #fff;
-      display: none;
-    }
-    
-    ul {
-      font-size: 10px;
-      line-height: 1.3em;
-    }
-    
-    p {
-      font-size: 12px;
-      line-height: 1.4em;
-    }
-    
-    .mdl-layout__header-row,
-    .mdl-layout__drawer-button {
-      color: white;
-    }
-    
-    .mdl-switch__label {
-      font-size: 1em;
-      font-weight: normal;
-    }
-    
-    .mdl-tabs__panel {
-      padding-top: 20px;
-    }
-    
-    .pad {
-      margin-bottom: 10px;
-    }
-    /* .mdl-switch {padding: 10px 10px;}*/
-    /* .page-content {padding-top: } */
-    /* div {padding-bottom: 10px;} */
-    
-    .mdl-layout__drawer>.mdl-layout-title {
-      padding-left: 20px!important;
-    }
-    .pull-right {
-      float: right;
-      position: relative;
-      margin-top: 10px;
-    }
-  </style>
+<link rel="stylesheet" href="css/timeline.css">
 </head>
 <body>
   <!-- LA Google Tag Manager, of course -->
@@ -192,8 +38,15 @@
   })(window,document,'script','dataLayer','GTM-W6WFRN');</script>
 <!-- End Google Tag Manager -->
   <header>
-    <h1 style="margin-left: 10px;">Philly Pope Map: Timeline</h1>
-      <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent" style="float:right;" href="/"> VIEW MAP</a>
+    <div>
+    <a href="/" target="_blank"><img src="img/popemapthumbnail.png"/><h1>Philly Pope Map: Timeline</h1></a>
+      <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent" id="view-map"  href="/"> VIEW MAP</a>
+   <div id="key">
+     <span class="parking">Parking</span>
+     <span class="driving">Driving</span>
+     <span class="walking">Walking</span>
+     <span class="transit">Transit</span>
+  </div>
     </div>
   </header>
   <div id="timeline">
@@ -212,8 +65,12 @@
     <div style="clear:both;" </div>
     </div>
   </div>
-  </main>
-  <script>
+  <div id="contact">
+    <div><img src="img/codeforliberty.png"/></div>
+    <p>Made with <img src="img/heart-12.png"/> in Philadelphia by <a  href="https://twitter.com/laurenancona" >Lauren Ancona</a> & <a href="https://twitter.com/thomasfuchs">Thomas Fuchs</a>
+  </p>
+  </div>
+<script>
     (function () {
       var $tl = document.getElementById('timeline-content');
 

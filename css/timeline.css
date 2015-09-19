@@ -1,0 +1,324 @@
+    body {
+      margin: 0;
+      background: #444;
+    }
+    
+    header {
+      padding: 10px 0px 10px 10px!important;
+    }
+    
+    header a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    header img {
+      top: 0px;
+      left: 0px;
+      margin: 15px 0px 0px 15px;
+      width: 30px;
+      position: fixed;
+    }
+    
+    header h1 {}
+    
+    header > button {
+      margin: 20px 10px!important;
+      top: 0px;
+      float: right;
+      position: absolute;
+    }
+    
+    #key {
+      text-transform: uppercase;
+      top: 50px;
+      left: 50px;
+      position: fixed;
+      height: 30px;
+      font-size: 10px;
+      color: #fff;
+      padding: 10px 3px;
+    }
+    
+    #key .parking {
+      max-width: 50px;
+      font-weight: bold;
+      width: 25%;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    
+    #key .driving {
+      max-width: 50px;
+      font-weight: bold;
+      width: 25%;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    
+    #key .walking {
+      max-width: 50px;
+      font-weight: bold;
+      width: 25%;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    
+    #key .transit {
+      max-width: 50px;
+      font-weight: bold;
+      width: 25%;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    
+    #contact {
+      float: right;
+      position: fixed;
+      margin: 20px 0px 20px 20px!important;
+      color: #aaa;
+      padding: 12px 0px 0px 0px;
+      max-width: 300px;
+    }
+    
+    #contact p {
+      padding-top: 5px!important;
+      margin: 0px auto;
+    }
+    
+    #contact > a {
+      text-decoration: none!important;
+    }
+    
+    #contact > img {
+      margin-top: -4px;
+    }
+    
+    #contact > div > img {
+      right: 0px;
+      padding: 10px;
+      position: fixed;
+    }
+    
+    #timeline {
+      background: #4D4D4D;
+      font-size: 12px;
+      line-height: 18px;
+      font-family: -apple-system-font, Arial;
+      min-width: 1200px;
+      position: relative;
+      margin-top: 80px;
+      padding-top: 5px;
+    }
+    
+    #timeline-header > div {
+      width: 11%;
+      float: left;
+      box-sizing: border-box;
+      padding: 3px 0;
+      text-align: center;
+      color: #aaa;
+    }
+    
+    #timeline-header > div.main {
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    #timeline-content {
+      clear: both;
+      /*    height: 100%;*/
+      margin-bottom: 10px;
+    }
+    
+    #timeline-content > div {
+      position: relative;
+      height: 28px;
+    }
+    
+    .bar {
+      position: absolute;
+      background: #fff;
+      color: #000;
+      padding: 2px 0;
+      text-align: center;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      box-sizing: border-box;
+      border-radius: 3px;
+      border: 1px solid transparent;
+    }
+    
+    .parking a,
+    .driving a,
+    .walking a,
+    .transit a,
+    .line a {
+      text-decoration: none!important;
+      color: #2a2a2a;
+      font-weight: bold;
+    }
+    
+    .parking {
+      background: rgba(242, 185, 12, 0.8);
+      color: #444;
+    }
+    
+    .driving {
+      background: rgba(242, 139, 12, 0.8);
+      color: #444
+    }
+    
+    .walking {
+      background: rgba(242, 96, 12, 0.8);
+      color: #444;
+    }
+    
+    .transit {
+      background: rgba(242, 54, 12, 0.8);
+      color: #444;
+    }
+    
+    .line {
+      position: absolute;
+      display: block;
+      width: 1px;
+      background: #888;
+      height: 100%;
+    }
+    
+    .line.sub {
+      background: repeating-linear-gradient(180deg, transparent, transparent 3px, #666 3px, #666 4px);
+    }
+    
+    h1 {
+      color: white;
+      font-size: 18px;
+      line-height: 24px;
+      padding: 0 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      font-family: -apple-system-font, Arial;
+      font-weight: bold;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+    
+    ul {
+      font-size: 10px;
+      line-height: 1.3em;
+    }
+    
+    p {
+      font-size: 12px;
+      line-height: 1.4em;
+    }
+    
+    body a {
+      text-decoration: none;
+    }
+    
+    .mdl-layout__header-row,
+    .mdl-layout__drawer-button {
+      color: white;
+    }
+    
+    .mdl-switch__label {
+      font-size: 1em;
+      font-weight: normal;
+    }
+    
+    .mdl-tabs__panel {
+      padding-top: 20px;
+    }
+    
+    #view-map {
+      margin: 20px;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+    }
+    
+    .pad {
+      margin-bottom: 10px;
+    }
+    /* .mdl-switch {padding: 10px 10px;}*/
+    /* .page-content {padding-top: } */
+    /* div {padding-bottom: 10px;} */
+    
+    .mdl-layout__drawer>.mdl-layout-title {
+      padding-left: 20px!important;
+    }
+    
+    .st0 {
+      fill: #595A5C;
+    }
+    
+    .st1 {
+      fill: #231F20;
+      stroke: #000000;
+      stroke-miterlimit: 10;
+    }
+    
+    .st2 {
+      fill: #D1D2D3;
+    }
+    
+    .st3 {
+      fill: none;
+      stroke: #231F20;
+      stroke-width: 27;
+      stroke-linecap: square;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+    
+    .st4 {
+      fill: #FFFFFF;
+    }
+    
+    .st5 {
+      fill: #231F20;
+    }
+    
+    .st6 {
+      fill: none;
+      stroke: #231F20;
+      stroke-width: 27;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+    
+    .st7 {
+      display: none;
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 5;
+      stroke-miterlimit: 10;
+    }
+    
+    .st8 {
+      fill: none;
+    }
+    
+    .st9 {
+      fill: #FFFFFF;
+      stroke: #231F20;
+      stroke-miterlimit: 10;
+    }
+    
+    .st10 {
+      fill: #ABABAB;
+    }
+    
+    .st11 {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-miterlimit: 10;
+    }
+    
+    .st12 {
+      fill: #808184;
+    }
