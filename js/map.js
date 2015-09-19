@@ -211,7 +211,7 @@ function empty() {
 //        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
 
 var hash = L.hash(map); // append (z)/(x)/(y) to URL for deep linking to locations
-map.setView([39.9572, -75.1575], 14);
+//map.setView([39.9572, -75.1575], 14);
 
 
 // ht @konklone for console.log-fication example
