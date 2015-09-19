@@ -32,7 +32,7 @@
 
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
   <link href='css/mapbox.css' rel='stylesheet' />
-<!--  <link rel="shortcut icon" href="//laurenancona.com/LA-Icon-2014_red_favi.ico" type="image/x-icon">-->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link href="css/style.css" type="text/css" rel='stylesheet'>
 <!--  <link rel="stylesheet" href="css/font-awesome.min.css">-->
 
@@ -78,46 +78,14 @@
     font-family: -apple-system-font, Arial;
     }
     .mdl-layout__drawer>.mdl-layout-title  {
-      padding-left: 20px!important;
+      margin-left: -20px!important;
     }
   </style>
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-<!--
-      <header class="mdl-layout__header">
-        <div class="mdl-layout-icon"></div>
--->
-<!--        <div class="mdl-layout__header-row">-->
-          <!-- Title -->
-<!--          <span class="mdl-layout-title" href="/">Philly Pope Map</span>-->
-          <!-- Add spacer, to align navigation to the right -->
-<!--          <div class="mdl-layout-spacer"></div>-->
-
-
-<!--           Navigation -->
-<!--          <nav class="mdl-navigation">-->
-<!--            <a class="mdl-navigation__link"></a>-->
-<!--            <div>-->
-<!--              <a class="mdl-navigation__link" href="http://www.link-to-something.html" />Optional Links</a>-->
-<!--            </div>-->
-<!--          </nav>-->
-<!--
-            <button class="map-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-                <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-              <li class="mdl-menu__item">One</li>
-              <li class="mdl-menu__item">Two</li>
-              <li disabled class="mdl-menu__item">Three</li>
-              <li class="mdl-menu__item">Four</li>
-            </ul>
--->
-<!--        </div>-->
-<!--      </header>-->
-
     <!-- SIDE DRAWER MENU -->
       <div class="mdl-layout__drawer">
-        <span class="side mdl-layout-title">Philly Pope Map</span>
+        <span class="side mdl-layout-title"><img src="/img/popemapthumbnail.png" width="40px"/>Philly Pope Map</span>
         <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent"  href="/timeline.html"> VIEW TIMELINE</a>
       <nav class="mdl-navigation">
       <!-- ADD MORE LINKS HERE-->
@@ -164,6 +132,11 @@
 <div class="mdl-tabs__panel" id="about">
           <p>This is an attempt to aggregate the myriad sources of publicly-released (analog) geodata published about the #PopeInPhilly visit. It should not be considered <em>official</em>, though it will be updated daily as changes are announced.</p>
 
+  <strong>Contributors: </strong>
+    <li><a href="https://twitter.com/laurenancona" target="_blank">Lauren Ancona</a></li>
+    <li><a href="https://twitter.com/thomasfuchs" target="_blank">Thomas Fuchs</a></li>
+    <li><a href="https://twitter.com/mjumbewu" target="_blank">Mjumbe Poe</a></li>
+  <div
 <script
   type="text/JavaScript"
   language="JavaScript">
@@ -232,9 +205,8 @@ function date_lastmodified()
 document.write(
   "<p>Last updated:  " +
   date_lastmodified() + ".</p>" );
-
-// -->
 </script>
+        </div>
         <p>Have an idea? <a href="https://twitter.com/laurenancona" />Feedback</a> is welcome, as is help updating layers.</p>
           <a class="" href="/sources.html">
             Sources
@@ -280,8 +252,9 @@ document.write(
             <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css' rel='stylesheet' />
             <div id='info' class='info'></div>
             </div>
+            <div id="icons">
+            </div>
             <script src='js/map.js'></script>
-<!--            <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>-->
 <!--            </div>-->
 <!--            <div class="mdl-cell mdl-cell--12-col" id="data-table">-->
               <!-- Add fixed footer here-->
