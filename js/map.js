@@ -1,15 +1,16 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 // Construct a bounding box
-var southWest = L.latLng(39.864439, -75.387541),
-    northEast = L.latLng(40.156325, -74.883544),
-    bounds = L.latLngBounds(southWest, northEast);
+//var southWest = L.latLng(39.864439, -75.387541),
+//    northEast = L.latLng(40.156325, -74.883544),
+//    bounds = L.latLngBounds(southWest, northEast);
 
 var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons baselayer
   // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
-  maxBounds: bounds,
+//  maxBounds: bounds,
   maxZoom: 17,
   minZoom: 13,
-  center: [39.9572, -75.1575]
+  center: [39.9572, -75.1575],
+  zoom: 14
 })
 
 .addControl(L.mapbox.geocoderControl('mapbox.places', {
@@ -38,7 +39,8 @@ hospitals.loadURL('data/hospitals.geojson');
 mapLayers.push(hospitals);
 
 var transit = L.mapbox.featureLayer(); //.addTo(map);
-transit.loadURL('data/transit-locations.geojson');mapLayers.push(transit);
+transit.loadURL('data/transit-locations.geojson');
+mapLayers.push(transit);
 
 var entrances = L.mapbox.featureLayer(); //.addTo(map);
 entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
@@ -91,7 +93,9 @@ change();*/
 // Locate user
 L.control.locate().addTo(map);
 
-map.fitBounds(bounds); // zoom/snap the map to that bounding box
+//map.fitBounds(bounds); // zoom/snap the map to that bounding box
+
+//map.setView([39.9572, -75.1575], 14);
 
 
 // I do not want to do this:
@@ -212,7 +216,6 @@ function empty() {
 //        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
 
 var hash = L.hash(map); // append (z)/(x)/(y) to URL for deep linking to locations
-//map.setView([39.9572, -75.1575], 14);
 
 
 // ht @konklone for console.log-fication example
