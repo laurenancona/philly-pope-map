@@ -18,7 +18,8 @@ var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons bas
 var mapLayers = [],
     layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking']
 
-//// Here be our data layers
+// Here be our data layers
+
 var highways = L.mapbox.featureLayer(); //.addTo(map);
 highways.loadURL('data/highways.geojson');
 mapLayers.push(highways);
@@ -202,25 +203,6 @@ function empty() {
   info.innerHTML = '<div><p><strong>Choose layers at left, then click features for info</strong></p></div>';
 }
 
-//============================================================//
-
-// Layer control freak
-//L.control.layers({
-    // 'Friday': L.mapbox.tileLayer('laurenancona.mgb93lh3').addTo(map), //in case want to split by day
-    // 'Saturday': L.mapbox.tileLayer('laurenancona.fc7871b8'),
-    // 'Sunday': L.mapbox.tileLayer('laurenancona.fc7871b8')
-//    }, {
-//    'Jumbotrons': screens,
-//    'Pedestrian routes': walking,
-//    'Festival Entrances': entrances,
-//    'Pope Bike Ride': poperide,
-//    'Transit Stations': transit,
-//    'Towing/Parking Deadlines': parking.addTo(map),
-//    'Closed Highways': highways.addTo(map),
-//    'Hospitals': hospitals
-//    }
-//    ).addTo(map);
-
 // UTF Grid interactivity, testing w/ multiple layers
 //    var blocksTiles = blocks.addTo(map);
     var infoGrid = L.mapbox.gridLayer('laurenancona.2ff8c154').addTo(map); //,
@@ -229,7 +211,7 @@ function empty() {
 //        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
 
 var hash = L.hash(map); // append (z)/(x)/(y) to URL for deep linking to locations
-map.setView([39.9581, -75.1657], 14);
+map.setView([39.9572, -75.1575], 14);
 
 
 // ht @konklone for console.log-fication example
