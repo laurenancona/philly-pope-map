@@ -7,7 +7,7 @@
 /node_modules/
 /tiles/
 /polygons/
-/sources/
+/_sources/
 /img/icons/
 /data/authorized-vehicle-only
 
@@ -23,3 +23,7 @@ css/geojson.io.mhtml
 img/add to homescreen thumbnails.ai
 
 data/authorized-vehicle-only.zip
+
+data/transit-lines.geojson
+
+test/test-septa.html
