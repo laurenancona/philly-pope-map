@@ -13,8 +13,8 @@
 /philly-pope-polygons.tm2/
 /transit-screens.tm2source/
 /transit-screens.tm2/
-/icons/
-/fonts/
+*./icons/
+*./fonts/
 # filetypes
 *.qgs
 *.bak
