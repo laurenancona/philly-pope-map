@@ -9,11 +9,12 @@
 /_sources/
 /img/icons/
 /data/authorized-vehicle-only
-/philly-pope-map.tm2
-/philly-pope-polygons.tm2
-/transit-screens.tm2source
-/transit-screens.tm2
-/icons
+/philly-pope-map.tm2/
+/philly-pope-polygons.tm2/
+/transit-screens.tm2source/
+/transit-screens.tm2/
+/icons/
+/fonts/
 # filetypes
 *.qgs
 *.bak
