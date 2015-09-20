@@ -15,9 +15,11 @@
 /transit-screens.tm2/
 /tiles/philly-pope-basemap.tm2/icons/
 /tiles/philly-pope-basemap.tm2/fonts/
+
 # filetypes
 *.qgs
 *.bak
+*.ai
 
 # files
 dailymaps.pdf
