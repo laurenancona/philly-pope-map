@@ -40,8 +40,9 @@
 <!-- End Google Tag Manager -->
   <header>
     <div>
-    <a href="/" target="_blank"><img src="img/popemapthumbnail.png"/><h1>Philly Pope Map: Timeline</h1></a>
-      <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent" id="view-map"  href="/"> VIEW MAP</a>
+    <a href="/" target="_blank"><img src="img/popemapthumbnail.png"/><small><p class="header--small">Philly Pope Map</p></small>
+      <h1>Timeline</h1></a>
+      <a id="view-map"  href="/"> VIEW MAP</a>
    <div id="key">
      <span class="parking">Parking</span>
      <span class="driving">Driving</span>
@@ -63,14 +64,15 @@
       <div>Mon Sep 28</div>
     </div>
     <div id="timeline-content"></div>
-    <div style="clear:both;" </div>
-    </div>
+    <div style="clear:both;">
+      <div id="contact">
+<!--    <div><img src="img/codeforliberty.png"/></div>-->
+    <p><small>Made with <img src="img/heart-12.png"/> in Philadelphia by <a  href="https://twitter.com/laurenancona" >Lauren Ancona</a> & <a href="https://twitter.com/thomasfuchs">Thomas Fuchs</a></small></p>
+      </div>
+      </div>
   </div>
-  <div id="contact">
-    <div><img src="img/codeforliberty.png"/></div>
-    <p>Made with <img src="img/heart-12.png"/> in Philadelphia by <a  href="https://twitter.com/laurenancona" >Lauren Ancona</a> & <a href="https://twitter.com/thomasfuchs">Thomas Fuchs</a>
-  </p>
   </div>
+  
 <script>
     (function () {
       var $tl = document.getElementById('timeline-content');

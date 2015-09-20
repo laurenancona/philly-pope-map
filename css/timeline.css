@@ -20,7 +20,9 @@
       position: fixed;
     }
     
-    header h1 {}
+    header h1 {
+    padding-top: 5px;
+    }
     
     header > button {
       margin: 20px 10px!important;
@@ -28,11 +30,17 @@
       float: right;
       position: absolute;
     }
+
+.header--small {
+  text-transform: uppercase;
+  margin: 8px 0px 0px 40px;
+  font-size: 8px;
+  position: fixed;
+}
     
     #key {
       text-transform: uppercase;
       top: 50px;
-      left: 50px;
       position: fixed;
       height: 30px;
       font-size: 10px;
@@ -73,11 +81,12 @@
     }
     
     #contact {
-      float: right;
+      left: -8x;
+      bottom: 8px;
       position: fixed;
-      margin: 20px 0px 20px 20px!important;
+      margin: 15px 0px 20px 20px!important;
       color: #aaa;
-      padding: 12px 0px 0px 0px;
+      padding: 10px 0px 0px 0px;
       max-width: 300px;
     }
     
@@ -107,7 +116,7 @@
       font-family: -apple-system-font, Arial;
       min-width: 1200px;
       position: relative;
-      margin-top: 80px;
+      margin-top: 70px;
       padding-top: 5px;
     }
     
@@ -234,11 +243,25 @@
     }
     
     #view-map {
-      margin: 20px;
+      margin: 20px 10px;
       position: fixed;
       right: 0px;
       top: 0px;
+      text-transform: uppercase;
+      height: 20px;
+      font-size: 10px;
+      color: #444;
+      font-weight: bold;
+      padding: 3px 5px;
+      border-radius: 3px;
+      background: rgb(64,196,255);
     }
+
+.mdl-button .mdl-js-button .mdl-button--raised .mdl-button--colored .mdl-button--accent {
+  padding: 4px 0px!important;
+  line-height: 27px!important;
+  height: 25px!important;
+}
     
     .pad {
       margin-bottom: 10px;
