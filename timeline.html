@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/ShareButton.css">
+  <script src="js/ShareButton.js"
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
 </head>
 <body>
@@ -44,6 +46,16 @@
       <a href="/" target="_blank"><img src="img/popemapthumbnail.png"/><small><p class="header--small">Philly Pope Map</p></small>
       <h1>Timeline</h1></a>
       <a id="view-map" href="/">VIEW MAP</a>
+      <share-button id="share">SHARE</share-button>
+      <script>
+        new ShareButton({
+          networks: {
+            facebook: {
+              app_id: "843077295784066"
+            }
+          }
+        });
+      </script>
       <div id="key">
          <span class="parking">Parking</span>
          <span class="driving">Driving</span>
