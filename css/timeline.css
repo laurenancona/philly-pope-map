@@ -1,6 +1,6 @@
     body {
       margin: 0;
-      background: #444;
+      background: #555;
     }
     
     header {
@@ -15,36 +15,69 @@
     header img {
       top: 0px;
       left: 0px;
-      margin: 15px 0px 0px 15px;
+      margin: 15px 0px 0px 10px;
       width: 30px;
       position: fixed;
     }
     
     header h1 {
-    padding-top: 5px;
+      padding-top: 5px;
     }
     
     header > button {
-      margin: 20px 10px!important;
+      margin: 10px 10px!important;
       top: 0px;
       float: right;
       position: absolute;
     }
+    
+    .header--small {
+      text-transform: uppercase;
+      margin: 5px 0px 0px 35px;
+      font-size: 8px;
+      position: fixed;
+    }
+    
+    #view-map {
+      margin: 12px 10px;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      text-transform: uppercase;
+      height: 20px;
+      font-size: 10px;
+      color: #222;
+      font-weight: bold;
+      padding: 3px 5px;
+      border-radius: 3px;
+      background: rgba(64, 196, 255, 0.8);
+      width: 55px;
+      text-align: center;
+    }
 
-.header--small {
-  text-transform: uppercase;
-  margin: 8px 0px 0px 40px;
-  font-size: 8px;
-  position: fixed;
-}
+    #share {
+      margin: 50px 10px;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      text-transform: uppercase;
+      height: 20px;
+      font-size: 10px;
+      color: #222;
+      font-weight: bold;
+      padding: 3px 5px;
+      border-radius: 3px;
+      background: rgba(242,54,12, 0.8);
+      width: 55px;
+      text-align: center;
+    }
     
     #key {
       text-transform: uppercase;
-      top: 50px;
+      top: 47px;
       position: fixed;
       height: 30px;
       font-size: 10px;
-      color: #fff;
       padding: 10px 3px;
     }
     
@@ -54,6 +87,7 @@
       width: 25%;
       padding: 3px 5px;
       border-radius: 3px;
+      color: #222;
     }
     
     #key .driving {
@@ -62,6 +96,7 @@
       width: 25%;
       padding: 3px 5px;
       border-radius: 3px;
+      color: #222;
     }
     
     #key .walking {
@@ -70,6 +105,7 @@
       width: 25%;
       padding: 3px 5px;
       border-radius: 3px;
+      color: #222;
     }
     
     #key .transit {
@@ -78,6 +114,7 @@
       width: 25%;
       padding: 3px 5px;
       border-radius: 3px;
+      color: #222;
     }
     
     #contact {
@@ -210,7 +247,7 @@
       left: 0;
       font-family: -apple-system-font, Arial;
       font-weight: bold;
-      margin-left: 40px;
+      margin-left: 35px;
       margin-top: 20px;
     }
     
@@ -242,26 +279,11 @@
       padding-top: 20px;
     }
     
-    #view-map {
-      margin: 20px 10px;
-      position: fixed;
-      right: 0px;
-      top: 0px;
-      text-transform: uppercase;
-      height: 20px;
-      font-size: 10px;
-      color: #444;
-      font-weight: bold;
-      padding: 3px 5px;
-      border-radius: 3px;
-      background: rgb(64,196,255);
+    .mdl-button .mdl-js-button .mdl-button--raised .mdl-button--colored .mdl-button--accent {
+      padding: 4px 0px!important;
+      line-height: 27px!important;
+      height: 25px!important;
     }
-
-.mdl-button .mdl-js-button .mdl-button--raised .mdl-button--colored .mdl-button--accent {
-  padding: 4px 0px!important;
-  line-height: 27px!important;
-  height: 25px!important;
-}
     
     .pad {
       margin-bottom: 10px;
