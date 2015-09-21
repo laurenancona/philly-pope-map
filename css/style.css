@@ -224,7 +224,12 @@ position: fixed;
 
 .li a{
 /*  font-size: 1.6em!important;*/
-  
+
+}
+
+body.hovering .mapboxgl-canvas-container.mapboxgl-interactive,
+body.hovering .mapboxgl-ctrl-nav-compass {
+  cursor: pointer;
 }
 
 .ui-select {

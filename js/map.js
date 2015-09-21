@@ -17,6 +17,31 @@ var PopeMap = PopeMap || {};
       center: [-75.1575, 39.9572],
       zoom: 14
     });
+
+    map.on('mousemove', function(evt) {
+      map.featuresAt(evt.point, {radius: 5}, function(err, features) {
+          if (err) throw err;
+
+          if (features.length > 0) {
+            document.body.classList.add('hovering');
+          } else {
+            document.body.classList.remove('hovering');
+          }
+      });
+
+    });
+
+    map.on('click', function(evt) {
+      // Find what was clicked on
+      map.featuresAt(evt.point, {radius: 5}, function(err, features) {
+          if (err) throw err;
+
+          if (features.length > 0) {
+            console.log(features[0]);
+          }
+      });
+
+    });
   };
 
   PopeMap.initClassicMap = function() {
