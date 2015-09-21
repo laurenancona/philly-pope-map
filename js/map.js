@@ -225,11 +225,13 @@ var PopeMap = PopeMap || {};
         break;
 
       case 'poperide':
+      case 'poperide.i':
         content = '<div><strong>Pope Bike Ride</strong>' +
           '<p>' + feature.properties.name + '</p></div>';
         break;
 
       case 'parking':
+      case 'parking.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           '<p> Deadline to move vehicles: ' + '</p>' +
           '<p>' +feature.properties.desc + '</p>' +
@@ -237,6 +239,7 @@ var PopeMap = PopeMap || {};
         break;
 
       case 'highways':
+      case 'highways.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           '<p> Closed to inbound traffic</p></div>';
         break;
@@ -247,6 +250,11 @@ var PopeMap = PopeMap || {};
           '<p>' + feature.properties.address + '</p>' +
           '<p> PHILADELPHIA, PA ' + feature.properties.zip + '</p>' +
           '<p>' + feature.properties.phone + '</p></div>';
+        break;
+
+      default:
+        content = '<div><strong>' + feature.properties.name + '</strong>' +
+          '<p>' + feature.properties.description + '</p>';
         break;
     }
     info.innerHTML = content;
