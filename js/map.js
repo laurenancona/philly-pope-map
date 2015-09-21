@@ -17,6 +17,9 @@ var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons bas
   autocomplete: true
 }));
 
+//var secureareas = L.mapbox.featureLayer().addTo(map);
+//secureareas.loadURL('data/secure-areas.geojson')
+
 var mapLayers = [],
     layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking']
 
@@ -64,80 +67,8 @@ layerNames.forEach(function(item, index){
   });
 });
 
-
-/*var filters = document.getElementById('filters');
-var checkboxes = document.getElementsByClassName('filter');
-
-function change() {
-  // Find all checkboxes that are checked and build a list of their values
-  var on = [];
-  for (var i = 0; i < checkboxes.length; i++) {
-    if (checkboxes[i].checked) on.push(checkboxes[i].value);
-  }
-  // The filter function takes a GeoJSON feature object
-  // and returns true to show it or false to hide it.
-  map.featureLayer.setFilter(function (f) {
-    // check each marker's symbol to see if its value is in the list
-    // of symbols that should be on, stored in the 'on' array
-    return on.indexOf(f.properties['marker-symbol']) !== -1;
-  });
-  return false;
-}
-
-// When the form is touched, re-filter markers
-filters.onchange = change;
-// Initially filter the markers
-change();*/
-
-
 // Locate user
 L.control.locate().addTo(map);
-
-//map.fitBounds(bounds); // zoom/snap the map to that bounding box
-//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        map.fitBounds(bounds); // zoom/snap the map to that bounding box
-
-//map.setView([39.9572, -75.1575], 14);
-
-
-// I do not want to do this:
-
-// var points = L.mapbox.tileLayer('laurenancona.4ae9c933').addTo(map);
-// blocks = L.mapbox.tileLayer('laurenancona.fc7871b8'),
-// legend = map.legendControl.addLegend(document.getElementById('legend').innerHTML); // add legend
-// lots = L.mapbox.featureLayer('').addTo(map);
-
-// Set our icon styles
-//var screenIcon = L.icon({
-//			iconUrl: 'img/icons/square-18.png',
-//			iconSize: [15, 15],
-//            color: '#FFF',
-//			iconAnchor: [16, 37],
-//			popupAnchor: [0, -28]
-//		});
-//
-//function onEachFeature(feature, layer) {
-//			var popupContent = "<p>I started out as a GeoJSON " +
-//				  feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
-//
-//			if (feature.properties && feature.properties.name) {
-//				  popupContent += feature.properties.name;
-//			}
-//
-//			layer.bindPopup(popupContent);
-//		}
-//
-//
-//var screenLayer = L.geoJson(screens, {
-//
-//			pointToLayer: function (feature, latlng) {
-//			   return L.marker(latlng, {icon: screenIcon});
-//			},
-//
-//			onEachFeature: onEachFeature
-//		}).addTo(map);
-
-
-
 
 //============================================================//
 
