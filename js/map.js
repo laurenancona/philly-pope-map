@@ -6,6 +6,33 @@ var PopeMap = PopeMap || {};
   var map;
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 
+  var interactivePattern = /\.i$/;
+  var isInteractive = function(feature) {
+    var layerName = feature.layer.id;
+    if (interactivePattern.test(layerName)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  var featuresAt = function(map, point, options, callback) {
+    var hijacked = function(err, features) {
+      var filteredFeatures = [];
+      var i;
+
+      for (i = 0; i < features.length; i++) {
+        if (isInteractive(features[i])) {
+          filteredFeatures.push(features[i]);
+        }
+      }
+
+      callback(err, filteredFeatures);
+    };
+
+    map.featuresAt(point, options, hijacked);
+  };
+
   PopeMap.initFancyMap = function() {
     mapboxgl.accessToken = accessToken;
     map = new mapboxgl.Map({
@@ -19,26 +46,30 @@ var PopeMap = PopeMap || {};
     });
 
     map.on('mousemove', function(evt) {
-      map.featuresAt(evt.point, {radius: 5}, function(err, features) {
-          if (err) throw err;
+      featuresAt(map, evt.point, {radius: 5}, function(err, features) {
+        if (err) throw err;
 
-          if (features.length > 0) {
-            document.body.classList.add('hovering');
-          } else {
-            document.body.classList.remove('hovering');
-          }
+        if (features.length > 0) {
+          document.body.classList.add('hovering');
+        } else {
+          document.body.classList.remove('hovering');
+        }
       });
 
     });
 
     map.on('click', function(evt) {
       // Find what was clicked on
-      map.featuresAt(evt.point, {radius: 5}, function(err, features) {
-          if (err) throw err;
+      featuresAt(map, evt.point, {radius: 5}, function(err, features) {
+        var layerName, feature;
 
-          if (features.length > 0) {
-            console.log(features[0]);
-          }
+        if (err) throw err;
+
+        if (features.length > 0) {
+          feature = features[0];
+          layerName = feature.layer.id;
+          showInfo(layerName, feature);
+        }
       });
 
     });
@@ -120,64 +151,6 @@ var PopeMap = PopeMap || {};
 
     //============================================================//
 
-    // Listen for individual marker clicks.
-
-    entrances.on('click', function (e) {
-      e.layer.closePopup(); // Force the popup closed.
-      var feature = e.layer.feature;
-      var content = '<div><strong>' + feature.properties.name + '</strong>' +
-        '<p>Ticketed? ' + feature.properties.ticketed + '</p></div>';
-      info.innerHTML = content;
-    });
-
-    transit.on('click', function (e) {
-      e.layer.closePopup();
-      var feature = e.layer.feature;
-      var content = '<div><strong>' + feature.properties.name + '</strong>' +
-          feature.properties.description + '</div>';
-//        '<p>' + feature.properties.Tickets + '</p>' +
-//        '<p><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
-      info.innerHTML = content;
-    });
-
-    poperide.on('click', function (e) {
-      e.layer.closePopup();
-      var feature = e.layer.feature;
-      var content = '<div><strong>Pope Bike Ride</strong>' +
-              '<p>' + feature.properties.name + '</p></div>';
-
-      info.innerHTML = content;
-    });
-
-    parking.on('click', function (e) {
-      e.layer.closePopup();
-      var feature = e.layer.feature;
-      var content = '<div><strong>' + feature.properties.name + '</strong>' +
-        '<p> Deadline to move vehicles: ' + '</p>' +
-        '<p>' +feature.properties.desc + '</p>' +
-        '<p><a href="http://www.philapark.org/2015/09/the-papal-visit-what-the-ppa-is-doing/" target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
-      info.innerHTML = content;
-    });
-
-    highways.on('click', function (e) {
-      e.layer.closePopup();
-      var feature = e.layer.feature;
-      var content = '<div><strong>' + feature.properties.name + '</strong>' +
-        '<p> Closed to inbound traffic</p></div>';
-      info.innerHTML = content;
-    });
-
-    hospitals.on('click', function (e) {
-      e.layer.closePopup();
-      var feature = e.layer.feature;
-      var content = '<div><strong>' + feature.properties.name + '</strong>' +
-        '<p>' + feature.properties.address + '</p>' +
-        '<p> PHILADELPHIA, PA ' + feature.properties.zip + '</p>' +
-        '<p>' + feature.properties.phone + '</p></div>';
-      info.innerHTML = content;
-    });
-
-
     // Clear the tooltip when map is clicked.
     map.on('move', empty);
 
@@ -196,6 +169,87 @@ var PopeMap = PopeMap || {};
     //        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
 
     var hash = L.hash(map); // append (z)/(x)/(y) to URL for deep linking to locations
+
+    // Listen for individual marker clicks.
+
+    entrances.on('click', function (e) {
+      e.layer.closePopup(); // Force the popup closed.
+      showInfo('entrances', e.layer.feature);
+    });
+
+    transit.on('click', function (e) {
+      e.layer.closePopup();
+      showInfo('transit', e.layer.feature);
+    });
+
+    poperide.on('click', function (e) {
+      e.layer.closePopup();
+      showInfo('poperide', e.layer.feature);
+    });
+
+    parking.on('click', function (e) {
+      e.layer.closePopup();
+      showInfo('parking', e.layer.feature);
+    });
+
+    highways.on('click', function (e) {
+      e.layer.closePopup();
+      showInfo('highways', e.layer.feature);
+    });
+
+    hospitals.on('click', function (e) {
+      e.layer.closePopup();
+      showInfo('hospitals', e.layer.feature);
+    });
+  };
+
+
+  //============================================================//
+
+  var showInfo = function(tpl, feature) {
+    var content;
+
+    switch (tpl) {
+      case 'entrances':
+      case 'entrances.i':
+        content = '<div><strong>' + feature.properties.name + '</strong>' +
+          '<p>Ticketed? ' + feature.properties.ticketed + '</p></div>';
+        break;
+
+      case 'transit':
+      case 'transit.i':
+        content = '<div><strong>' + feature.properties.name + '</strong>' +
+          feature.properties.description + '</div>';
+//          '<p>' + feature.properties.Tickets + '</p>' +
+//          '<p><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
+        break;
+
+      case 'poperide':
+        content = '<div><strong>Pope Bike Ride</strong>' +
+          '<p>' + feature.properties.name + '</p></div>';
+        break;
+
+      case 'parking':
+        content = '<div><strong>' + feature.properties.name + '</strong>' +
+          '<p> Deadline to move vehicles: ' + '</p>' +
+          '<p>' +feature.properties.desc + '</p>' +
+          '<p><a href="http://www.philapark.org/2015/09/the-papal-visit-what-the-ppa-is-doing/" target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
+        break;
+
+      case 'highways':
+        content = '<div><strong>' + feature.properties.name + '</strong>' +
+          '<p> Closed to inbound traffic</p></div>';
+        break;
+
+      case 'hospitals':
+      case 'hospitals.i':
+        content = '<div><strong>' + feature.properties.name + '</strong>' +
+          '<p>' + feature.properties.address + '</p>' +
+          '<p> PHILADELPHIA, PA ' + feature.properties.zip + '</p>' +
+          '<p>' + feature.properties.phone + '</p></div>';
+        break;
+    }
+    info.innerHTML = content;
   };
 
   if (PopeMap.allowFancyMap && mapboxgl.supported()) {
