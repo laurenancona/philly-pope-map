@@ -869,7 +869,7 @@
         ]
       },
       "properties": {
-        "stroke": "#0d799c",
+        "stroke": "#4AB1AF",
         "stroke-width": 4,
         "stroke-opacity": 0.8,
         "name": "Route"
@@ -886,7 +886,7 @@
         ]
       },
       "properties": {
-        "marker-color": "#0d799c",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "bicycle",
         "name": "    Mile 1   ",
@@ -906,7 +906,7 @@
       "properties": {
         "name": "\n    Mile 2\n   ",
         "stroke": "",
-        "marker-color": "#0D799C",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "bicycle"
       }
@@ -923,7 +923,7 @@
       },
       "properties": {
         "name": "\n    Mile 3\n   ",
-        "marker-color": "#0D799C",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "bicycle"
       }
@@ -940,7 +940,7 @@
       },
       "properties": {
         "name": "\n    Mile 4\n   ",
-        "marker-color": "#0D799C",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "bicycle"
       }
@@ -957,7 +957,7 @@
       },
       "properties": {
         "name": "\n    Mile 5\n   ",
-        "marker-color": "#0D799C",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "bicycle"
       }
@@ -974,7 +974,7 @@
       },
       "properties": {
         "name": "\n    Mile 6\n   ",
-        "marker-color": "#0D799C",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "bicycle"
       }
@@ -1008,7 +1008,7 @@
       },
       "properties": {
         "name": "Start",
-        "marker-color": "#0d799c",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "star"
       }
@@ -1025,7 +1025,7 @@
       },
       "properties": {
         "name": "Finish",
-        "marker-color": "#0d799c",
+        "marker-color": "#4AB1AF",
         "marker-size": "small",
         "marker-symbol": "roadblock"
       }
