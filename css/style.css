@@ -22,7 +22,7 @@ p {
   margin-right: auto;
   opacity: 1!important;
   /*z-index:100; text-shadow:1px 1px 2px #888888;*/
-  
+
   font-family: 'Cabin', sans-serif;
   font-size: .7em;
   font-weight: 500;
@@ -57,7 +57,7 @@ p {
   width: 20px;
 }
 /*
-  .img { 
+  .img {
   	width:20px;
   }
 */
@@ -247,9 +247,9 @@ body.hovering .mapboxgl-ctrl-nav-compass {
   }
 
   @media only screen and (max-width : 992px) {
-  #map, .info {
+    #map, .info {
       padding-left: 0px;
-      margin-left: 0px
+      margin-left: 0px;
     }
     .leaflet-top {
       top: 50px;
