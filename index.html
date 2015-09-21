@@ -149,7 +149,7 @@
           <div class="mdl-tabs__panel is-active" id="options">
             <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="highways">
               <input type="checkbox" id="highways" class="mdl-switch__input">
-              <span class="mdl-switch__label">Highways</span>
+              <span class="mdl-switch__label">Closed Highways</span>
             </label>
             <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="walking">
               <input type="checkbox" id="walking" class="mdl-switch__input">
@@ -177,7 +177,7 @@
             </label>
             <label class="pad mdl-switch mdl-js-switch mdl-js-ripple-effect" for="parking">
               <input type="checkbox" id="parking" class="mdl-switch__input" checked>
-              <span class="mdl-switch__label">Parking/Towing Info</span>
+              <span class="mdl-switch__label">Parking/Towing Info</span> <!--  -->
             </label>
           </div>
           <div class="mdl-tabs__panel" id="about">
@@ -195,19 +195,18 @@
               <h5>Roadmap</h5>
               <p>The following layers are in-progress:</p>
               <ul>
-                <li>Open/closed Indiego Bikeshare stations <em><strong>next</strong></em></li>
-                <li>[x] Vehicle Tow Zones + Times <em><strong>added 9/11</strong></em></li>
-                <li>all timed boundaries</li>
-                <li>[x]City transit stations <em><strong>added 9/9</strong></em></li>
                 <li>Regional transit stations</li>
+                <li>Open/closed Indiego Bikeshare stations <em><strong>next</strong></em></li>
+                <li>Medic stations</li>
+                <li>All timed boundaries</li>
+                <li>[x] Vehicle Tow Zones + Times <em><strong>added 9/11</strong></em></li>
+                <li>[x] City transit stations <em><strong>added 9/9</strong></em></li>
                 <li>[x] Jumbotron locations <em><strong>added</strong></em></li>
                 <li>[x] Authorized Vehicle Only routes <em><strong>added 9/8</strong></em></li>
                 <li>[x] Recommended walking routes <em><strong>added 9/10</strong></em></li>
                 <li>[x] Closed highways/Roads/Bridges<strong>added 9/11</strong</li>
-            <li>[x] Event entrance points <em><strong>added 9/9</strong></em>
-                </li>
-                <li>Hospitals</li>
-                <li>Medic stations</li>
+                <li>[x] Event entrance points <em><strong>added 9/9</strong></em></li>
+                <li>[x] Hospitals <em>added 9/15</em></li>
                 <li>[x] Pope Bike Ride route <em><strong>added 9/10</strong></em></li>
               </ul>
             </div>
@@ -221,7 +220,9 @@
   <main class="mdl-layout__content">
     <div class="page-content">
       <div id="map">
-
+        <!-- Add mapbox watermark -->
+        <a href="//mapbox.com/about/maps" class='mapbox-maplogo' target="_blank">MapBox</a>
+        <!-- plugins & other scripts  -->
         <script src="js/feature-geojson.js" type="text/javascript"></script>
         <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
         <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
