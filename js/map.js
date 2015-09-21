@@ -94,6 +94,7 @@ change();*/
 L.control.locate().addTo(map);
 
 //map.fitBounds(bounds); // zoom/snap the map to that bounding box
+//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        map.fitBounds(bounds); // zoom/snap the map to that bounding box
 
 //map.setView([39.9572, -75.1575], 14);
 
