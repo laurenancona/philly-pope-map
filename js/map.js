@@ -4,6 +4,7 @@ var PopeMap = PopeMap || {};
   'use strict';
 
   var map;
+  var layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking'];
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 
   var INTERACTIVE_PATTERN = /\.i$/;
@@ -74,6 +75,18 @@ var PopeMap = PopeMap || {};
         }
       });
     });
+
+    layerNames.forEach(function(layerName, index){
+      document.getElementById(layerName).addEventListener('change', function(){
+        if (document.getElementById(layerName).checked) {
+          // TODO: How do we show a layer or set of layers
+          // on a gl map?
+        } else {
+          // TODO: How do we hide a layer or set of layers
+          // on a gl map?
+        }
+      });
+    });
   };
 
   PopeMap.initClassicMap = function() {
@@ -100,8 +113,7 @@ var PopeMap = PopeMap || {};
       autocomplete: true
     }));
 
-    var mapLayers = [],
-        layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking']
+    var mapLayers = [];
 
     // Here be our data layers
 
