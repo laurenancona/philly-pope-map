@@ -6,10 +6,14 @@ var PopeMap = PopeMap || {};
   var map;
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 
-  var interactivePattern = /\.i$/;
+  var INTERACTIVE_PATTERN = /\.i$/;
   var isInteractive = function(feature) {
+    /* Check whether the given feature belongs to an
+     * interactive layer.
+     */
+
     var layerName = feature.layer.id;
-    if (interactivePattern.test(layerName)) {
+    if (INTERACTIVE_PATTERN.test(layerName)) {
       return true;
     } else {
       return false;
@@ -17,19 +21,28 @@ var PopeMap = PopeMap || {};
   };
 
   var featuresAt = function(map, point, options, callback) {
-    var hijacked = function(err, features) {
-      var filteredFeatures = [];
-      var i;
+    /* A wrapper around mapboxgl.Map.featuresAt that will
+     * only take interactive layers into account. Layer
+     * interactivity is determined by the isInteractive
+     * function.
+     *
+     * TODO: Allow overriding the isInteractive method from
+     * within the options.
+     */
 
+    // Hijack the callback.
+    var hijacked = function(err, features) {
+      var filteredFeatures = [], i;
       for (i = 0; i < features.length; i++) {
         if (isInteractive(features[i])) {
           filteredFeatures.push(features[i]);
         }
       }
-
       callback(err, filteredFeatures);
     };
 
+    // Call mapboxgl.Map.featuresAt with the hijacked
+    // callback function.
     map.featuresAt(point, options, hijacked);
   };
 
