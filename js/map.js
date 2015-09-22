@@ -4,6 +4,7 @@ var PopeMap = PopeMap || {};
   'use strict';
 
   var map;
+  var mapLayers = {};
   var layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking'];
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 
@@ -113,44 +114,42 @@ var PopeMap = PopeMap || {};
       autocomplete: true
     }));
 
-    var mapLayers = [];
-
     // Here be our data layers
 
     var highways = L.mapbox.featureLayer(); //.addTo(map);
     highways.loadURL('data/highways.geojson');
-    mapLayers.push(highways);
+    mapLayers['highways'] = highways;
 
     var walking = L.mapbox.featureLayer(); //.addTo(map);
     walking.loadURL('data/walking.geojson');
-    mapLayers.push(walking);
+    mapLayers['walking'] = walking;
 
     var screens = L.mapbox.featureLayer();//.addTo(map);
     screens.loadURL('data/jumbotrons.geojson');
-    mapLayers.push(screens);
+    mapLayers['screens'] = screens;
 
     var hospitals =  L.mapbox.featureLayer();//.addTo(map);
     hospitals.loadURL('data/hospitals.geojson');
-    mapLayers.push(hospitals);
+    mapLayers['hospitals'] = hospitals;
 
     var transit = L.mapbox.featureLayer().addTo(map);
     transit.loadURL('https://gist.githubusercontent.com/laurenancona/f6fc6dee346781538cf7/raw/9ef66b848017b61a972eaa27179541ddfe90d990/septa-train-stations.geojson')
-    mapLayers.push(transit);
+    mapLayers['transit'] = transit;
 
     var entrances = L.mapbox.featureLayer(); //.addTo(map);
     entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
-    mapLayers.push(entrances);
+    mapLayers['entrances'] = entrances;
 
     var poperide = L.mapbox.featureLayer(); //.addTo(map);
     poperide.loadURL('data/poperide.geojson');
-    mapLayers.push(poperide);
+    mapLayers['poperide'] = poperide;
 
     var parking = L.mapbox.featureLayer().addTo(map);
     parking.loadURL('data/parking.geojson');
-    mapLayers.push(parking);
+    mapLayers['parking'] = parking;
 
-    layerNames.forEach(function(item, index){
-      var layer = mapLayers[index], layerName = layerNames[index];
+    layerNames.forEach(function(layerName, index){
+      var layer = mapLayers[layerName];
       document.getElementById(layerName).addEventListener('change', function(){
         if (document.getElementById(layerName).checked)
           layer.addTo(map);
