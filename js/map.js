@@ -77,15 +77,35 @@ var PopeMap = PopeMap || {};
       });
     });
 
-    layerNames.forEach(function(layerName, index){
-      document.getElementById(layerName).addEventListener('change', function(){
-        if (document.getElementById(layerName).checked) {
-          // TODO: How do we show a layer or set of layers
-          // on a gl map?
-        } else {
-          // TODO: How do we hide a layer or set of layers
-          // on a gl map?
+    var updateLayerVisibility = function(layerName) {
+      var toggledLayers = mapLayers[layerName] || [];
+      if (document.getElementById(layerName).checked) {
+        toggledLayers.forEach(function(layer) {
+          map.setLayoutProperty(layer.id, 'visibility', 'visible');
+        });
+      } else {
+        toggledLayers.forEach(function(layer) {
+          map.setLayoutProperty(layer.id, 'visibility', 'none');
+        });
+      }
+    };
+
+    map.on('load', function() {
+      layerNames.forEach(function(layerName, index){
+        // Associate the map layers with a layerName.
+        var interactiveLayerName = layerName + '.i';
+        var interactiveLayer = map.style.getLayer(interactiveLayerName);
+        if (interactiveLayer) {
+          mapLayers[layerName] = [interactiveLayer];
         }
+
+        // Bind the checkbox change to update layer visibility.
+        document.getElementById(layerName).addEventListener('change', function(){
+          updateLayerVisibility(layerName);
+        });
+
+        // Set the initial layer visibility to match the toggle.
+        updateLayerVisibility(layerName);
       });
     });
   };
