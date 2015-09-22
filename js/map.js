@@ -56,12 +56,7 @@ var PopeMap = PopeMap || {};
     map.on('mousemove', function(evt) {
       featuresAt(map, evt.point, {radius: 5}, function(err, features) {
         if (err) throw err;
-
-        if (features.length > 0) {
-          document.body.classList.add('hovering');
-        } else {
-          document.body.classList.remove('hovering');
-        }
+        document.body.classList.toggle('hovering', features.length > 0);
       });
 
     });
