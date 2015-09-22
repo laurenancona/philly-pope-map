@@ -45,7 +45,7 @@ var hospitals =  L.mapbox.featureLayer();//.addTo(map);
 hospitals.loadURL('data/hospitals.geojson');
 mapLayers.push(hospitals);
 
-var transit = L.mapbox.featureLayer(); //.addTo(map);
+var transit = L.mapbox.featureLayer().addTo(map);
 transit.loadURL('https://gist.githubusercontent.com/laurenancona/f6fc6dee346781538cf7/raw/9ef66b848017b61a972eaa27179541ddfe90d990/septa-train-stations.geojson') 
 mapLayers.push(transit);
 
