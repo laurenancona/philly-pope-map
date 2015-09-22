@@ -33,3 +33,5 @@ data/authorized-vehicle-only.zip
 data/transit-lines.geojson
 
 test/test-septa.html
+
+tiles/philly-pope-basemap.tm2/project.yml
