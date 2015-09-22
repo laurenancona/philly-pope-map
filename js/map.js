@@ -21,6 +21,8 @@ var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons bas
 
 //var secureareas = L.mapbox.featureLayer().addTo(map);
 //secureareas.loadURL('data/secure-areas.geojson')
+//var septatrains = L.mapbox.featureLayer().addTo(map);
+//septatrains.loadURL('https://gist.githubusercontent.com/laurenancona/ce73acc3de83fb041b01/raw/c480b8727614821087d4ab4cc08c706e69cdeda6/septa-rr-lines.geojson')
 
 var mapLayers = [],
     layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking']
@@ -44,7 +46,7 @@ hospitals.loadURL('data/hospitals.geojson');
 mapLayers.push(hospitals);
 
 var transit = L.mapbox.featureLayer(); //.addTo(map);
-transit.loadURL('data/transit-locations.geojson');
+transit.loadURL('https://gist.githubusercontent.com/laurenancona/f6fc6dee346781538cf7/raw/9ef66b848017b61a972eaa27179541ddfe90d990/septa-train-stations.geojson') 
 mapLayers.push(transit);
 
 var entrances = L.mapbox.featureLayer(); //.addTo(map);
@@ -86,11 +88,10 @@ entrances.on('click', function (e) {
 transit.on('click', function (e) {
   e.layer.closePopup();
   var feature = e.layer.feature;
-  var content = '<div><strong>' + feature.properties.type + ' | ' + feature.properties.desc + '<strong>' +
-    '<p>' + feature.properties.name + '</p>' +
-    '<p>' + feature.properties.Fare + '</p>' +
-    '<p>' + feature.properties.Tickets + '</p>' +
-    '<p><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
+  var content = '<div><strong>' + feature.properties.name + '</strong>' + 
+      feature.properties.description + '</div>';
+//    '<p>' + feature.properties.Tickets + '</p>' +
+//    '<p><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
   info.innerHTML = content;
 });
 
