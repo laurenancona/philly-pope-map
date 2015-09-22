@@ -58,7 +58,6 @@ var PopeMap = PopeMap || {};
         if (err) throw err;
         document.body.classList.toggle('hovering', features.length > 0);
       });
-
     });
 
     map.on('click', function(evt) {
@@ -74,7 +73,6 @@ var PopeMap = PopeMap || {};
           showInfo(layerName, feature);
         }
       });
-
     });
   };
 
