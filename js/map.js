@@ -11,13 +11,8 @@ var PopeMap = PopeMap || {};
     /* Check whether the given feature belongs to an
      * interactive layer.
      */
-
     var layerName = feature.layer.id;
-    if (INTERACTIVE_PATTERN.test(layerName)) {
-      return true;
-    } else {
-      return false;
-    }
+    return INTERACTIVE_PATTERN.test(layerName);
   };
 
   var featuresAt = function(map, point, options, callback) {
