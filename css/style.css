@@ -89,7 +89,7 @@ position: fixed;
 }
 
 .leaflet-top {
-  top: 70px;
+  top: 0px;
 }
 
 .leaflet-container a {
@@ -237,14 +237,17 @@ position: fixed;
   border-radius:3px;
   }
 
- header, main, footer {
-    padding-left: 240px;
+ #map {
+   margin-left: 240px;
   }
 
   @media only screen and (max-width : 992px) {
-    header, main, footer, #map {
-      padding-left: 0;
-      
+  #map, .info {
+      padding-left: 0px;
+      margin-left: 0px
+    }
+    .leaflet-top {
+      top: 50px;
     }
   }
 

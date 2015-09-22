@@ -7,6 +7,8 @@ L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkM
 var map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons baselayer
   // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
 //  maxBounds: bounds,
+  infoControl: false, 
+  attributionControl: false,
   maxZoom: 17,
   minZoom: 13,
   center: [39.9572, -75.1575],
@@ -50,7 +52,7 @@ entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959
 mapLayers.push(entrances);
 
 var poperide = L.mapbox.featureLayer(); //.addTo(map);
-poperide.loadURL('https://gist.githubusercontent.com/laurenancona/51985e88ee9e6df7355a/raw/bc1e5536e0cd01d167615bce9eff2a50bed881a0/poperide.geojson');
+poperide.loadURL('data/poperide.geojson');
 mapLayers.push(poperide);
 
 var parking = L.mapbox.featureLayer().addTo(map);
