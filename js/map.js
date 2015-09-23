@@ -122,13 +122,25 @@ var PopeMap = PopeMap || {};
     };
 
     map.on('load', function() {
+      var layerAssociation = {  //using '.i' in GL layernames we want to be interactive
+        'highways': ['highways.i'],
+        'walking': ['walking.i'],
+        'screens': ['screens.i'],
+        'hospitals': ['hospitals.i'],
+        'transit': ['transit.i'],
+        'entrances': ['entrances.i'],
+        'poperide': ['poperide.i'],
+        'parking': ['parking.i']
+      };
+
       layerNames.forEach(function(layerName, index){
         // Associate the map layers with a layerName.
-        var interactiveLayerName = layerName + '.i'; //using '.i' in GL layernames we want to be interactive
-        var interactiveLayer = map.style.getLayer(interactiveLayerName);
-        if (interactiveLayer) {
-          mapLayers[layerName] = [interactiveLayer];
-        }
+        var interactiveLayerNames = layerAssociation[layerName];
+        interactiveLayerNames.forEach(function(interactiveLayerName) {
+          var interactiveLayer = map.style.getLayer(interactiveLayerName);
+          if (!mapLayers[layerName]) { mapLayers[layerName] = []; }
+          if (interactiveLayer) { mapLayers[layerName].push(interactiveLayer); }
+        });
 
         // Bind the checkbox change to update layer visibility.
         document.getElementById(layerName).addEventListener('change', function(){
