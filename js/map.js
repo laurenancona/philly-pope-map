@@ -4,7 +4,7 @@ var PopeMap = PopeMap || {};
   'use strict';
 
   var mapLayers = {};
-  var layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking'];
+  var layerNames = ['highways','walking','screens','hospitals','transit','entrances','poperide','parking'];
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 
   var INTERACTIVE_PATTERN = /\.i$/;
@@ -57,11 +57,12 @@ var PopeMap = PopeMap || {};
     PopeMap.map = L.map('map', { // Popemap polygons baselayer
       // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
       maxBounds: bounds,
-      maxZoom: 17,
+      maxZoom: 18,
       minZoom: 13,
       center: [39.9572, -75.1575],
       zoom: 14,
-      zoomAnimation: true
+      zoomAnimation: true,
+      maptiks_id: 'Pope Baselayer'
     });
 
     PopeMap.gl = L.mapboxGL({
@@ -119,7 +120,7 @@ var PopeMap = PopeMap || {};
     map.on('load', function() {
       layerNames.forEach(function(layerName, index){
         // Associate the map layers with a layerName.
-        var interactiveLayerName = layerName + '.i';
+        var interactiveLayerName = layerName + '.i'; //using '.i' in GL layernames we want to be interactive
         var interactiveLayer = map.style.getLayer(interactiveLayerName);
         if (interactiveLayer) {
           mapLayers[layerName] = [interactiveLayer];
@@ -136,6 +137,7 @@ var PopeMap = PopeMap || {};
     });
   };
 
+  // Vector tiles fallback
   PopeMap.initClassicMap = function() {
     var map;
 
@@ -152,7 +154,7 @@ var PopeMap = PopeMap || {};
     //  maxBounds: bounds,
       infoControl: false,
       attributionControl: false,
-      maxZoom: 17,
+      maxZoom: 18,
       minZoom: 13,
       center: [39.9572, -75.1575],
       zoom: 14
@@ -181,7 +183,7 @@ var PopeMap = PopeMap || {};
     mapLayers['transit'] = transit;
 
     var entrances = L.mapbox.featureLayer(); //.addTo(map);
-    entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
+   entrances.loadURL('https://gist.githubusercontent.com/laurenancona/222ac7fbcb959208a93a/raw/b8953400ac6c945380203e98d6107505f9e9f0c9/entrances.geojson');
     mapLayers['entrances'] = entrances;
 
     var poperide = L.mapbox.featureLayer(); //.addTo(map);
