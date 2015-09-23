@@ -1,7 +1,8 @@
-/*
+
 #bridge {
   line-color: @dark;
   line-join: round;
+  line-comp-op: dst;
   [zoom>14]{
   [class='street']{
   line-width: 3;
@@ -24,7 +25,7 @@
   }
  } 
 }
-*/
+
 #road {
   line-color: @dark;
   line-join: round;

@@ -14,28 +14,102 @@
 </Parameters>
 
 
+<Style name="waterway" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="waterway"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>waterway</StyleName>  </Layer>
 
 <Style name="water" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="#0c6995" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#40c4ff" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#40c4ff" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="#40c4ff" />
   </Rule>
 </Style>
 <Layer name="water"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>water</StyleName>  </Layer>
 
-<Layer name="philadelphia-city-limits"
+<Style name="Philadelphia_City_Limits" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#000000" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#000000" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="#000000" />
+  </Rule>
+</Style>
+<Layer name="Philadelphia_City_Limits"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>Philadelphia_City_Limits</StyleName>  </Layer>
 
+<Style name="landuse" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="landuse"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>landuse</StyleName>  </Layer>
 
 <Style name="tunnel" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([type] = 'subway') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke-width="8" stroke-opacity="0.1" stroke-dasharray="3, 3" comp-op="dst-out" stroke="#413f3f" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([type] = 'subway') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke-width="6" stroke-opacity="0.1" stroke-dasharray="2, 2" comp-op="dst-out" stroke="#413f3f" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'subway') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke-width="6" stroke-opacity="0.1" stroke-dasharray="2, 2" comp-op="dst-out" stroke="#413f3f" />
+  </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([type] = 'subway')</Filter>
@@ -46,33 +120,96 @@
     <Filter>([type] = 'subway')</Filter>
     <LineSymbolizer stroke-width="6" stroke-opacity="0.1" stroke-dasharray="2, 2" comp-op="dst-out" stroke="#413f3f" />
   </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
 </Style>
 <Layer name="tunnel"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>tunnel</StyleName>  </Layer>
 
+<Style name="curbproj" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="curbproj"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>curbproj</StyleName>  </Layer>
 
 <Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="secure-vehicle-perimeter-fri-10a"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>secure-vehicle-perimeter-fri-10a</StyleName>  </Layer>
 
+<Style name="secure-vehicle-perimeter-fri-10p_3857" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="secure-vehicle-perimeter-fri-10p_3857"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>secure-vehicle-perimeter-fri-10p_3857</StyleName>  </Layer>
 
 <Style name="secure-vehicle-independence-fri-10p" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" fill-opacity="0.8" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="2" stroke-opacity="1" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="secure-vehicle-independence-fri-10p"
@@ -81,22 +218,59 @@
 
 <Style name="secure-perimeter-12-20th-6a" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(158, 206, 9, 0.7)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="secure-perimeter-12-20th-6a"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>secure-perimeter-12-20th-6a</StyleName>  </Layer>
 
+<Style name="secure-perimeter-thur-10p" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="secure-perimeter-thur-10p"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>secure-perimeter-thur-10p</StyleName>  </Layer>
 
 <Style name="independence-mall-secure-perimeter-sat-6am" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" fill-opacity="0.8" />
-    <LineSymbolizer comp-op="soft-light" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="independence-mall-secure-perimeter-sat-6am"
@@ -105,48 +279,6 @@
 
 <Style name="traffic-boxes-fri-6-10pm" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500</MaxScaleDenominator>
-    <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-  </Rule>
-  <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([name] = 'Vine Street Bridge')</Filter>
     <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
@@ -171,6 +303,27 @@
     <Filter>([name] = 'Fairmount Park')</Filter>
     <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
     <LineSymbolizer stroke="#000000" stroke-width="0" />
+  </Rule>
+  <Rule>
+    <Filter>([name] = 'University City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <Filter>([name] = 'Center City Traffic Box')</Filter>
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
   </Rule>
 </Style>
 <Layer name="traffic-boxes-fri-6-10pm"
@@ -182,22 +335,34 @@
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
     <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
-    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
     <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
   </Rule>
-  <Rule>
-    <Filter>([name] = 'parkway-ticketed')</Filter>
-    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(248, 0, 47, 0.5)" stroke-width="0.8" stroke-opacity="1" comp-op="soft-light" />
-  </Rule>
 </Style>
 <Layer name="parkway-ticketed-sunday"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>parkway-ticketed-sunday</StyleName>  </Layer>
+
+<Style name="GIS_PLANNING_Zipcodes" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
+<Layer name="GIS_PLANNING_Zipcodes"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>GIS_PLANNING_Zipcodes</StyleName>  </Layer>
 
 <Style name="road-hatch" filter-mode="first">
   <Rule>
@@ -222,56 +387,150 @@
 <Style name="road" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([class] = 'street')</Filter>
-    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([class] = 'street')</Filter>
-    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([class] = 'street')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'path') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke-width="0.8" stroke-dasharray="1, 2" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'path') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([class] = 'path')</Filter>
-    <LineSymbolizer stroke-width="0.8" stroke-dasharray="1, 2" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="0.8" stroke-dasharray="1, 2" stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([class] = 'path')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'minor_rail') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'minor_rail') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <Filter>([class] = 'minor_rail')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'major_rail') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'major_rail') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
   <Rule>
     <Filter>([class] = 'major_rail')</Filter>
-    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" />
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" stroke-opacity="1" comp-op="src-over" />
   </Rule>
 </Style>
 <Layer name="road"
@@ -280,38 +539,222 @@
     <StyleName>road-line</StyleName>
     <StyleName>road-hatch</StyleName>  </Layer>
 
+<Style name="bridge" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
+    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
+    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'street')</Filter>
+    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'street')</Filter>
+    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'street')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'path') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="rgba(217, 217, 217, 0.5)" stroke-width="0.6" stroke-dasharray="1, 2" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'path') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'path')</Filter>
+    <LineSymbolizer stroke="rgba(217, 217, 217, 0.5)" stroke-width="0.6" stroke-dasharray="1, 2" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'path')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+</Style>
 <Layer name="bridge"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>bridge</StyleName>  </Layer>
 
+<Style name="highways" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="highways"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>highways</StyleName>  </Layer>
+
+<Style name="septa-stations" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
+<Layer name="septa-stations"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>septa-stations</StyleName>  </Layer>
 
 <Style name="walking" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <LineSymbolizer stroke="rgba(8, 145, 196, 0.6)" stroke-width="6" stroke-opacity="0.9" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="9" placement="line" fill="#000000" halo-fill="#ffffff" ><![CDATA[['Walking Route']]]></TextSymbolizer>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
   </Rule>
 </Style>
 <Layer name="walking"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>walking</StyleName>  </Layer>
 
+<Style name="authorized-veh-only-fri-6p" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="authorized-veh-only-fri-6p"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>authorized-veh-only-fri-6p</StyleName>  </Layer>
 
 <Style name="authorized-vehicles-only" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <LineSymbolizer stroke-width="12" stroke="#000000" />
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke-width="12" stroke="#f28b0c" comp-op="overlay" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <LineSymbolizer stroke-width="8" stroke="#000000" />
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke-width="8" stroke="#f28b0c" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <LineSymbolizer stroke-width="12" stroke="#f28b0c" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="8" stroke="#f28b0c" comp-op="overlay" />
   </Rule>
 </Style>
 <Layer name="authorized-vehicles-only"
@@ -320,22 +763,61 @@
 
 <Style name="secure-vehicle-perimeter-fri-10a" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="0.7" stroke-opacity="1" comp-op="soft-light" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="secure-vehicle-perimeter-fri-10a"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>secure-vehicle-perimeter-fri-10a</StyleName>  </Layer>
 
+<Style name="secure-vehicle-perimeter-fri-10p_3857" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="secure-vehicle-perimeter-fri-10p_3857"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>secure-vehicle-perimeter-fri-10p_3857</StyleName>  </Layer>
 
 <Style name="secure-vehicle-independence-fri-10p" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" fill-opacity="0.8" comp-op="overlay" />
-    <LineSymbolizer stroke="#000000" stroke-width="2" stroke-opacity="1" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" fill-opacity="0.6" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.5)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="secure-vehicle-independence-fri-10p"
@@ -344,8 +826,20 @@
 
 <Style name="independence-mall-secure-perimeter-sat-6am" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" fill-opacity="0.8" />
-    <LineSymbolizer comp-op="soft-light" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="independence-mall-secure-perimeter-sat-6am"
@@ -354,60 +848,85 @@
 
 <Style name="secure-perimeter-12-20th-6a" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="rgba(158, 206, 9, 0.7)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#f2600c" stroke-width="4" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="secure-perimeter-12-20th-6a"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>secure-perimeter-12-20th-6a</StyleName>  </Layer>
 
+<Style name="secure-perimeter-thur-10p" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="secure-perimeter-thur-10p"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>secure-perimeter-thur-10p</StyleName>  </Layer>
 
 <Style name="traffic-boxes-fri-6-10pm" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
+    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="plus" ><![CDATA[[title]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="plus" ><![CDATA[[title]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([name] = 'Center City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
+    <TextSymbolizer minimum-padding="80" face-name="Arial Unicode MS Regular" size="8" placement="line" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="plus" ><![CDATA[[title]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
-    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" repeat-distance="400" spacing="200" avoid-edges="true" minimum-padding="20" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" size="8" placement="line" fill="#ffffff" halo-fill="#000000" halo-radius="2" allow-overlap="false" vertical-alignment="top" comp-op="plus" ><![CDATA[[title]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([name] = 'University City Traffic Box')</Filter>
-    <PolygonSymbolizer fill="rgba(217, 217, 217, 0.4)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(158, 206, 9, 0.7)" stroke-width="2" />
+    <PolygonSymbolizer fill="rgba(177, 174, 174, 0.3)" comp-op="plus" />
+    <LineSymbolizer stroke="#f28b0c" stroke-width="3" comp-op="src-over" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -434,6 +953,17 @@
     <Filter>([name] = 'Fairmount Park')</Filter>
     <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
     <LineSymbolizer stroke="#000000" stroke-width="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
   </Rule>
 </Style>
 <Layer name="traffic-boxes-fri-6-10pm"
@@ -445,41 +975,210 @@
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
     <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
-    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" ><![CDATA[CLOSED]]></TextSymbolizer>
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
     <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
   </Rule>
-  <Rule>
-    <Filter>([name] = 'parkway-ticketed')</Filter>
-    <PolygonSymbolizer fill="rgba(248, 0, 47, 0.5)" comp-op="overlay" />
-    <LineSymbolizer stroke="rgba(248, 0, 47, 0.5)" stroke-width="0.8" stroke-opacity="1" comp-op="soft-light" />
-  </Rule>
 </Style>
 <Layer name="parkway-ticketed-sunday"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>parkway-ticketed-sunday</StyleName>  </Layer>
 
+<Style name="philadelpiha_city_limits" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
+<Layer name="philadelpiha_city_limits"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>philadelpiha_city_limits</StyleName>  </Layer>
+
 <Style name="water" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="#0c6995" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#40c4ff" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#40c4ff" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <PolygonSymbolizer fill="#40c4ff" />
   </Rule>
 </Style>
 <Layer name="water"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>water</StyleName>  </Layer>
 
+<Style name="highways" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="highways"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>highways</StyleName>  </Layer>
 
+<Style name="bridge" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
+    <LineSymbolizer stroke-width="7" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
+    <LineSymbolizer stroke-width="4" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'street')</Filter>
+    <LineSymbolizer stroke-width="5" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'street')</Filter>
+    <LineSymbolizer stroke-width="3" stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'street')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'path') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="rgba(217, 217, 217, 0.5)" stroke-width="0.6" stroke-dasharray="1, 2" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'path') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'path')</Filter>
+    <LineSymbolizer stroke="rgba(217, 217, 217, 0.5)" stroke-width="0.6" stroke-dasharray="1, 2" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'path')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <LineSymbolizer stroke="#413f3f" stroke-linejoin="round" comp-op="dst" />
+  </Rule>
+</Style>
 <Layer name="bridge"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>bridge</StyleName>  </Layer>
 
 <Style name="road_label" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="500" allow-overlap="false" margin="100" minimum-padding="20" wrap-width="80" dx="-10" avoid-edges="true" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'street') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <Filter>([class] = 'street')</Filter>
@@ -487,44 +1186,164 @@
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="300" allow-overlap="false" margin="100" minimum-padding="20" comp-op="src-atop" dx="-10" avoid-edges="true" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'main') and ([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([class] = 'main')</Filter>
-    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="300" allow-overlap="false" margin="100" minimum-padding="20" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer face-name="Arial Unicode MS Bold" placement="line" fill="#ffffff" opacity="1" text-transform="uppercase" size="10" halo-fill="#000000" halo-radius="2" repeat-distance="300" allow-overlap="false" margin="100" minimum-padding="20" comp-op="src-atop" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
   </Rule>
 </Style>
 <Layer name="road_label"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>road_label</StyleName>  </Layer>
 
+<Style name="septa-stations" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
+<Layer name="septa-stations"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>septa-stations</StyleName>  </Layer>
+
 <Style name="authorized-vehicle-only_labels" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" avoid-edges="true" minimum-padding="50" ><![CDATA[[name]]]></TextSymbolizer>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" avoid-edges="true" minimum-padding="30" halo-radius="2" dx="-10" ><![CDATA[[name]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <TextSymbolizer face-name="Arial Unicode MS Regular" placement="line" size="9" text-transform="uppercase" fill="#ffffff" halo-fill="#000000" avoid-edges="true" minimum-padding="30" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
 </Style>
 <Layer name="authorized-vehicle-only_labels"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>authorized-vehicle-only_labels</StyleName>  </Layer>
 
+<Style name="GIS_PLANNING_Zipcodes" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
+<Layer name="GIS_PLANNING_Zipcodes"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>GIS_PLANNING_Zipcodes</StyleName>  </Layer>
+
+<Style name="transit-stations" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="transit-stations"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>transit-stations</StyleName>  </Layer>
 
 <Style name="jumbotrons" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <MarkersSymbolizer file="icons/maki/svg/square-24.svg" fill="#f7f7f7" stroke="#000000" stroke-width="2" stroke-opacity="0.8" opacity="1" width="18" avoid-edges="true" placement="point" comp-op="src-atop" />
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
   </Rule>
 </Style>
 <Layer name="jumbotrons"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>jumbotrons</StyleName>  </Layer>
 
+<Style name="hospitals" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="hospitals"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>hospitals</StyleName>  </Layer>
 
+<Style name="entrances" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+    <TextSymbolizer size="7" face-name="Arial Unicode MS Regular" fill="#ffffff" halo-fill="#000000" halo-radius="2" dx="-10" avoid-edges="true" ><![CDATA[CLOSED]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([name] = 'JFK Boulevard (closed)')</Filter>
+    <PolygonSymbolizer fill="#413f3f" fill-opacity="0.6" comp-op="overlay" />
+  </Rule>
+</Style>
 <Layer name="entrances"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
+    <StyleName>entrances</StyleName>  </Layer>
 
 </Map>

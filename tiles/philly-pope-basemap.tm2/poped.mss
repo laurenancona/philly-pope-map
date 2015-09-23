@@ -3,26 +3,14 @@
 @polygons: rgba(217,217,217,0.5);
 @ticketed:  rgba(248, 0, 47, 0.5);
 @text: rgba(255, 255, 255,1);
+@parking: rgba(242,185,12,1);
+@driving: rgba(242,139,12,1);
+@walking: rgba(242,96,12,1);
+@transit: rgba(242,54,12,1);
 
 
-#authorized-vehicles-only {
-  [zoom > 14]{
-  line-color: @authorized;
-  line-width: 4;
- // line-comp-op: 
-  [zoom < 17]{ line-width: 8; }
-  [zoom >= 17]{ line-width: 12; }
-  }
-}
-#parkway-ticketed-sunday {
-  [name='parkway-ticketed'] {
-  polygon-fill:  @ticketed;
-  polygon-comp-op: overlay;
-  line-color: @ticketed;
-  line-width: 0.8;
-  line-opacity: 1;
-  line-comp-op: soft-light;
-  }
+
+
  
   [name='JFK Boulevard (closed)'] {
   polygon-fill:  @dark;
@@ -38,18 +26,20 @@
   text-halo-fill: @authorized;
   text-halo-radius: 2;
   text-dx: -10;
+  text-avoid-edges: true;
   }
   // [zoom >= 16]{ line-width: 9; }
   // [zoom >= 17]{ line-width: 12; }
  }
-}
 
+// TRAFFIC BOXES ================================
 #traffic-boxes-fri-6-10pm{
   [name='Center City Traffic Box'],[name='University City Traffic Box']{
-  polygon-fill:   rgba(217,217,217,0.4);
-  polygon-comp-op: overlay;
-  line-color: @traffic;
-  line-width: 2;
+  polygon-fill:   rgba(177, 174, 174, 0.3);
+  polygon-comp-op: plus;
+  line-color: @driving;
+  line-width: 3;
+  line-comp-op: src-over;
   }
 }
 #traffic-boxes-fri-6-10pm{
@@ -61,13 +51,15 @@
   line-width: 0; 
   }
 }
+
+// SECURE VEHICLE PERIMETERS ======================
 #secure-vehicle-perimeter-fri-10a {
   polygon-fill: @polygons;
-  polygon-comp-op: overlay;
-  line-color: @authorized;
-  line-width: 0.7;
+  polygon-comp-op: plus;
+  line-color: @driving;
+  line-width: 2;
   line-opacity: 1;
-  line-comp-op: soft-light;
+ // line-comp-op: soft-light;
 }
 #secure-perimeter-thur-10p {
   //polygon-fill:   rgba(217,217,217,0.7);
@@ -82,36 +74,52 @@
 
 #secure-vehicle-independence-fri-10p {
   polygon-fill:   @polygons;
-  polygon-opacity: 0.8;
-  polygon-comp-op: overlay;
-  line-color: @authorized;
+//  polygon-opacity: 0.8;
+  polygon-comp-op: plus;
+  line-color: @driving;
   line-width: 2;
   line-opacity: 1;
  // line-comp-op: soft-light;
 }
 
+
+// SECURE PERIMETERS ===========================
 #secure-perimeter-12-20th-6a {
  // polygon-fill:   rgba(228, 0, 0,0.3);
-  polygon-fill:  @traffic;
-  polygon-comp-op: overlay;
-  line-color: @traffic;
-  //line-width: 1;
- // line-opacity: 1;
-//  line-comp-op: soft-light;
+ // polygon-fill:  @driving;
+ // polygon-comp-op: dst-atop;
+ // polygon-opacity: 0.7;
+  line-color: @walking;
+  line-width: 4;
+  line-opacity: 1;
+ // line-comp-op: soft-light;
  // polygon-smooth: 0.1;
-}
+ }
 
 #independence-mall-secure-perimeter-sat-6am {
-   polygon-fill:  @ticketed;
- // polygon-fill:  white;
+  // polygon-fill:  @ticketed;
+//  polygon-fill:  @driving;
  // polygon-comp-op: overlay;
-  polygon-opacity: 0.8;
-  //line-color: black;
-  //line-width: 2;
- // line-opacity: 1;
-  line-comp-op: soft-light;
+ // polygon-opacity: 0.7;
+  line-color: @walking;
+  line-width: 4;
+  line-opacity: 1;
+ // line-comp-op: soft-light;
 }
 
+// LINE SEGMENTS - WALKING & DRIVING ==================
+
+#authorized-vehicles-only {
+  [zoom > 14]{
+  line-color: @driving;
+  line-width: 4;
+  line-comp-op: overlay;
+  [zoom < 17]{ line-width: 8; }
+  [zoom >= 17]{ line-width: 12; }
+  }
+}
+
+/*
 #walking {
  // [name='name']{
   [zoom >= 15]{
@@ -129,4 +137,6 @@
  // [zoom >= 16]{ text-min-padding: 80; }
  // }
  }
-}
+
+
+*/

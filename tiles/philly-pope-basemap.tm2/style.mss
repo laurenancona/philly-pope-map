@@ -12,32 +12,15 @@ Map {
 @light:   #f7f7f7;
 @concrete:  rgb(52,52,52);
 @dark:  rgb(65, 63, 63);
-@water: rgb(12,105,149);
+@water: rgb(64,196,255);//rgb(12,105,149);
 @land: rgb(52,52,52);
 @curbs: rgba(217,217,217,0.3);
-@fill4: rgb(52,52,52);
 
 // Text
 @routes: 'Arial Unicode MS Regular';
 @bold: 'Arial Unicode MS Bold';
-/*
-#water {
-  ::shadow {
-    polygon-fill: mix(@land,@water,75);
-    
-  }
-  ::fill {
-    // a fill and overlay comp-op lighten the polygon-
-    // fill from ::shadow.
-    polygon-fill: @water;
-    comp-op: soft-light;
-    // blurring reveals the polygon fill from ::shadow around
-    // the edges of the water
-    image-filters: agg-stack-blur(10,10);
-    image-filters-inflate: true;
-  }
-}
-*/
+
+
 /*
 #POINT {
 [type='SEPTA']{
@@ -77,8 +60,8 @@ Map {
   }
 }
 
-#philadelphia_city_limits {
- // line-width: 0;
+ #Philadelphia_City_Limits.shp {
+ polygon-fill: black;
 }
 
 #landuse {
@@ -107,10 +90,10 @@ Map {
 
 #water {
     polygon-fill: @water;
- //   image-filters: agg-stack-blur(40,40);
- //   image-filters-inflate: true;
- //   line-width: .5;
- //   line-color: rgba(136,170,238,0.5);
+  //  image-filters: agg-stack-blur(40,20);
+  //  image-filters-inflate: true;
+  //  line-width: .5;
+  //  line-color: rgba(136,170,238,0.5);
 }
 
 #building {
@@ -176,6 +159,7 @@ Map {
     text-allow-overlap: false;
     text-margin: 100;
     text-min-padding: 20;
+    text-comp-op: src-atop;
   //  text-min-path-length: 200;
    }
   }
@@ -218,23 +202,24 @@ Map {
 
 
 
- #traffic-boxes-fri-6-10pm {
+ #traffic-boxes-fri-6-10pm.labels {
   [zoom>=15]{
   [name='Center City Traffic Box'],[name='University City Traffic Box']{
-  text-name: [name];
+  text-name: [title];
   text-face-name: 'Arial Unicode MS Regular';
   text-size: 8;
   text-placement: line;
-  text-repeat-distance: 400;
-  text-spacing: 200;
-  text-avoid-edges: true;
-  text-min-padding: 20;
+//  text-repeat-distance: 200;
+//  text-spacing: 00;
+ // text-avoid-edges: true;
+ // text-min-padding: 20;
   text-fill: @text;
   text-halo-fill: @authorized;
   text-halo-radius: 2;
   text-allow-overlap: false;
   text-vertical-alignment: top;
-  text-comp-op: src-atop;
+  text-comp-op: plus;
+ // text-comp-op: src-atop;
  // text-comp-op: plus;
   [zoom >= 16]{ text-min-padding: 80; }
    }
@@ -270,7 +255,7 @@ Map {
  // text-comp-op: src-atop;
  // text-halo-radius: 1;
   text-avoid-edges: true;
-  text-min-padding: 50;
+  text-min-padding: 30;
 //  text-allow-overlap: false;
  // text-min-path-length: 100;
 //  text-repeat-distance: 2000; 
@@ -299,6 +284,7 @@ Map {
   }
 } 
 */
+/*
 #jumbotrons {
   [zoom >= 15]{
   marker-file: url("icons/maki/svg/square-24.svg");
@@ -313,7 +299,7 @@ Map {
   marker-comp-op: src-atop;
   }
 }
-
+*/
 /*
 #place_label{
 [zoom < 14]{  

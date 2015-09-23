@@ -17,8 +17,8 @@ format: "png8:m=h:c=32"
 interactivity_layer: laurenancona.b6b3d96e
 layers: 
   - waterway
-  - water 
-  - Philadelphia_City_Limits
+  - water
+  - Philadelphia_City_Limits.shp
   - landuse
   - tunnel
   - curbproj
