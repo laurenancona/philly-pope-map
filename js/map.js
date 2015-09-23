@@ -128,8 +128,8 @@ var PopeMap = PopeMap || {};
         'screens': ['screens.i'],
         'hospitals': ['hospitals.i'],
         'transit': ['transit.i'],
-        'entrances': ['entrances.i'],
-        'poperide': ['poperide.i'],
+        'entrances': ['entrances.i','entrances.halo.i'],
+        'poperide': ['poperide.i','poperide.route.i'],
         'parking': ['parking.i']
       };
 
