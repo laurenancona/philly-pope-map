@@ -45,26 +45,57 @@ var PopeMap = PopeMap || {};
 
   PopeMap.initFancyMap = function() {
     mapboxgl.accessToken = accessToken;
-    map = PopeMap.map = new mapboxgl.Map({
-      bearing: 9, // Rotate Philly 9° off of north
-      container: 'map',
-      style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
+
+    // Construct a bounding box
+
+    var southWest = L.latLng(39.864439, -75.387541),
+        northEast = L.latLng(40.156325, -74.883544),
+        bounds = L.latLngBounds(southWest, northEast);
+
+    PopeMap.map = L.map('map', { // Popemap polygons baselayer
+      // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
+      maxBounds: bounds,
       maxZoom: 17,
-      minZoom: 10,
-      center: [-75.1575, 39.9572],
+      minZoom: 13,
+      center: [39.9572, -75.1575],
       zoom: 14
     });
 
+    PopeMap.gl = L.mapboxGL({
+      accessToken: accessToken,
+      bearing: 9, // Rotate Philly 9° off of north
+      style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
+    }).addTo(PopeMap.map);
+    map = PopeMap.gl._glMap;
+
+    // map = PopeMap.map = new mapboxgl.Map({
+    //   bearing: 9, // Rotate Philly 9° off of north
+    //   container: 'map',
+    //   style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
+    //   maxZoom: 17,
+    //   minZoom: 10,
+    //   center: [-75.1575, 39.9572],
+    //   zoom: 14
+    // });
+
+    var getPoint = function(evt) {
+      return evt.point ||
+        { x: evt.latlng.lng, y: evt.latlng.lat };
+    }
+
     map.on('mousemove', function(evt) {
-      featuresAt(map, evt.point, {radius: 5}, function(err, features) {
+      var point = getPoint(evt);
+      featuresAt(map, point, {radius: 5}, function(err, features) {
         if (err) throw err;
         document.body.classList.toggle('hovering', features.length > 0);
       });
     });
 
     map.on('click', function(evt) {
+      var point = getPoint(evt);
+
       // Find what was clicked on
-      featuresAt(map, evt.point, {radius: 5}, function(err, features) {
+      featuresAt(map, point, {radius: 5}, function(err, features) {
         var layerName, feature;
 
         if (err) throw err;
