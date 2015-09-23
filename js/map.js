@@ -3,7 +3,6 @@ var PopeMap = PopeMap || {};
 (function() {
   'use strict';
 
-  var map;
   var mapLayers = {};
   var layerNames = ['highways','walking','screens', 'hospitals','transit','entrances','poperide','parking'];
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
@@ -44,6 +43,9 @@ var PopeMap = PopeMap || {};
   };
 
   PopeMap.initFancyMap = function() {
+    var map;
+
+    L.mapbox.accessToken = accessToken;
     mapboxgl.accessToken = accessToken;
 
     // Construct a bounding box
@@ -58,25 +60,18 @@ var PopeMap = PopeMap || {};
       maxZoom: 17,
       minZoom: 13,
       center: [39.9572, -75.1575],
-      zoom: 14
+      zoom: 14,
+      zoomAnimation: true
     });
 
     PopeMap.gl = L.mapboxGL({
       accessToken: accessToken,
+      animate: true,
       bearing: 9, // Rotate Philly 9° off of north
+      interactive: true,
       style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
     }).addTo(PopeMap.map);
     map = PopeMap.gl._glMap;
-
-    // map = PopeMap.map = new mapboxgl.Map({
-    //   bearing: 9, // Rotate Philly 9° off of north
-    //   container: 'map',
-    //   style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
-    //   maxZoom: 17,
-    //   minZoom: 10,
-    //   center: [-75.1575, 39.9572],
-    //   zoom: 14
-    // });
 
     var getPoint = function(evt) {
       return evt.point ||
@@ -142,6 +137,8 @@ var PopeMap = PopeMap || {};
   };
 
   PopeMap.initClassicMap = function() {
+    var map;
+
     L.mapbox.accessToken = accessToken;
 
     // Construct a bounding box
@@ -159,11 +156,7 @@ var PopeMap = PopeMap || {};
       minZoom: 13,
       center: [39.9572, -75.1575],
       zoom: 14
-    })
-
-    .addControl(L.mapbox.geocoderControl('mapbox.places', {
-      autocomplete: true
-    }));
+    });
 
     // Here be our data layers
 
@@ -209,20 +202,7 @@ var PopeMap = PopeMap || {};
       });
     });
 
-    // Locate user
-    L.control.locate().addTo(map);
-
     //============================================================//
-
-    // Clear the tooltip when map is clicked.
-    map.on('move', empty);
-
-    // Trigger empty contents when the script has loaded on the page.
-    empty();
-
-    function empty() {
-      info.innerHTML = '<div><p><strong>Choose layers at left, then click features for info</strong></p></div>';
-    }
 
     // UTF Grid interactivity, testing w/ multiple layers
     //    var blocksTiles = blocks.addTo(map);
@@ -230,8 +210,6 @@ var PopeMap = PopeMap || {};
     //        lotsGrid = L.mapbox.gridLayer('laurenancona.fc7871b8').addTo(map);
     //    var blocksControl = L.mapbox.gridControl(blocksGrid ).addTo(map); //,
     //        lotsControl = L.mapbox.gridControl('laurenancona.fc7871b8').addTo(map);
-
-    var hash = L.hash(map); // append (z)/(x)/(y) to URL for deep linking to locations
 
     // Listen for individual marker clicks.
 
@@ -328,6 +306,26 @@ var PopeMap = PopeMap || {};
   } else {
     PopeMap.initClassicMap();
   }
+
+  PopeMap.map.addControl(L.mapbox.geocoderControl('mapbox.places', {
+    autocomplete: true
+  }));
+
+  // Locate user
+  L.control.locate().addTo(PopeMap.map);
+
+  // Clear the tooltip when map is clicked.
+  PopeMap.map.on('move', empty);
+
+  // Trigger empty contents when the script has loaded on the page.
+  empty();
+
+  function empty() {
+    info.innerHTML = '<div><p><strong>Choose layers at left, then click features for info</strong></p></div>';
+  }
+
+  var hash = L.hash(PopeMap.map); // append (z)/(x)/(y) to URL for deep linking to locations
+
 })();
 
 
