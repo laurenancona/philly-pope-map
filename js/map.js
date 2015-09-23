@@ -74,33 +74,37 @@ var PopeMap = PopeMap || {};
     map = PopeMap.gl._glMap;
 
     var getPoint = function(evt) {
-      return evt.point ||
-        { x: evt.latlng.lng, y: evt.latlng.lat };
+      // MapboxGL will call it `point`, leaflet `containerPoint`.
+      return evt.point || evt.containerPoint;
     }
 
-    map.on('mousemove', function(evt) {
-      var point = getPoint(evt);
-      featuresAt(map, point, {radius: 5}, function(err, features) {
-        if (err) throw err;
-        document.body.classList.toggle('hovering', features.length > 0);
-      });
+    PopeMap.map.on('mousemove', function(evt) {
+      if (map.loaded()) {
+        var point = getPoint(evt);
+        featuresAt(map, point, {radius: 5}, function(err, features) {
+          if (err) throw err;
+          PopeMap.map._container.classList.toggle('interacting', features.length > 0);
+        });
+      }
     });
 
-    map.on('click', function(evt) {
-      var point = getPoint(evt);
+    PopeMap.map.on('click', function(evt) {
+      if (map.loaded()) {
+        var point = getPoint(evt);
 
-      // Find what was clicked on
-      featuresAt(map, point, {radius: 5}, function(err, features) {
-        var layerName, feature;
+        // Find what was clicked on
+        featuresAt(map, point, {radius: 5}, function(err, features) {
+          var layerName, feature;
 
-        if (err) throw err;
+          if (err) throw err;
 
-        if (features.length > 0) {
-          feature = features[0];
-          layerName = feature.layer.id;
-          showInfo(layerName, feature);
-        }
-      });
+          if (features.length > 0) {
+            feature = features[0];
+            layerName = feature.layer.id;
+            showInfo(layerName, feature);
+          }
+        });
+      }
     });
 
     var updateLayerVisibility = function(layerName) {
