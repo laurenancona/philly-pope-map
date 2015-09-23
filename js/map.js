@@ -61,8 +61,7 @@ var PopeMap = PopeMap || {};
       minZoom: 13,
       center: [39.9572, -75.1575],
       zoom: 14,
-      zoomAnimation: true,
-      maptiks_id: 'Pope Baselayer'
+      zoomAnimation: true
     });
 
     PopeMap.gl = L.mapboxGL({
