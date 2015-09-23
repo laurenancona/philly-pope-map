@@ -82,7 +82,7 @@ var PopeMap = PopeMap || {};
     PopeMap.map.on('mousemove', function(evt) {
       if (map.loaded()) {
         var point = getPoint(evt);
-        featuresAt(map, point, {radius: 5}, function(err, features) {
+        featuresAt(map, point, {radius: 15}, function(err, features) {
           if (err) throw err;
           PopeMap.map._container.classList.toggle('interacting', features.length > 0);
         });
@@ -94,7 +94,7 @@ var PopeMap = PopeMap || {};
         var point = getPoint(evt);
 
         // Find what was clicked on
-        featuresAt(map, point, {radius: 5}, function(err, features) {
+        featuresAt(map, point, {radius: 15}, function(err, features) {
           var layerName, feature;
 
           if (err) throw err;
