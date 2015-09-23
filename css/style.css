@@ -227,8 +227,9 @@ position: fixed;
 
 }
 
-body.hovering .mapboxgl-canvas-container.mapboxgl-interactive,
-body.hovering .mapboxgl-ctrl-nav-compass {
+#map.interacting .mapboxgl-canvas-container.mapboxgl-interactive,
+#map.interacting .mapboxgl-ctrl-nav-compass,
+#map.interacting.leaflet-container {
   cursor: pointer;
 }
 
