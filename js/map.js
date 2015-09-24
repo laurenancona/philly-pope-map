@@ -344,7 +344,8 @@ var PopeMap = PopeMap || {};
 
       default:
         content = '<div><strong>' + feature.properties.name + '</strong>' +
-          '<p>' + feature.properties.description + '</p>';
+          (feature.properties.description ?
+            '<p>' + feature.properties.description + '</p>' : '');
         break;
     }
     info.innerHTML = content;
