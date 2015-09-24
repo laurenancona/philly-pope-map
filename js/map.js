@@ -49,14 +49,14 @@ var PopeMap = PopeMap || {};
     mapboxgl.accessToken = accessToken;
 
     // Construct a bounding box
-//
-//    var southWest = L.latLng(39.864439, -75.387541),
-//        northEast = L.latLng(40.156325, -74.883544),
-//        bounds = L.latLngBounds(southWest, northEast);
+
+    var southWest = L.latLng(39.864439, -75.387541),
+        northEast = L.latLng(40.156325, -74.883544),
+        bounds = L.latLngBounds(southWest, northEast);
 
     PopeMap.map = L.map('map', { // Popemap polygons baselayer
       // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
-//      maxBounds: bounds,
+      maxBounds: bounds,
       maxZoom: 18,
       minZoom: 13,
       center: [39.9572, -75.1575],
@@ -159,10 +159,10 @@ var PopeMap = PopeMap || {};
     L.mapbox.accessToken = accessToken;
 
     // Construct a bounding box
-//
-//    var southWest = L.latLng(39.864439, -75.387541),
-//        northEast = L.latLng(40.156325, -74.883544),
-//        bounds = L.latLngBounds(southWest, northEast);
+
+    var southWest = L.latLng(39.864439, -75.387541),
+        northEast = L.latLng(40.156325, -74.883544),
+        bounds = L.latLngBounds(southWest, northEast);
 
     map = PopeMap.map = L.mapbox.map('map', 'laurenancona.2ff8c154', { // Popemap polygons baselayer
       // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
