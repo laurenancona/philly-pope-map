@@ -68,6 +68,33 @@ var PopeMap = PopeMap || {};
 
     map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
 
+    map.on('load', function() {
+      map.addSource("poperide", {
+        "type": "geojson",
+        "data": "data/poperide.geojson"
+      });
+      map.addLayer({
+        "id": "poperide.route.i",
+        "source": "poperide",
+        "style": {
+          "line-color": "blue",
+          "line-width": 10
+        },
+        "type" : "line",
+        "interactive": true
+      });
+      map.addLayer({
+        "id": "poperide.i",
+        "source": "poperide",
+        "style": {
+          "circle-color": "green",
+          "circle-radius": 10
+        },
+        "type" : "circle",
+        "interactive": true
+      });
+    });
+
     // map.dragRotate.disable();
 
     var getPoint = function(evt) {
@@ -317,7 +344,8 @@ var PopeMap = PopeMap || {};
 
       default:
         content = '<div><strong>' + feature.properties.name + '</strong>' +
-          '<p>' + feature.properties.description + '</p>';
+          (feature.properties.description ?
+            '<p>' + feature.properties.description + '</p>' : '');
         break;
     }
     info.innerHTML = content;

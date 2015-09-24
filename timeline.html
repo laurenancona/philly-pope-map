@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/timeline.css?2">
   <link rel="stylesheet" href="css/ShareButton.css">
   <script src="js/ShareButton.js"
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
@@ -85,7 +85,7 @@
       </div>
   </div>
   </div>
-  
+
 <script>
     (function () {
       var $tl = document.getElementById('timeline-content');
@@ -218,7 +218,7 @@
           new Date(2015, 8, 25, 18, 0),
           new Date(2015, 8, 28, 18, 0),
           'driving',
-          "/#14/39.9565/-75.1600"     
+          "/#14/39.9565/-75.1600"
         );
         addBar('University City Traffic box',
           new Date(2015, 8, 25, 22, 0),
@@ -253,10 +253,14 @@
           'transit',
           "/#14/39.9561/-75.1593"
         );
+
+        addLine(new Date, 'current');
       }
 
       window.addEventListener('resize', render);
       render();
+
+      setInterval(render, 5*60*1000);
     })();
   </script>
 
