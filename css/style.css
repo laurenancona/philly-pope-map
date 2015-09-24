@@ -151,6 +151,10 @@ position: fixed;
   font-size: 10px;
 }
 
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+  display: none;
+}
+
 .map-legend,
 .wax-legend {
   position: fixed;
@@ -255,7 +259,13 @@ position: fixed;
     .leaflet-top {
       top: 50px;
     }
+    .mapboxgl-ctrl-group mapboxgl-ctrl {
+      top: 50px;
+    }
   }
+
+
+
 
     .mapbox-maplogo {
       position:absolute;
