@@ -50,28 +50,25 @@ var PopeMap = PopeMap || {};
 
     // Construct a bounding box
 
-    var southWest = L.latLng(39.864439, -75.387541),
-        northEast = L.latLng(40.156325, -74.883544),
-        bounds = L.latLngBounds(southWest, northEast);
+    // var southWest = L.latLng(39.864439, -75.387541),
+    //     northEast = L.latLng(40.156325, -74.883544),
+    //     bounds = L.latLngBounds(southWest, northEast);
 
-    PopeMap.map = L.map('map', { // Popemap polygons baselayer
-      // set that bounding box as maxBounds to restrict moving the map (http://leafletjs.com/reference.html#map-maxbounds)
-      maxBounds: bounds,
+    map = PopeMap.map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
+      center: [-75.1575, 39.9572],
+      bearing: 9.2, // Rotate Philly ~9° off of north
+      zoom: 14,
       maxZoom: 18,
       minZoom: 13,
-      center: [39.9572, -75.1575],
-      zoom: 14,
-      zoomAnimation: true
+    //   maxBounds: bounds,
+      hash: true,
     });
 
-    PopeMap.gl = L.mapboxGL({
-      accessToken: accessToken,
-      animate: true,
-      bearing: 9, // Rotate Philly 9° off of north
-      interactive: true,
-      style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
-    }).addTo(PopeMap.map);
-    map = PopeMap.gl._glMap;
+    map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
+
+    // map.dragRotate.disable();
 
     var getPoint = function(evt) {
       // MapboxGL will call it `point`, leaflet `containerPoint`.
@@ -174,6 +171,14 @@ var PopeMap = PopeMap || {};
       center: [39.9572, -75.1575],
       zoom: 14
     });
+
+    // Map controls and additions for URL hash, geocoding, and locate-me
+
+    PopeMap.map.addControl(L.mapbox.geocoderControl('mapbox.places', {
+      autocomplete: true
+    }));
+    L.control.locate().addTo(PopeMap.map);
+    L.hash(PopeMap.map); // append (z)/(x)/(y) to URL for deep linking to locations
 
     // Here be our data layers
 
@@ -324,13 +329,6 @@ var PopeMap = PopeMap || {};
     PopeMap.initClassicMap();
   }
 
-  PopeMap.map.addControl(L.mapbox.geocoderControl('mapbox.places', {
-    autocomplete: true
-  }));
-
-  // Locate user
-  L.control.locate().addTo(PopeMap.map);
-
   // Clear the tooltip when map is clicked.
   PopeMap.map.on('move', empty);
 
@@ -340,8 +338,6 @@ var PopeMap = PopeMap || {};
   function empty() {
     info.innerHTML = '<div><p><strong>Choose layers at left, then click features for info</strong></p></div>';
   }
-
-  var hash = L.hash(PopeMap.map); // append (z)/(x)/(y) to URL for deep linking to locations
 
 })();
 
