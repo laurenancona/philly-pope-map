@@ -127,7 +127,7 @@ var PopeMap = PopeMap || {};
         'walking': ['walking.i'],
         'screens': ['screens.i'],
         'hospitals': ['hospitals.i'],
-        'transit': ['transit-stations.i','septa-rr.lines.i'],
+        'transit': ['transit-stations.i','septa-rr.lines.i','market-st','broad-st','patco'],
         'entrances': ['gates.i'],
         'poperide': ['poperide.points.i','poperide.route.i'],
         'parking': ['parking.i']
