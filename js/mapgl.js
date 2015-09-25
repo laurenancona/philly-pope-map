@@ -308,7 +308,7 @@ var PopeMap = PopeMap || {};
         break;
 
       case 'highways':
-      case 'highways.i': 
+      case 'highways.i':
       case 'highways.casing.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           '<p> Closed to inbound traffic</p></div>';
