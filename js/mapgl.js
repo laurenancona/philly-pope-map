@@ -67,6 +67,10 @@ var PopeMap = PopeMap || {};
     });
 
     map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
+    map.on('load', function() {
+      map.addControl(new mapboxgl.Control.Locate({position: 'top-left'}));
+    });
+    // L.control.locate().addTo(PopeMap.map);
 
     // map.dragRotate.disable();
 
