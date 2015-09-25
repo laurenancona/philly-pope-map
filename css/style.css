@@ -251,6 +251,12 @@ position: fixed;
    margin-left: 240px;
   }
 
+  @media only screen and (min-width : 992px) {
+    .mapboxgl-control-container .leaflet-control-locate {
+      display: none;
+    }
+  }
+
   @media only screen and (max-width : 992px) {
     #map, .info {
       padding-left: 0px;
@@ -280,4 +286,19 @@ position: fixed;
     background-position: 0 0 ;
     background-size: 65px 20px;
   }
+
+.mapboxgl-control-container .leaflet-control-locate a {
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+.mapboxgl-control-container .leaflet-bar a {
+  width: 20px;
+  height: 25px;
+  border-bottom: none;
+}
+
+.mapboxgl-control-container .leaflet-bar a {
+  border-color: rgba(.75,.75,.75,.4);
+}
 
