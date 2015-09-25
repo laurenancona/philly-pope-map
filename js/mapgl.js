@@ -129,7 +129,7 @@ var PopeMap = PopeMap || {};
         'hospitals': ['hospitals.i'],
         'transit': ['transit-stations.i','septa-rr.lines.i'],
         'entrances': ['gates.i'],
-        'poperide': ['poperide.i','poperide.route.i'],
+        'poperide': ['poperide.points.i','poperide.route.i'],
         'parking': ['parking.i']
       };
 
@@ -294,7 +294,9 @@ var PopeMap = PopeMap || {};
         break;
 
       case 'poperide':
-      case 'poperide.i':
+      case 'poperide.route.i':
+      case 'poperide.points.i':
+  
         content = '<div><strong>Pope Bike Ride</strong>' +
           '<p>' + feature.properties.name + '</p></div>';
         break;
