@@ -13,7 +13,7 @@ var PopeMap = PopeMap || {};
      * interactive layer.
      */
     var layerName = feature.layer.id;
-    return INTERACTIVE_PATTERN.test(layerName);
+    return INTERACTIVE_PATTERN.test(layerName) && PopeMap.map.getLayoutProperty(layerName, 'visibility') === 'visible';
   };
 
   var featuresAt = function(map, point, options, callback) {
