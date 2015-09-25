@@ -59,7 +59,7 @@ var PopeMap = PopeMap || {};
       style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
       center: [-75.1575, 39.9572],
       bearing: 9.2, // Rotate Philly ~9° off of north
-      zoom: 14,
+      zoom: 13,
       maxZoom: 18,
       minZoom: 13,
     //   maxBounds: bounds,
@@ -128,7 +128,7 @@ var PopeMap = PopeMap || {};
         'walking': ['walking.i'],
         'screens': ['screens.i'],
         'hospitals': ['hospitals.i'],
-        'transit': ['transit.i','septa-rr.lines.i','septa-rr.lines.hatch.i'],
+        'transit': ['transit-stations.i','septa-rr.lines.i','septa-rr.lines.hatch.i','septa-rr.lines.casing.i','patco.i','broad-st.i','market-st.i'],
         'entrances': ['gates.i'],
         'poperide': ['poperide.i','poperide.route.i'],
         'parking': ['parking.i']
@@ -280,12 +280,20 @@ var PopeMap = PopeMap || {};
     switch (tpl) {
       case 'entrances':
       case 'entrances.i':
+      case 'gates.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           '<p>' + feature.properties.description + '</p></div>';
         break;
 
       case 'transit':
       case 'transit.i':
+      case 'transit-stations.i':
+      case 'septa-rr.lines.i':
+      case 'septa-rr.lines.hatch.i':
+      case 'septa-rr.lines.casing.i':
+      case 'patco.i':
+      case 'broad-st.i':
+      case 'market-st.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           feature.properties.description + '</div>';
 //          '<p>' + feature.properties.Tickets + '</p>' +
@@ -307,7 +315,8 @@ var PopeMap = PopeMap || {};
         break;
 
       case 'highways':
-      case 'highways.i':
+      case 'highways.i': 
+      case 'highways.casing.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           '<p> Closed to inbound traffic</p></div>';
         break;
