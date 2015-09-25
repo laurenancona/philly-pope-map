@@ -123,12 +123,11 @@ var PopeMap = PopeMap || {};
 
     map.on('load', function() {
       var layerAssociation = {  //using '.i' in GL layernames we want to be interactive
-//        'secure': ['ind-mall-sat-6am-overlay.i','parkway-overlay.i','12-20th-6a-overlay.i'],
         'highways': ['highways.i','highways.casing.i','highways.label'],
         'walking': ['walking.i'],
         'screens': ['screens.i'],
         'hospitals': ['hospitals.i'],
-        'transit': ['transit-stations.i','septa-rr.lines.i','septa-rr.lines.hatch.i','septa-rr.lines.casing.i','patco.i','broad-st.i','market-st.i'],
+        'transit': ['transit-stations.i','septa-rr.lines.i','patco.i','broad-st.i','market-st.i'],
         'entrances': ['gates.i'],
         'poperide': ['poperide.i','poperide.route.i'],
         'parking': ['parking.i']
@@ -278,8 +277,6 @@ var PopeMap = PopeMap || {};
     var content;
 
     switch (tpl) {
-      case 'entrances':
-      case 'entrances.i':
       case 'gates.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           '<p>' + feature.properties.description + '</p></div>';
@@ -289,7 +286,6 @@ var PopeMap = PopeMap || {};
       case 'transit.i':
       case 'transit-stations.i':
       case 'septa-rr.lines.i':
-      case 'septa-rr.lines.hatch.i':
       case 'septa-rr.lines.casing.i':
       case 'patco.i':
       case 'broad-st.i':
