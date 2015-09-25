@@ -281,6 +281,21 @@ position: fixed;
     background-size: 65px 20px;
   }
 
+.mapboxgl-control-container .leaflet-control-locate a {
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+.mapboxgl-control-container .leaflet-bar a {
+  width: 20px;
+  height: 25px;
+  border-bottom: none;
+}
+
+.mapboxgl-control-container .leaflet-bar a {
+  border-color: rgba(.75,.75,.75,.4);
+}
+
 .titleCase {
   text-transform: t
 }
