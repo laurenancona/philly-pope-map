@@ -127,7 +127,7 @@ var PopeMap = PopeMap || {};
         'walking': ['walking.i'],
         'screens': ['screens.i'],
         'hospitals': ['hospitals.i'],
-        'transit': ['transit-stations.i','septa-rr.lines.i','patco.i','broad-st.i','market-st.i'],
+        'transit': ['transit-stations.i','septa-rr.lines.i'],
         'entrances': ['gates.i'],
         'poperide': ['poperide.i','poperide.route.i'],
         'parking': ['parking.i']
@@ -287,9 +287,6 @@ var PopeMap = PopeMap || {};
       case 'transit-stations.i':
       case 'septa-rr.lines.i':
       case 'septa-rr.lines.casing.i':
-      case 'patco.i':
-      case 'broad-st.i':
-      case 'market-st.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
           feature.properties.description + '</div>';
 //          '<p>' + feature.properties.Tickets + '</p>' +
