@@ -95,7 +95,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
             },
             setView: true, // automatically sets the map view to the user's location
             // keep the current map zoom level when displaying the user's location. (if 'false', use maxZoom)
-            keepCurrentZoomLevel: true,
+            keepCurrentZoomLevel: false,
             showPopup: true, // display a popup when the user click on the inner marker
             strings: {
                 title: "Show me where I am",
@@ -105,7 +105,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 outsideMapBoundsMsg: "You seem located outside the boundaries of the map"
             },
             locateOptions: {
-                maxZoom: Infinity,
+                maxZoom: 16,
                 watch: true  // if you overwrite this, visualization cannot be updated
             }
         },
@@ -161,9 +161,9 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
          * Override it to shutdown any functionalities you added on start.
          */
         _deactivate: function() {
-            this._map.stopLocate();
+            this.stopLocate();
 
-            this._map.off('dragstart', this._stopFollowing, this);
+            this._map.off('move', this._stopFollowing, this);
             if (this.options.follow && this._following) {
                 this._stopFollowing(this._map);
             }
@@ -220,6 +220,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                         }
                     }]
                 });
+                map.setLayoutProperty('user.location', 'visibility', 'visible');
                 map.setPaintProperty('user.location', 'circle-radius', radius);
                 for (o in style) {
                     map.setPaintProperty('user.location', o, style[o]);
@@ -287,9 +288,14 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
          * Remove the marker from map.
          */
         removeMarker: function() {
-            this._layer.clearLayers();
+            this._clearLayers();
             this._marker = undefined;
             this._circle = undefined;
+        },
+
+        _clearLayers: function() {
+            this._map.setLayoutProperty('user.location', 'visibility', 'none');
+            this._map.setLayoutProperty('user.location.accuracy', 'visibility', 'none');
         },
 
         _createSource: function() {
@@ -308,7 +314,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 source: 'user.location',
                 type: 'circle',
                 layout: {
-                    visibility: 'visible'
+                    visibility: 'none'
                 },
                 paint: {},
                 interactive: false
@@ -321,7 +327,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 source: 'user.location',
                 type: 'circle',
                 layout: {
-                    visibility: 'visible'
+                    visibility: 'none'
                 },
                 paint: {},
                 interactive: false
@@ -351,7 +357,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 .on(this._link, 'click', L.DomEvent.preventDefault)
                 .on(this._link, 'click', function() {
                     var shouldStop = (this._event === undefined ||
-                        this._map.getBounds().contains(this._event.lnglat) ||
+                        this.boundsContains(this._map.getBounds(), this._event.lnglat) ||
                         !this.options.setView || this._isOutsideMapBounds());
                     if (!this.options.remainActive && (this._active && shouldStop)) {
                         this.stop();
@@ -365,6 +371,16 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
             this.bindEvents(map);
 
             return container;
+        },
+
+        boundsContains: function(bounds, lnglat) {
+            return (
+                bounds && lnglat &&
+                lnglat.lat <= bounds._ne.lat &&
+                lnglat.lng <= bounds._ne.lng &&
+                lnglat.lat >= bounds._sw.lat &&
+                lnglat.lng >= bounds._sw.lng
+            );
         },
 
         /**
@@ -451,7 +467,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
             this._map.fire('startfollowing', this);
             this._following = true;
             if (this.options.stopFollowingOnDrag) {
-                this._map.on('dragstart', this._stopFollowing, this);
+                this._map.on('move', this._stopFollowing, this);
             }
         },
 
@@ -462,7 +478,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
             this._map.fire('stopfollowing', this);
             this._following = false;
             if (this.options.stopFollowingOnDrag) {
-                this._map.off('dragstart', this._stopFollowing, this);
+                this._map.off('move', this._stopFollowing, this);
             }
             this._toggleContainerStyle();
         },
@@ -474,7 +490,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
             if (this._event === undefined)
                 return false;
             return this._map.options.maxBounds &&
-                !this._map.options.maxBounds.contains(this._event.lnglat);
+                this.boundsContains(!this._map.options.maxBounds, this._event.lnglat);
         },
 
         /**
