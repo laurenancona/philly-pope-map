@@ -4,7 +4,7 @@ var PopeMap = PopeMap || {};
   'use strict';
 
   var mapLayers = {};
-  var layerNames = ['highways','walking','screens','hospitals','transit','entrances','poperide','parking'];
+  var layerNames = ['secure','highways','walking','screens','hospitals','transit','entrances','poperide','parking'];
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6IjYxNGUxN2ExMmQzZWVkMThhZjY2MGE0YmQxZWZlN2Q2In0.18vQmCC7jmOvuHNnDh8Ybw';
 
   var INTERACTIVE_PATTERN = /\.i$/;
@@ -150,12 +150,13 @@ var PopeMap = PopeMap || {};
 
     map.on('load', function() {
       var layerAssociation = {  //using '.i' in GL layernames we want to be interactive
+        'secure': ['ind-mall-sat-6am-overlay.i','parkway-overlay.i','12-20th-6a-overlay.i'],        
         'highways': ['highways.i'],
         'walking': ['walking.i'],
         'screens': ['screens.i'],
         'hospitals': ['hospitals.i'],
         'transit': ['transit.i'],
-        'entrances': ['entrances.i','entrances.halo.i'],
+        'entrances': ['gates.i'],
         'poperide': ['poperide.i','poperide.route.i'],
         'parking': ['parking.i']
       };
@@ -307,7 +308,7 @@ var PopeMap = PopeMap || {};
       case 'entrances':
       case 'entrances.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
-          '<p>Ticketed? ' + feature.properties.ticketed + '</p></div>';
+          '<p>' + feature.properties.description + '</p></div>';
         break;
 
       case 'transit':
