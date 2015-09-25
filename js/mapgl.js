@@ -67,37 +67,10 @@ var PopeMap = PopeMap || {};
     });
 
     map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
-
-    // map.on('load', function() {
-    //   map.addSource("poperide", {
-    //     "type": "geojson",
-    //     "data": "data/poperide.geojson"
-    //   });
-    //   map.addLayer({
-    //     "id": "poperide.route.i",
-    //     "source": "poperide",
-    //     "layout": {},
-    //     "paint": {
-    //       "line-color": "#4AB1AF",
-    //       "line-width": 4,
-    //       "line-opacity": 0.8
-    //     },
-    //     "type" : "line",
-    //     "interactive": true
-    //   });
-    //   map.addLayer({
-    //     "id": "poperide.i",
-    //     "source": "poperide",
-    //     "layout": {},
-    //     "paint": {
-    //       "circle-color": "#4AB1AF",
-    //       "circle-radius": 10,
-    //       // "circle-symbol": "bicycle",
-    //     },
-    //     "type" : "circle",
-    //     "interactive": true
-    //   });
-    // });
+    map.on('load', function() {
+      map.addControl(new mapboxgl.Control.Locate({position: 'top-left'}));
+    });
+    // L.control.locate().addTo(PopeMap.map);
 
     // map.dragRotate.disable();
 
@@ -150,7 +123,7 @@ var PopeMap = PopeMap || {};
 
     map.on('load', function() {
       var layerAssociation = {  //using '.i' in GL layernames we want to be interactive
-//        'secure': ['ind-mall-sat-6am-overlay.i','parkway-overlay.i','12-20th-6a-overlay.i'],        
+//        'secure': ['ind-mall-sat-6am-overlay.i','parkway-overlay.i','12-20th-6a-overlay.i'],
         'highways': ['highways.i'],
         'walking': ['walking.i'],
         'screens': ['screens.i'],
