@@ -288,7 +288,7 @@ var PopeMap = PopeMap || {};
       case 'septa-rr.lines.i':
       case 'septa-rr.lines.casing.i':
         content = '<div><strong>' + feature.properties.name + '</strong>' +
-          feature.properties.description + '</div>';
+          (feature.properties.description || '') + '</div>';
 //          '<p>' + feature.properties.Tickets + '</p>' +
 //          '<p><a href=' + '"' + feature.properties.info + '"' + ' target="_blank" /><strong>VISIT SITE</strong></a></p></div>';
         break;
