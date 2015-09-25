@@ -42,6 +42,9 @@
 
   <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.0/mapbox-gl-dev.js"></script>
 -->
+
+  <script src="//cdn.ravenjs.com/1.1.22/raven.min.js"></script>
+
   <script src="js/mapbox-gl-dev.js"></script>
   <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.0/mapbox-gl.css" rel="stylesheet" />
 
@@ -88,6 +91,13 @@
     })(window, document, 'script', 'dataLayer', 'GTM-W6WFRN');
   </script>
   <!-- End Google Tag Manager -->
+
+  <!-- Sentry -->
+  <script>
+    Raven.config('https://3dc95625e5a44d34afb875ba056cece7@app.getsentry.com/53368').install()
+  </script>
+  <!-- End Sentry -->
+
   <style>
     /* TODO: these should be moved to style.css */
     /* #page-content { overlow-x: hidden!important; width: 100%!important; }*/
