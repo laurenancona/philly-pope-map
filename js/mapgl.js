@@ -331,7 +331,7 @@ var PopeMap = PopeMap || {};
     info.innerHTML = content;
   };
 
-  if (PopeMap.allowFancyMap && mapboxgl.supported()) {
+  if (PopeMap.allowFancyMap && window.mapboxgl && mapboxgl.supported()) {
     PopeMap.initFancyMap();
   } else {
     PopeMap.initClassicMap();
