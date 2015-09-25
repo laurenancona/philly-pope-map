@@ -124,7 +124,7 @@ var PopeMap = PopeMap || {};
     map.on('load', function() {
       var layerAssociation = {  //using '.i' in GL layernames we want to be interactive
 //        'secure': ['ind-mall-sat-6am-overlay.i','parkway-overlay.i','12-20th-6a-overlay.i'],
-        'highways': ['highways.i'],
+        'highways': ['highways.i','highways.casing.i','highways.label'],
         'walking': ['walking.i'],
         'screens': ['screens.i'],
         'hospitals': ['hospitals.i'],
