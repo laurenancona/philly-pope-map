@@ -59,9 +59,9 @@ var PopeMap = PopeMap || {};
       style: 'mapbox://styles/laurenancona/cieoq4nyj0i1ns1m2sctobre0',
       center: [-75.1575, 39.9572],
       bearing: 9.2, // Rotate Philly ~9° off of north
-      zoom: 13,
+      zoom: 12,
       maxZoom: 18,
-      minZoom: 12,
+      minZoom: 11,
     //   maxBounds: bounds,
       hash: true,
     });
