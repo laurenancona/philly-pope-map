@@ -4,6 +4,8 @@ var PopeMap = PopeMap || {};
   'use strict';
 
   var mapLayers = {};
+  var layerNames = ['highways','walking','screens','hospitals','transit','entrances','poperide','parking'];
+  
   var accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6ImNpZjMxbWtoeDI2MjlzdW0zanUyZGt5eXAifQ.0yDBBkfLr5famdg4bPgtbw';
 
   var INTERACTIVE_PATTERN = /\.i$/;
