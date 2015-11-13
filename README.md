@@ -3,7 +3,7 @@ everything in its right place
 
 A central resource for all geographic information related to the Pope's visit to Philadelphia in September, 2015.
 
-![]()
+![](https://raw.githubusercontent.com/laurenancona/philly-pope-map/gh-pages/img/popemap.png)
 
 ##More information
 
