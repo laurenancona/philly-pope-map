@@ -1,6 +1,8 @@
 # philly-pope-map
 everything in its right place
 
+_Note: for a newer version of this app, see [Parkadelphia.com](https://parkadelphia.com) | ([source](https://github.com/laurenancona/parkadelphia))_
+
 A central resource for all geographic information related to the Pope's visit to Philadelphia in September, 2015.
 
 ![](https://raw.githubusercontent.com/laurenancona/philly-pope-map/gh-pages/img/popemap.png)
